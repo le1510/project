@@ -1,5 +1,6 @@
 #include"Game.hpp"
-#include"Rescoure.hpp"
+#include"Resource.hpp"
+ #include"scenes/PlayScene.hpp"
 static Game* g_game=nullptr;
 Game::Game()
 {
@@ -22,7 +23,9 @@ void Game::Run()
             if(e.type==SDL_QUIT)
             {
                 m_isRunning=false;
+
             }
+            m_scene->HandlEvent(e);
         }
         //fps-frame per second
         //60fps -> 1 giay 60 frames
@@ -30,8 +33,11 @@ void Game::Run()
 
         float delta=(SDL_GetTicks()-last_frame_time)/1000.f;
         last_frame_time=SDL_GetTicks();
+        m_scene->Update(delta);
         //render
         SDL_RenderClear(m_renderer);
+        SDL_RenderCopy(m_renderer,Resource::TX_MAP_BACKGROUND,nullptr,nullptr);
+        m_scene->Render(m_renderer);
         SDL_RenderPresent(m_renderer);
 
     }
@@ -50,6 +56,12 @@ Game* Game::GetInstance()
     }
     return g_game;
 }
+
+void Game::SetScene(BaseScene* scene)
+{
+    m_scene = scene;
+}
+
 void Game::Initialize()
 {//KHOI TAO SDL2
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -62,6 +74,7 @@ void Game::Initialize()
     SDL_SetRenderDrawColor(m_renderer,0,0,0,255);
     m_isRunning=true;
     Resource::LoadAllData(m_renderer);
+    SetScene(new PlayScene());
 
 }
 
