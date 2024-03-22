@@ -11,7 +11,7 @@ private:
 public:
     PlayScene();
 
-     void HandlEvent(SDL_Event) override ;
+     void HandlEvent(SDL_Event) override ;//ghi de hinh anh
 void Update(float) override;
      void Render(SDL_Renderer*) override ;
 };

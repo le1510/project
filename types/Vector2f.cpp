@@ -2,13 +2,13 @@
 #include <cmath>
 
 Vector2f::Vector2f() :
-	x(0.f),
+	x(0.f),//x=0; y=0;
 	y(0.f)
 {
 }
 
 Vector2f::Vector2f(float _x, float _y) :
-	x(_x),
+	x(_x),//xy chi dinh
 	y(_y)
 {
 }

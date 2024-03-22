@@ -1,7 +1,7 @@
 #include "PlayScene.hpp"
 PlayScene::PlayScene()
 {
-    m_tower=new Tower();
+    m_tower=new Tower();//tao ra cac doi tuong tower va player trong canh choi
     m_player=new Player();
 }
 void PlayScene::HandlEvent(SDL_Event e)

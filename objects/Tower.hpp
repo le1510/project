@@ -4,7 +4,7 @@
 #include "../components/HP.hpp"
 #include "AnimatedObject.hpp"
 
-class Tower final : public AnimatedObject, HP
+class Tower final : public AnimatedObject, HP //final:de khong bi ke thu
 {
 private:
 

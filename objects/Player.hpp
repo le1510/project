@@ -8,13 +8,13 @@
 class Player final : public AnimatedObject, Damage
 {
 private:
-	int				m_speed;
-	Gun*			m_gun;
+	int				m_speed;//toc do
+	Gun*			m_gun;//player so huu vu khi
 
 public:
 	Player();
 	~Player() = default;
 
-	void Update(float) override;
+	void Update(float) override;//cap nha trang thai nguoi choi tai 1 thoi gian float//override;ghi de ham
 	void Render(SDL_Renderer*) override;
 };

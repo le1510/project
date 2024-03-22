@@ -12,30 +12,30 @@ BaseObject::BaseObject() :
 
 void BaseObject::Render(SDL_Renderer* renderer)
 {
-	if (this->m_texture != nullptr)
+	if (this->m_texture != nullptr)//sdl_point xac din vi tri doi tuong voi 2 diem x y
 	{
 		SDL_Point* center = new SDL_Point();
 		center->x = this->m_rectDst->w / 2;
 		center->y = this->m_rectDst->h / 2;
 
 		SDL_RendererFlip flip = this->m_flipH ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
-
+//?toan tu 3 ngoi tru truoc false sau            lat ngang                khong lat
 		SDL_RenderCopyEx(
-			renderer,
-			this->m_texture,
-			this->m_rectSrc,
-			this->m_rectDst,
-			this->m_angle,
-			center,
-			flip
+			renderer,//xac dinh renderer ma hinh anh duoc ve len//trinhket xuat
+			this->m_texture,//xac dinh hinh anh can duoc ve len
+			this->m_rectSrc,//xac dinh vung texture sao chep len//hinh chu nhat nguon
+			this->m_rectDst,//xac dinh vung man hinh ve vao// hinh hcu nhat dich
+			this->m_angle,//goc xoay cua doi tuong
+			center,//diem trug tam doi tuong
+			flip//xac dinh xem co lat ngang hay kh
 		);
 	}
 }
 
-SDL_Point BaseObject::GetOrigin() const
+SDL_Point BaseObject::GetOrigin() const //tra ve diem goc doi tuong
 {
-	this->m_origin->x = this->m_rectDst->w / 2 + this->m_rectDst->x;
-	this->m_origin->y = this->m_rectDst->w / 2 + this->m_rectDst->y;
+	this->m_origin->x = this->m_rectDst->w / 2 + this->m_rectDst->x;//dtoa do x khi hinh chu nhat xuat hien tren man hinh
+	this->m_origin->y = this->m_rectDst->w / 2 + this->m_rectDst->y;// tuong tu
 
 	return *this->m_origin;
 }
@@ -43,7 +43,7 @@ SDL_Point BaseObject::GetOrigin() const
 void BaseObject::SetOrigin(SDL_Point origin)
 {
 	SDL_Point o = this->GetOrigin();
-	int xOffset = origin.x - o.x;
+	int xOffset = origin.x - o.x;//diem goc moi va diem goc hien tai//di chuyen doi tuong
 	int yOffset = origin.y - o.y;
 
 	this->m_rectDst->x += xOffset;

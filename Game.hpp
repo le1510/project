@@ -1,7 +1,7 @@
 #pragma once
 #include"Config.hpp"
 #include"scenes/BaseScene.hpp"
-//clas game
+//class game
 class Game
 {
 

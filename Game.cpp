@@ -4,11 +4,13 @@
 static Game* g_game=nullptr;
 Game::Game()
 {
+    //chay game
     Initialize();
 
 }
 Game::~Game()
 {
+    //huy game
     Terminate();
 }
 void Game::Run()
@@ -29,29 +31,24 @@ void Game::Run()
         }
         //fps-frame per second
         //60fps -> 1 giay 60 frames
-        //update
+        //update game
 
         float delta=(SDL_GetTicks()-last_frame_time)/1000.f;
         last_frame_time=SDL_GetTicks();
         m_scene->Update(delta);
         //render
-        SDL_RenderClear(m_renderer);
-        SDL_RenderCopy(m_renderer,Resource::TX_MAP_BACKGROUND,nullptr,nullptr);
-        m_scene->Render(m_renderer);
-        SDL_RenderPresent(m_renderer);
+        SDL_RenderClear(m_renderer);//xoa noi dung render, chuan bi doi tuong moi
+        SDL_RenderCopy(m_renderer,Resource::TX_MAP_BACKGROUND,nullptr,nullptr);// sao chep map_background len renderer
+        m_scene->Render(m_renderer);//ve doi tuong scene len rederer
+        SDL_RenderPresent(m_renderer);//hien thi noi dung renderer len man hinh
 
     }
 
 }
 Game* Game::GetInstance()
 {
-    if(g_game==nullptr)
+    if(g_game==nullptr)//kiem tra xem co doi tuong game nao duoc tao chua
     {
-
-
-
-
-
         g_game=new Game();
     }
     return g_game;
@@ -71,15 +68,15 @@ void Game::Initialize()
     m_renderer=SDL_CreateRenderer(m_window,-1,SDL_RENDERER_PRESENTVSYNC);
 
     //chon mau render
-    SDL_SetRenderDrawColor(m_renderer,0,0,0,255);
+    SDL_SetRenderDrawColor(m_renderer,0,0,0,255);//mau den
     m_isRunning=true;
     Resource::LoadAllData(m_renderer);
-    SetScene(new PlayScene());
+    SetScene(new PlayScene());//tro choi bat dau
 
 }
 
 void Game::Terminate()
-{
+{//dung chuong trinh
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
 

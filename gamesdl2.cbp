@@ -26,8 +26,27 @@
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.hpp" />
 		<Unit filename="Main.cpp" />
-		<Unit filename="Rescoure.cpp" />
-		<Unit filename="Rescoure.hpp" />
+		<Unit filename="Resource.cpp" />
+		<Unit filename="Resource.hpp" />
+		<Unit filename="components/Damage.cpp" />
+		<Unit filename="components/Damage.hpp" />
+		<Unit filename="components/HP.cpp" />
+		<Unit filename="components/HP.hpp" />
+		<Unit filename="objects/AnimatedObject.cpp" />
+		<Unit filename="objects/AnimatedObject.hpp" />
+		<Unit filename="objects/BaseObject.cpp" />
+		<Unit filename="objects/BaseObject.hpp" />
+		<Unit filename="objects/Gun.cpp" />
+		<Unit filename="objects/Gun.hpp" />
+		<Unit filename="objects/Player.cpp" />
+		<Unit filename="objects/Player.hpp" />
+		<Unit filename="objects/Tower.cpp" />
+		<Unit filename="objects/Tower.hpp" />
+		<Unit filename="scenes/BaseScene.hpp" />
+		<Unit filename="scenes/PlayScene.cpp" />
+		<Unit filename="scenes/PlayScene.hpp" />
+		<Unit filename="types/Vector2f.cpp" />
+		<Unit filename="types/Vector2f.hpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

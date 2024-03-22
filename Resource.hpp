@@ -9,7 +9,7 @@ public:
 
 	static SDL_Texture* TX_PLAYER;
 	static SDL_Texture* TX_PLAYER_GUN;
-	static SDL_Texture* TX_PLAYER_BULLET;
+	static SDL_Texture* TX_PLAYER_BULLET;//dan
 
 	static SDL_Texture* TX_MAP_BACKGROUND;
 	static SDL_Texture* TX_MAP_TOWER;
