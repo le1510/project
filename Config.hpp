@@ -7,6 +7,7 @@
 #include<SDL2/SDL_ttf.h>
 
 #include<iostream>
+#include <ctime>
 #define WINDOW_TITLE "Dino Gun"
 #define WINDOW_WIDTH 1200
 #define WINDOW_HEIGHT 680

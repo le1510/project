@@ -7,7 +7,7 @@ Player::Player() :
 	Damage(10),//muc do sat thuong la 10
 	m_speed(150)//toc do 150
 {
-	this->m_texture = Resource::TX_PLAYER;//duongdan anh
+	this->m_texture = Resource::TX_PLAYER;//duongdan anh`
 	this->m_rectSrc->w = 72;
 	this->m_rectSrc->h = 72;
 

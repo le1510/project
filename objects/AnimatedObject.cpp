@@ -29,3 +29,15 @@ void AnimatedObject::UpdateAnimation(float delta)
 		}
 	}
 }
+void AnimatedObject::SetMaxFrame(int maxFrame)
+{
+    this->m_maxFrame=maxFrame;
+}
+void AnimatedObject::SetCurrentFrame(int currentFrame)
+{
+    this->m_currentFrame=currentFrame;
+}
+void AnimatedObject::SetTimePerFrame(float timePerFrame)
+{
+    this->m_timePerFrame=timePerFrame;
+}

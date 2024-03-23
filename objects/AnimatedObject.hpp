@@ -16,4 +16,8 @@ public:
 	AnimatedObject(int, float);
 
 	void UpdateAnimation(float);// cap nhat  trang thai
+
+	void SetMaxFrame(int);
+	void SetCurrentFrame(int);
+	void SetTimePerFrame(float);
 };

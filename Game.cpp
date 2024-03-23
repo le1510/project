@@ -15,7 +15,7 @@ Game::~Game()
 }
 void Game::Run()
 {
-    float last_frame_time=0.f;
+    float last_frame_time=0.f;//thoi gian troi qua cua cac khung hinh
     while(m_isRunning)
     {
         //xu ly su kien
