@@ -30,7 +30,7 @@ Threat::Threat(
 
 	if (Random::RandomBool())
 	{
-		this->SetOrigin({ Random::RandomInt(0, WINDOW_WIDTH), Random::RandomBool() ? 0 : WINDOW_HEIGHT });
+		this->SetOrigin({ Random::RandomInt(0, WINDOW_WIDTH), Random::RandomBool() ? 0 : WINDOW_HEIGHT });//tr ve mot gia tr ngau nhien trong khoang tu 0 den window width cho x, windowheight cho y
 	}
 	else
 	{
@@ -78,7 +78,7 @@ ThreatState Threat::GetState() const
 
 void Threat::Update(float delta)
 {
-	this->SetFlipH(this->GetOrigin().x > WINDOW_WIDTH / 2);
+	this->SetFlipH(this->GetOrigin().x > WINDOW_WIDTH / 2);//giup doi tuong luon huong ve vi tri tower khong di vi tri khac
 	this->UpdateAnimation(delta);
 
 	if (this->m_state == ThreatState::WALK)
