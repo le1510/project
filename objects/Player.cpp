@@ -5,7 +5,8 @@
 Player::Player() :
 	AnimatedObject(6, 0.1f),//6 hinh anh dong, khoang time giua cac khung hinh la 0.1s
 	Damage(10),//muc do sat thuong la 10
-	m_speed(150)//toc do 150
+	m_speed(150),//toc do 150
+	m_isShotable(true)
 {
 	this->m_texture = Resource::TX_PLAYER;//duongdan anh`
 	this->m_rectSrc->w = 72;
@@ -21,6 +22,11 @@ Player::Player() :
 
 void Player::Update(float delta)
 {
+    this->m_elapsedTime+=delta;
+    if(m_elapsedTime>0.5f)
+    {
+        m_isShotable=true;
+    }
 	this->UpdateAnimation(delta);
 
 	const Uint8* keyboardState = SDL_GetKeyboardState(nullptr);
@@ -84,4 +90,16 @@ void Player::Render(SDL_Renderer* renderer)
 	BaseObject::Render(renderer);//ve player len man hinh
 
 	this->m_gun->Render(renderer);//cho phep sung cung hien thi player
+}
+
+bool Player::IsShotable() const
+{
+    return m_isShotable;
+}
+
+Bullet* Player::Shot()
+{
+    m_isShotable=false;
+    m_elapsedTime=0.f;
+     return new Bullet(m_gun->GetAngle(),GetOrigin());
 }

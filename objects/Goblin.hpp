@@ -4,5 +4,5 @@
 class Goblin : public Threat
 {
     public:
-    Goblin();
+    Goblin();//yeutinh
 };

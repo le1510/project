@@ -14,9 +14,25 @@ Tower::Tower() :
 	this->m_rectDst->h = 210;
 	this->m_rectDst->x = (WINDOW_WIDTH - this->m_rectDst->w) / 2;//vi tri dat tower
 	this->m_rectDst->y = (WINDOW_HEIGHT - this->m_rectDst->h) / 2;
+
+	m_totalHP.w=m_currentHP.w=WINDOW_WIDTH/2;
+    m_totalHP.h=m_currentHP.h=5;
+    m_totalHP.x=m_currentHP.x=(WINDOW_WIDTH-m_totalHP.w)/2;
+    m_totalHP.y=m_currentHP.y=10;
+
 }
 
 void Tower::Update(float delta)
 {
 	this->UpdateAnimation(delta);//cap nhat trang thai tower
+}
+void Tower::Render(SDL_Renderer* renderer )
+{
+    BaseObject::Render(renderer);
+    SDL_SetRenderDrawColor(renderer,225,225,225,255);//mau den
+
+    SDL_RenderFillRect(renderer,&this->m_totalHP);
+    SDL_SetRenderDrawColor(renderer,255,255,0,255);//MAU DO
+    SDL_RenderFillRect(renderer,&this->m_currentHP);
+
 }
