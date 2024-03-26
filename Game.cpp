@@ -37,6 +37,8 @@ void Game::Run()
         last_frame_time=SDL_GetTicks();
         m_scene->Update(delta);
         //render
+        SDL_SetRenderDrawColor(m_renderer,0,0,0,255);//mau den
+
         SDL_RenderClear(m_renderer);//xoa noi dung render, chuan bi doi tuong moi
         SDL_RenderCopy(m_renderer,Resource::TX_MAP_BACKGROUND,nullptr,nullptr);// sao chep map_background len renderer
         m_scene->Render(m_renderer);//ve doi tuong scene len rederer

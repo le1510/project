@@ -12,8 +12,8 @@ private:
 	int				m_speed;//toc do
 	Gun*			m_gun;//player so huu vu khi
 
-	bool m_isShotable;
-	float m_elapsedTime;
+	bool m_isShotable;//danh dau xem player cos the bắn  hay khong
+	float m_elapsedTime;//thoi gian troi qua
 
 public:
 	Player();
@@ -23,6 +23,6 @@ public:
 	void Render(SDL_Renderer*) override;
 
 
-	bool IsShotable() const;
-	Bullet* Shot();
+	bool IsShotable() const;//tra ve gia tri bool xem nguoi choi co the ban khong
+	Bullet* Shot();//bullet :đạn ,bắn ra đạn
 };

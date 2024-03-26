@@ -7,7 +7,7 @@ class Bullet:public BaseObject,public Damage
 {
 
 private:
-    int m_speed;
+    int m_speed;//tốc độ đạn
 public:
     Bullet(float,SDL_Point);
     void Update(float) override;

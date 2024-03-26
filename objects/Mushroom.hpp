@@ -4,5 +4,5 @@
 class Mushroom : public Threat
 {
     public:
-    Mushroom();//nam
+    Mushroom();//nấm
 };

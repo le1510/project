@@ -38,6 +38,8 @@
 		<Unit filename="objects/AnimatedObject.hpp" />
 		<Unit filename="objects/BaseObject.cpp" />
 		<Unit filename="objects/BaseObject.hpp" />
+		<Unit filename="objects/Bullet.cpp" />
+		<Unit filename="objects/Bullet.hpp" />
 		<Unit filename="objects/Goblin.cpp" />
 		<Unit filename="objects/Goblin.hpp" />
 		<Unit filename="objects/Gun.cpp" />

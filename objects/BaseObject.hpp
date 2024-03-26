@@ -10,14 +10,14 @@ protected:
 	SDL_Rect*		m_rectSrc;//luu ytu hinh chu nhat nguon, xac dinh hinh anh goc ma ta sao cheep len man hinh
 	SDL_Rect*		m_rectDst;//luu tr uhinh chu nhat dich, xac dinh vung tren man hinh ma ta muon ve hinh anh vao, xac dinh bi tri va kich thuoc doi tuong
 	SDL_Point*		m_origin;//luu tru diem goc cua doi tuong
-	float			m_angle;
-	bool			m_flipH;
+	float			m_angle;//goc xoay doi tuong
+	bool			m_flipH;//xem co can lat ngang khong
 
 public:
 	BaseObject();
 	~BaseObject() = default;
 
-	virtual void Update(float) = 0;
+	virtual void Update(float) = 0;//phuong thuc ao de update
 
 	virtual void Render(SDL_Renderer*);//ve doi tuong len man hinh su dung renderer truyen vao
 

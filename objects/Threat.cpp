@@ -7,14 +7,14 @@ Threat::Threat(
 	SDL_Texture* attackTex,
 	SDL_Texture* deathTex,
 	SDL_Texture* walkTex,
-	int maxHP, int damage, int speed) :
+	int maxHP, int damage, int speed) ://damage:su tan pha
 	HP(maxHP),
 	Damage(damage),
 	m_attackTex(attackTex),
 	m_deathTex(deathTex),
 	m_walkTex(walkTex),
 	m_speed(speed),
-	m_totalHP({0,0,30,3}),
+	m_totalHP({0,0,30,3}),//kich thuoc 3083 va vi tri la (0,0)
 	m_currentHP({0,0,30,3})
 {
 	this->SetCurrentFrame(1);
@@ -42,7 +42,7 @@ Threat::Threat(
 
 void Threat::SetState(ThreatState state)
 {
-	this->m_state = state;
+	this->m_state = state;//state:tinh trang
 
 	switch (this->m_state)
 	{

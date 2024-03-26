@@ -3,12 +3,13 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1711203163 d:\codegameltncm\gamesdl2\config.hpp
+1711285560 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
 	<SDL2/SDL_ttf.h>
 	<iostream>
+	<vector>
 	<ctime>
 
 1710899052 d:\codegameltncm\gamesdl2\game.hpp
@@ -21,7 +22,7 @@
 1710602135 d:\codegameltncm\gamesdl2\rescoure.hpp
 	"Config.hpp"
 
-1711195464 source:d:\codegameltncm\gamesdl2\game.cpp
+1711285777 source:d:\codegameltncm\gamesdl2\game.cpp
 	"Game.hpp"
 	"Resource.hpp"
 	"scenes/PlayScene.hpp"
@@ -29,14 +30,15 @@
 1711195464 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1711202879 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1711472404 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 
-1711202881 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1711289420 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
 	"../objects/Player.hpp"
 	"../objects/Tower.hpp"
 	"../objects/Threat.hpp"
+	"../objects/Bullet.hpp"
 
 1710906605 source:d:\codegameltncm\gamesdl2\components\damage.cpp
 	"Damage.hpp"
@@ -51,7 +53,7 @@
 1711104278 source:d:\codegameltncm\gamesdl2\objects\baseobject.cpp
 	"BaseObject.hpp"
 
-1710999577 d:\codegameltncm\gamesdl2\objects\baseobject.hpp
+1711472404 d:\codegameltncm\gamesdl2\objects\baseobject.hpp
 	"../Config.hpp"
 	"../types/Vector2f.hpp"
 
@@ -64,7 +66,7 @@
 1711201217 source:d:\codegameltncm\gamesdl2\objects\animatedobject.cpp
 	"AnimatedObject.hpp"
 
-1711201219 d:\codegameltncm\gamesdl2\objects\animatedobject.hpp
+1711472404 d:\codegameltncm\gamesdl2\objects\animatedobject.hpp
 	"../Config.hpp"
 	"BaseObject.hpp"
 
@@ -83,23 +85,24 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1711199289 source:d:\codegameltncm\gamesdl2\objects\player.cpp
+1711290189 source:d:\codegameltncm\gamesdl2\objects\player.cpp
 	"Player.hpp"
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
 
-1711199289 d:\codegameltncm\gamesdl2\objects\player.hpp
+1711472404 d:\codegameltncm\gamesdl2\objects\player.hpp
 	"../Config.hpp"
 	"../components/Damage.hpp"
 	"AnimatedObject.hpp"
 	"Gun.hpp"
+	"Bullet.hpp"
 
-1711200462 d:\codegameltncm\gamesdl2\objects\tower.hpp
+1711472404 d:\codegameltncm\gamesdl2\objects\tower.hpp
 	"../Config.hpp"
 	"../components/HP.hpp"
 	"AnimatedObject.hpp"
 
-1711109647 source:d:\codegameltncm\gamesdl2\objects\tower.cpp
+1711472404 source:d:\codegameltncm\gamesdl2\objects\tower.cpp
 	"Tower.hpp"
 	"../Resource.hpp"
 
@@ -109,7 +112,7 @@
 
 1711200968 d:\codegameltncm\gamesdl2\misc\random.hpp
 
-1711201909 d:\codegameltncm\gamesdl2\objects\threat.hpp
+1711472404 d:\codegameltncm\gamesdl2\objects\threat.hpp
 	"../components/Damage.hpp"
 	"../Config.hpp"
 	"../components/HP.hpp"
@@ -119,7 +122,7 @@
 	"Goblin.hpp"
 	"../Resource.hpp"
 
-1711202881 d:\codegameltncm\gamesdl2\objects\goblin.hpp
+1711285782 d:\codegameltncm\gamesdl2\objects\goblin.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
@@ -127,7 +130,7 @@
 	"Mushroom.hpp"
 	"../Resource.hpp"
 
-1711202881 d:\codegameltncm\gamesdl2\objects\mushroom.hpp
+1711472404 d:\codegameltncm\gamesdl2\objects\mushroom.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
@@ -135,14 +138,24 @@
 	"Skeleton.hpp"
 	"../Resource.hpp"
 
-1711202881 d:\codegameltncm\gamesdl2\objects\skeleton.hpp
+1711285782 d:\codegameltncm\gamesdl2\objects\skeleton.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
-1711202924 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
+1711287141 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
 	"Threat.hpp"
 	"Goblin.hpp"
 	"Mushroom.hpp"
 	"Skeleton.hpp"
 	"../misc/Random.hpp"
+
+1711472404 d:\codegameltncm\gamesdl2\objects\bullet.hpp
+	"../Config.hpp"
+	"BaseObject.hpp"
+	"../components/Damage.hpp"
+
+1711288708 source:d:\codegameltncm\gamesdl2\objects\bullet.cpp
+	"Bullet.hpp"
+	"../Resource.hpp"
+	<cmath>
 
