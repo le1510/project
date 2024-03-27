@@ -7,7 +7,7 @@ BaseObject::BaseObject() :
 {
 	this->m_rectSrc = new SDL_Rect();
 	this->m_rectDst = new SDL_Rect();
-	this->m_origin = new SDL_Point();
+	this->m_origin = new SDL_Point();//cấu trúc xác định 1 điểm hai chiều
 }
 
 void BaseObject::Render(SDL_Renderer* renderer)
@@ -80,7 +80,7 @@ void BaseObject::SetFlipH(bool flip)
 
 void BaseObject::Move(Vector2f vector)
 {
-	auto origin = this->GetOrigin();
+	auto origin = this->GetOrigin();//lay điẻm goóc cuar đói tuọng
 	origin.x += (int) vector.x;
 	origin.y += (int) vector.y;
 

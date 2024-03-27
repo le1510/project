@@ -32,7 +32,7 @@ Vector2f Vector2f::Normalize() const
 	}
 }
 
-Vector2f Vector2f::operator*(float scalar) const
+Vector2f Vector2f::operator*(float scalar) const//scalar:vo huong
 {
 	return Vector2f(x * scalar, y * scalar);
 }

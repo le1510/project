@@ -22,20 +22,20 @@ Player::Player() :
 
 void Player::Update(float delta)
 {
-    this->m_elapsedTime+=delta;
+    this->m_elapsedTime+=delta;//tính toán time
     if(m_elapsedTime>0.5f)
     {
-        m_isShotable=true;
+        m_isShotable=true;//neu time lớn hơn 0.5 thì có thể bắn
     }
-	this->UpdateAnimation(delta);
+	this->UpdateAnimation(delta);// capaj nhật hình ảnh player
 
-	const Uint8* keyboardState = SDL_GetKeyboardState(nullptr);
+	const Uint8* keyboardState = SDL_GetKeyboardState(nullptr);//trạng thái của bàn phím xem người chơi bấm nút nào để player di chuyển
 
 	Vector2f vector;
 
 	if (keyboardState[SDL_SCANCODE_A])
 	{
-		this->SetFlipH(true);
+		this->SetFlipH(true);//đảo ngươc hình ảnh và đặt thành -1 để di chuyển sang trái
 		vector.x = -1.f;
 	}
 
@@ -92,14 +92,14 @@ void Player::Render(SDL_Renderer* renderer)
 	this->m_gun->Render(renderer);//cho phep sung cung hien thi player
 }
 
-bool Player::IsShotable() const
+bool Player::IsShotable() const//trả về giá trị của biến xem player có thể bắn hay không
 {
     return m_isShotable;
 }
 
 Bullet* Player::Shot()
 {
-    m_isShotable=false;
+    m_isShotable=false;//ngăn player bắn liên tiếp
     m_elapsedTime=0.f;
-     return new Bullet(m_gun->GetAngle(),GetOrigin());
+     return new Bullet(m_gun->GetAngle(),GetOrigin());// tạo ra góc bắn , getangle trả về góc bắn hiện tại , get origin trả vè tọa độ điểm gốc player
 }
