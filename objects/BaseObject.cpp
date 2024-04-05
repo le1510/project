@@ -3,10 +3,12 @@
 BaseObject::BaseObject() :
 	m_texture(nullptr),
 	m_angle(0.f),
-	m_flipH(false)
+	m_flipH(false),
+	m_isAlive(true)
 {
 	this->m_rectSrc = new SDL_Rect();
 	this->m_rectDst = new SDL_Rect();
+	this->m_rectCollision= new SDL_Rect();
 	this->m_origin = new SDL_Point();//cấu trúc xác định 1 điểm hai chiều
 }
 
@@ -29,6 +31,9 @@ void BaseObject::Render(SDL_Renderer* renderer)
 			center,//diem trug tam doi tuong
 			flip//xac dinh xem co lat ngang hay kh
 		);
+
+		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+SDL_RenderDrawRect(renderer, this->m_rectCollision);
 	}
 }
 
@@ -48,6 +53,9 @@ void BaseObject::SetOrigin(SDL_Point origin)
 
 	this->m_rectDst->x += xOffset;
 	this->m_rectDst->y += yOffset;
+
+	this->m_rectCollision->x += xOffset;
+this->m_rectCollision->y += yOffset;
 
 	this->m_origin->x = origin.x;
 	this->m_origin->y = origin.y;
@@ -85,4 +93,26 @@ void BaseObject::Move(Vector2f vector)
 	origin.y += (int) vector.y;
 
 	this->SetOrigin(origin);
+}
+SDL_Rect BaseObject::GetRectCollision() const
+{
+    return *this->m_rectCollision;
+}
+void BaseObject::SetIsAlive(bool isAlive )
+{
+    this->m_isAlive=isAlive;
+}
+bool BaseObject::IsAlive() const
+{
+    return this->m_isAlive;
+}
+
+bool BaseObject::IsCollision(const BaseObject* other) const
+{
+	int left = other->GetRectCollision().x - (this->GetRectCollision().x + this->GetRectCollision().w);
+	int top = (other->GetRectCollision().y + other->GetRectCollision().h) - this->GetRectCollision().y;
+	int right = (other->GetRectCollision().x + other->GetRectCollision().w) - this->GetRectCollision().x;
+	int bottom = other->GetRectCollision().y - (this->GetRectCollision().y + this->GetRectCollision().h);
+
+	return !(left > 0 || right < 0 || top < 0 || bottom > 0);
 }

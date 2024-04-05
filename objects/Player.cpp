@@ -15,6 +15,9 @@ Player::Player() :
 	this->m_rectDst->w = 72;
 	this->m_rectDst->h = 72;
 
+	this->m_rectCollision->w = this->m_rectCollision->h = 50;
+this->m_rectCollision->x = this->m_rectCollision->y = 11;
+
 	this->SetOrigin({ 100, 100 });//toa do ban dau
 
 	this->m_gun = new Gun();

@@ -41,6 +41,43 @@ void PlayScene::Update(float delta)
         bullet->Update(delta);//cap nhat vien dan
     }
 
+    for (auto bullet : this->m_bullets)
+{
+	for (auto threat : this->m_threats)
+	{
+		if (bullet->IsAlive() && bullet->IsCollision(threat))
+		{
+			threat->SetCurrentHP(threat->GetCurrentHP() - bullet->GetDamage());
+			bullet->SetIsAlive(false);
+		}
+	}
+}
+
+ for (int i = 0; i < this->m_bullets.size();)
+{
+	if (!this->m_bullets[i]->IsAlive()) // !false -> true
+	{
+		this->m_bullets.erase(this->m_bullets.begin() + i);
+	}
+	else
+	{
+		i++;
+	}
+}
+
+for (int i = 0; i < this->m_threats.size();)
+{
+	if (!this->m_threats[i]->IsAlive())
+	{
+		this->m_threats.erase(this->m_threats.begin() + i);
+
+	}
+	else
+	{
+		i++;
+	}
+}
+
 }
 void PlayScene::Render(SDL_Renderer* renderer)
 {

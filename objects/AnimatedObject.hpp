@@ -20,4 +20,5 @@ public:
 	void SetMaxFrame(int);//thiet lapa so khung hinh toi da
 	void SetCurrentFrame(int);//thiet lap khung hinh hien ti
 	void SetTimePerFrame(float);//thiet lap thoi gin de khung anh nay sang khung hinh tiep theo
+	int GetCurrentFrame() const;
 };

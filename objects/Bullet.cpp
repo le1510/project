@@ -12,6 +12,9 @@ Bullet::Bullet(float angle, SDL_Point origin) :
 	this->m_rectSrc->w = this->m_rectDst->w = 32;
 	this->m_rectSrc->h = this->m_rectDst->h = 32;//thiết lập kích thước của vùng hiển thị hình ảnh bulllet
 
+	this->m_rectCollision->w = this->m_rectCollision->h = 20;
+this->m_rectCollision->x = this->m_rectCollision->y = 6;
+
 	this->SetAngle(angle);//thiêts lập góc bắn
 	this->SetOrigin(origin);//thiết lậpddieemr gốc
 }

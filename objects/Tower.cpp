@@ -15,6 +15,10 @@ Tower::Tower() :
 	this->m_rectDst->x = (WINDOW_WIDTH - this->m_rectDst->w) / 2;//vi tri dat tower
 	this->m_rectDst->y = (WINDOW_HEIGHT - this->m_rectDst->h) / 2;
 
+	this->m_rectCollision->w = 80;
+this->m_rectCollision->h = 130;
+this->m_rectCollision->x = this->m_rectDst->x + (this->m_rectDst->w - this->m_rectCollision->w) / 2;
+this->m_rectCollision->y = this->m_rectDst->y + (this->m_rectDst->h - this->m_rectCollision->h) / 2 + 30;
 	m_totalHP.w=m_currentHP.w=WINDOW_WIDTH/2;//thiet lap vi ti va kich thuoc thanh mau len man hinh
     m_totalHP.h=m_currentHP.h=5;
     m_totalHP.x=m_currentHP.x=(WINDOW_WIDTH-m_totalHP.w)/2;

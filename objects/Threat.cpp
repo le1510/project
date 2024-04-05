@@ -102,10 +102,15 @@ void Threat::Update(float delta)
 		}
 	}
 
-	if (this->GetCurrentHP() <= 0)
-	{
-		this->SetState(ThreatState::DEATH);// neu mau be hon 0 thi die
-	}
+	if (this->GetCurrentHP() <= 0 && this->m_state != ThreatState::DEATH)
+{
+	this->SetState(ThreatState::DEATH);
+}
+
+if (this->m_state == ThreatState::DEATH && this->GetCurrentFrame() == 4)
+{
+	this->m_isAlive = false;
+}
 }
 void Threat::Render(SDL_Renderer* renderer )
 {
