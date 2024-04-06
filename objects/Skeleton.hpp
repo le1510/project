@@ -5,4 +5,6 @@ class Skeleton  : public Threat
 {
     public:
     Skeleton();//bo xuong
+    int Score()override;
+
 };

@@ -3,7 +3,7 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1711285560 d:\codegameltncm\gamesdl2\config.hpp
+1712417696 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -22,7 +22,7 @@
 1710602135 d:\codegameltncm\gamesdl2\rescoure.hpp
 	"Config.hpp"
 
-1711285777 source:d:\codegameltncm\gamesdl2\game.cpp
+1712417245 source:d:\codegameltncm\gamesdl2\game.cpp
 	"Game.hpp"
 	"Resource.hpp"
 	"scenes/PlayScene.hpp"
@@ -30,11 +30,13 @@
 1711195464 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1712330742 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1712416800 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
+	"../Resource.hpp"
 
-1711289420 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1712415199 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
+	"../components/Text.hpp"
 	"../objects/Player.hpp"
 	"../objects/Tower.hpp"
 	"../objects/Threat.hpp"
@@ -70,10 +72,10 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1710684991 source:d:\codegameltncm\gamesdl2\resource.cpp
+1712417696 source:d:\codegameltncm\gamesdl2\resource.cpp
 	"Resource.hpp"
 
-1711101834 d:\codegameltncm\gamesdl2\resource.hpp
+1712417782 d:\codegameltncm\gamesdl2\resource.hpp
 	"Config.hpp"
 
 1711104276 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
@@ -112,37 +114,37 @@
 
 1711200968 d:\codegameltncm\gamesdl2\misc\random.hpp
 
-1711472404 d:\codegameltncm\gamesdl2\objects\threat.hpp
+1712416800 d:\codegameltncm\gamesdl2\objects\threat.hpp
 	"../components/Damage.hpp"
 	"../Config.hpp"
 	"../components/HP.hpp"
 	"AnimatedObject.hpp"
 
-1712329972 source:d:\codegameltncm\gamesdl2\objects\goblin.cpp
+1712416800 source:d:\codegameltncm\gamesdl2\objects\goblin.cpp
 	"Goblin.hpp"
 	"../Resource.hpp"
 
-1711285782 d:\codegameltncm\gamesdl2\objects\goblin.hpp
+1712416800 d:\codegameltncm\gamesdl2\objects\goblin.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712329548 source:d:\codegameltncm\gamesdl2\objects\mushroom.cpp
+1712416800 source:d:\codegameltncm\gamesdl2\objects\mushroom.cpp
 	"Mushroom.hpp"
 	"../Resource.hpp"
 
-1711472404 d:\codegameltncm\gamesdl2\objects\mushroom.hpp
+1712416800 d:\codegameltncm\gamesdl2\objects\mushroom.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712329569 source:d:\codegameltncm\gamesdl2\objects\skeleton.cpp
+1712416800 source:d:\codegameltncm\gamesdl2\objects\skeleton.cpp
 	"Skeleton.hpp"
 	"../Resource.hpp"
 
-1711285782 d:\codegameltncm\gamesdl2\objects\skeleton.hpp
+1712416800 d:\codegameltncm\gamesdl2\objects\skeleton.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712331090 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
+1712414324 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
 	"Threat.hpp"
 	"Goblin.hpp"
 	"Mushroom.hpp"
@@ -158,4 +160,10 @@
 	"Bullet.hpp"
 	"../Resource.hpp"
 	<cmath>
+
+1712415956 source:d:\codegameltncm\gamesdl2\components\text.cpp
+	"Text.hpp"
+
+1712414600 d:\codegameltncm\gamesdl2\components\text.hpp
+	"../Config.hpp"
 

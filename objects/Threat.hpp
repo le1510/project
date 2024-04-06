@@ -33,4 +33,5 @@ public:
     void Update(float ) override;//cap nhat update trang thai
     void Render(SDL_Renderer*) override;//ve doi tuong len man hinh
     static Threat* Generate();//tao ra doi tuong threat moi
+    virtual int Score() =0;
 };

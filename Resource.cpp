@@ -1,6 +1,10 @@
 #include "Resource.hpp"
 
 TTF_Font* Resource::FONT_24;
+TTF_Font* Resource::FONT_48;
+TTF_Font* Resource::FONT_96;
+Mix_Chunk* Resource::SFX_SHOT;
+Mix_Music* Resource::SFX_BACKGROUND;
 
 SDL_Texture* Resource::TX_PLAYER;
 SDL_Texture* Resource::TX_PLAYER_GUN;
@@ -29,17 +33,36 @@ SDL_Texture* Resource::LoadTextureFromFile(const std::string& path, SDL_Renderer
 
 	return texture;
 }
-/*
+
 TTF_Font* Resource::LoadFontFromFile(const std::string& path, int size)
 {
 	std::cout << "Loaded font from " << path << std::endl;
 
 	return TTF_OpenFont(path.c_str(), size);
 }
-*/
+
+Mix_Music* Resource::LoadMusicFromFile(const std::string& path)
+{
+	std::cout << "Loaded music from " << path << std::endl;
+
+	return Mix_LoadMUS(path.c_str());
+}
+
+Mix_Chunk* Resource::LoadSFXFromFile(const std::string& path)
+{
+	std::cout << "Loaded SFX from " << path << std::endl;
+
+	return Mix_LoadWAV(path.c_str());
+}
+
 void Resource::LoadAllData(SDL_Renderer* renderer)
 {
-	//FONT_24					= LoadFontFromFile(RES_FONT, 24);
+	FONT_24					= LoadFontFromFile(RES_FONT, 24);
+	FONT_48					= LoadFontFromFile(RES_FONT, 48);
+	FONT_96					= LoadFontFromFile(RES_FONT, 96);
+
+	SFX_SHOT                =LoadSFXFromFile(RES_SFX_SHOT);
+	SFX_BACKGROUND          =LoadMusicFromFile(RES_SFX_BACKGROUND);
 
 	TX_PLAYER				= LoadTextureFromFile(RES_TX_PLAYER, renderer);
 	TX_PLAYER_GUN			= LoadTextureFromFile(RES_TX_PLAYER_GUN, renderer);

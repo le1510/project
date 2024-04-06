@@ -15,8 +15,8 @@
 
 #define RES_FONT "res/fonts/monogram-extended.ttf"
 
-#define RES_SFX_SHOT "res/sfx/shot.wav"
-#define RES_SFX_BACKGROUND "res/sfx/background_music.wav"
+#define RES_SFX_SHOT "res/sfx/shot.mp3"
+#define RES_SFX_BACKGROUND "res/sfx/background_music.mp3"
 
 #define RES_TX_PLAYER "res/textures/player/dino.png"
 #define RES_TX_PLAYER_GUN "res/textures/player/gun.png"

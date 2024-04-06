@@ -64,6 +64,10 @@ void Game::SetScene(BaseScene* scene)
 void Game::Initialize()
 {//KHOI TAO SDL2
     SDL_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
+    Mix_Init(MIX_INIT_MP3);
+    Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,2048);
+
     //TAO WINDOW
     m_window=SDL_CreateWindow(WINDOW_TITLE,SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,WINDOW_WIDTH,WINDOW_HEIGHT,SDL_WINDOW_SHOWN);
     //tao renderer

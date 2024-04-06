@@ -118,8 +118,12 @@ void Threat::Render(SDL_Renderer* renderer )
     SDL_SetRenderDrawColor(renderer,225,225,225,255);//mau den
 
     SDL_RenderFillRect(renderer,&this->m_totalHP);//ve thanh mau tong cua quai vat mau do
-    SDL_SetRenderDrawColor(renderer,255,0,0,255);
-    SDL_RenderFillRect(renderer,&this->m_currentHP);//ve hinh chu nhat mau do de dai dien thanh mau tong hien tai
+
+    if(this->GetCurrentHP()>0)
+    {
+        SDL_SetRenderDrawColor(renderer,255,0,0,255);
+        SDL_RenderFillRect(renderer,&this->m_currentHP);
+    }
 
 }
 Threat* Threat::Generate()//tao ra quai vat ngau nhien

@@ -5,4 +5,5 @@ class Goblin : public Threat
 {
     public:
     Goblin();//yeutinh
+    int Score()override;
 };

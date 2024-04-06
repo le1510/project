@@ -1,5 +1,6 @@
 #pragma once
 #include"BaseScene.hpp"
+#include "../components/Text.hpp"
 #include"../objects/Player.hpp"
 #include"../objects/Tower.hpp"
 #include"../objects/Threat.hpp"
@@ -14,6 +15,8 @@ private:
     float m_elapsedTime;
     std::vector<Threat*> m_threats;
     std::vector<Bullet*> m_bullets;
+    int  m_score;
+    Text* m_scoreText;
 
 public:
     PlayScene();
