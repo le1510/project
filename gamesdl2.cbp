@@ -32,6 +32,8 @@
 		<Unit filename="components/Damage.hpp" />
 		<Unit filename="components/HP.cpp" />
 		<Unit filename="components/HP.hpp" />
+		<Unit filename="components/Text.cpp" />
+		<Unit filename="components/Text.hpp" />
 		<Unit filename="misc/Random.cpp" />
 		<Unit filename="misc/Random.hpp" />
 		<Unit filename="objects/AnimatedObject.cpp" />
