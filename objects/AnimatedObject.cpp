@@ -29,19 +29,19 @@ void AnimatedObject::UpdateAnimation(float delta)
 		}
 	}
 }
-void AnimatedObject::SetMaxFrame(int maxFrame)
+void AnimatedObject::SetMaxFrame(int maxFrame)//thiết lập số khung hình tóio đa cho đối tượng
 {
     this->m_maxFrame=maxFrame;
 }
-void AnimatedObject::SetCurrentFrame(int currentFrame)
+void AnimatedObject::SetCurrentFrame(int currentFrame)//thiết lập khung hình của đối tượng
 {
     this->m_currentFrame=currentFrame;
 }
-void AnimatedObject::SetTimePerFrame(float timePerFrame)
+void AnimatedObject::SetTimePerFrame(float timePerFrame)//thiết lập thời gian hiển thị cho mỗi khung hình cho đối tượng
 {
     this->m_timePerFrame=timePerFrame;
 }
-int AnimatedObject::GetCurrentFrame() const
+int AnimatedObject::GetCurrentFrame() const//trả khung hình hiện tại của đối tượng
 {
 	return this->m_currentFrame;
 }

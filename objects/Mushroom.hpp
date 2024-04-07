@@ -5,6 +5,6 @@ class Mushroom : public Threat
 {
     public:
     Mushroom();//nấm
-    int Score()override;
+    int Score()override;//ghi đề điểm khi giết đc 1 con nấm
 
 };

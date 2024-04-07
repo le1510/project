@@ -1,6 +1,6 @@
 #include "Resource.hpp"
-
-TTF_Font* Resource::FONT_24;
+//sử dụng để quản lý tài nguyên , các tài nguyên đẫ được tải lên và lưu trữ tròngz các biến static
+TTF_Font* Resource::FONT_24;// khai báo biến tĩnh có tên font 24 , lưu trữ font chữ có kích thước 24 pixel được tải lên từ tệp font chữ tương ướng
 TTF_Font* Resource::FONT_48;
 TTF_Font* Resource::FONT_96;
 Mix_Chunk* Resource::SFX_SHOT;

@@ -1,15 +1,15 @@
  #include "BaseObject.hpp"
-
+//lớp cơ sở cho các đối tượng trong trò chơi và các phương thức đẻ sử dụng ccasc lớp con khác
 BaseObject::BaseObject() :
-	m_texture(nullptr),
-	m_angle(0.f),
-	m_flipH(false),
-	m_isAlive(true)
+	m_texture(nullptr),//đại diện cho hình ảnh đối tượng
+	m_angle(0.f),// khởi tạo góc xoay bằng 0
+	m_flipH(false),// trạng thái lật ngang của đối tương
+	m_isAlive(true)//trạng thái sống chết của đối tượng
 {
 	this->m_rectSrc = new SDL_Rect();
 	this->m_rectDst = new SDL_Rect();
-	this->m_rectCollision= new SDL_Rect();
-	this->m_origin = new SDL_Point();//cấu trúc xác định 1 điểm hai chiều
+	this->m_rectCollision= new SDL_Rect();//hình chữ nhật va chám
+	this->m_origin = new SDL_Point();//cấu trúc xác định 1 điểm hai chiều, đại diện cho điểm gốc
 }
 
 void BaseObject::Render(SDL_Renderer* renderer)
@@ -86,31 +86,31 @@ void BaseObject::SetFlipH(bool flip)
 	this->m_flipH = flip;
 }
 
-void BaseObject::Move(Vector2f vector)
+void BaseObject::Move(Vector2f vector)//di chuyển đối tượng theo vector xác định
 {
 	auto origin = this->GetOrigin();//lay điẻm goóc cuar đói tuọng
-	origin.x += (int) vector.x;
+	origin.x += (int) vector.x;//cộng jtheem giá trị x và y của vector vào tọa độ x và y vào vị trí gốc dểdi chuyển
 	origin.y += (int) vector.y;
 
 	this->SetOrigin(origin);
 }
-SDL_Rect BaseObject::GetRectCollision() const
+SDL_Rect BaseObject::GetRectCollision() const//trả về hình chữ nhật va chạm của đối tượng
 {
     return *this->m_rectCollision;
 }
-void BaseObject::SetIsAlive(bool isAlive )
+void BaseObject::SetIsAlive(bool isAlive )//thiết lập trạng thái sống chết của đối tượng
 {
     this->m_isAlive=isAlive;
 }
-bool BaseObject::IsAlive() const
+bool BaseObject::IsAlive() const//trả về trạng thái sống chết củaddoosi tượng
 {
     return this->m_isAlive;
 }
 
-bool BaseObject::IsCollision(const BaseObject* other) const
+bool BaseObject::IsCollision(const BaseObject* other) const//kiểm tra xem va chạm giữa đối tượng hiện tại với đối tượng khác hay không
 {
-	int left = other->GetRectCollision().x - (this->GetRectCollision().x + this->GetRectCollision().w);
-	int top = (other->GetRectCollision().y + other->GetRectCollision().h) - this->GetRectCollision().y;
+	int left = other->GetRectCollision().x - (this->GetRectCollision().x + this->GetRectCollision().w);//khoảng cách từ cạnh trái hình chữ nhật va chạm đến cạnh phả hinhd chữ nhật va chámj
+	int top = (other->GetRectCollision().y + other->GetRectCollision().h) - this->GetRectCollision().y;//lhoarng cách từ cạnh trên hình chữ nhật đến cạnh dưới hình chữ nhật va chạm
 	int right = (other->GetRectCollision().x + other->GetRectCollision().w) - this->GetRectCollision().x;
 	int bottom = other->GetRectCollision().y - (this->GetRectCollision().y + this->GetRectCollision().h);
 

@@ -4,7 +4,7 @@
 #include"Skeleton.hpp"
 #include"../misc/Random.hpp"
 Threat::Threat(
-	SDL_Texture* attackTex,
+	SDL_Texture* attackTex,//các hình ảnh tươg ứng trạng thái tấn công chết và di chuyển của mối đe dọa
 	SDL_Texture* deathTex,
 	SDL_Texture* walkTex,
 	int maxHP, int damage, int speed) ://damage:su tan pha
