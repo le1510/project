@@ -21,7 +21,7 @@ private:
 public:
     PlayScene();// hàm khởi tạo lớp
 
-     void HandlEvent(SDL_Event) override ;//ghi de hinh anh
-void Update(float) override;// cậpt nhật trạng thais của cảnh dựa theo thời gian trôi qua
-     void Render(SDL_Renderer*) override ;// vẽ các đối tượng và hiển thị cảnh chơi lên màn hình
+    void HandleEvent(SDL_Event) override ;//ghi de hinh anh khong phai em ghi
+    void Update(float) override;// cậpt nhật trạng thais của cảnh dựa theo thời gian trôi qua
+    void Render(SDL_Renderer*) override ;// vẽ các đối tượng và hiển thị cảnh chơi lên màn hình
 };

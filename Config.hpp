@@ -6,9 +6,13 @@
 #include<SDL2/SDL_mixer.h>
 #include<SDL2/SDL_ttf.h>
 
-#include<iostream>
-#include<vector>
-#include <ctime>
+#include <algorithm>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <iomanip>
+#include <fstream>
 #define WINDOW_TITLE "Dino Gun" // tiêu đề cửa sổ trò
 #define WINDOW_WIDTH 1200 //chiều rộng cửa sổ trò chơi
 #define WINDOW_HEIGHT 680 // chiều cao cửa sổ trò chơi

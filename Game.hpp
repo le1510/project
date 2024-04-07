@@ -15,12 +15,15 @@ public:
     Game();
     ~Game();
     void Run();
+    void Quit();
     //sinmgleton pattern
     static Game* GetInstance();// chỉ có 1 dối tượng duy nhất tạo ra vào truy cập vào chương trình
     void SetScene(BaseScene*);// đặt cảnh hiện tại của trò chơi
 private:
 //ham khoi tao game
     void Initialize();
+
+
     //ham  huy game
     void Terminate();
 };

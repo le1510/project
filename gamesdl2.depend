@@ -3,16 +3,20 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1712476639 d:\codegameltncm\gamesdl2\config.hpp
+1712498407 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
 	<SDL2/SDL_ttf.h>
+	<algorithm>
 	<iostream>
 	<vector>
-	<ctime>
+	<string>
+	<sstream>
+	<iomanip>
+	<fstream>
 
-1712476620 d:\codegameltncm\gamesdl2\game.hpp
+1712499919 d:\codegameltncm\gamesdl2\game.hpp
 	"Config.hpp"
 	"scenes/BaseScene.hpp"
 
@@ -22,19 +26,21 @@
 1710602135 d:\codegameltncm\gamesdl2\rescoure.hpp
 	"Config.hpp"
 
-1712417245 source:d:\codegameltncm\gamesdl2\game.cpp
+1712499892 source:d:\codegameltncm\gamesdl2\game.cpp
 	"Game.hpp"
 	"Resource.hpp"
-	"scenes/PlayScene.hpp"
+	"scenes/MenuScene.hpp"
 
-1712479908 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
+1712498800 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1712418139 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1712499107 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 	"../Resource.hpp"
+	"../Game.hpp"
+	"GameOverScene.hpp"
 
-1712476620 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1712498902 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
 	"../components/Text.hpp"
 	"../objects/Player.hpp"
@@ -42,12 +48,12 @@
 	"../objects/Threat.hpp"
 	"../objects/Bullet.hpp"
 
-1712109340 source:d:\codegameltncm\gamesdl2\components\damage.cpp
+1712495410 source:d:\codegameltncm\gamesdl2\components\damage.cpp
 	"Damage.hpp"
 
 1712483081 d:\codegameltncm\gamesdl2\components\damage.hpp
 
-1710989274 source:d:\codegameltncm\gamesdl2\components\hp.cpp
+1712495446 source:d:\codegameltncm\gamesdl2\components\hp.cpp
 	"HP.hpp"
 
 1710906608 d:\codegameltncm\gamesdl2\components\hp.hpp
@@ -65,7 +71,7 @@
 	"Vector2f.hpp"
 	<cmath>
 
-1712331174 source:d:\codegameltncm\gamesdl2\objects\animatedobject.cpp
+1712488270 source:d:\codegameltncm\gamesdl2\objects\animatedobject.cpp
 	"AnimatedObject.hpp"
 
 1712480465 d:\codegameltncm\gamesdl2\objects\animatedobject.hpp
@@ -104,7 +110,7 @@
 	"../components/HP.hpp"
 	"AnimatedObject.hpp"
 
-1712486344 source:d:\codegameltncm\gamesdl2\objects\tower.cpp
+1712497855 source:d:\codegameltncm\gamesdl2\objects\tower.cpp
 	"Tower.hpp"
 	"../Resource.hpp"
 
@@ -114,7 +120,7 @@
 
 1711200968 d:\codegameltncm\gamesdl2\misc\random.hpp
 
-1712482766 d:\codegameltncm\gamesdl2\objects\threat.hpp
+1712497164 d:\codegameltncm\gamesdl2\objects\threat.hpp
 	"../components/Damage.hpp"
 	"../Config.hpp"
 	"../components/HP.hpp"
@@ -144,7 +150,7 @@
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712486343 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
+1712497209 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
 	"Threat.hpp"
 	"Goblin.hpp"
 	"Mushroom.hpp"
@@ -161,9 +167,51 @@
 	"../Resource.hpp"
 	<cmath>
 
-1712415956 source:d:\codegameltncm\gamesdl2\components\text.cpp
+1712488268 source:d:\codegameltncm\gamesdl2\components\text.cpp
 	"Text.hpp"
 
 1712482766 d:\codegameltncm\gamesdl2\components\text.hpp
 	"../Config.hpp"
+
+1712498327 source:d:\codegameltncm\gamesdl2\misc\utils.cpp
+	"Utils.hpp"
+
+1712498352 d:\codegameltncm\gamesdl2\misc\utils.hpp
+	"../Config.hpp"
+
+1712499814 source:d:\codegameltncm\gamesdl2\scenes\gameoverscene.cpp
+	"GameOverScene.hpp"
+	"MenuScene.hpp"
+	"../Game.hpp"
+	"../Resource.hpp"
+	"../misc/Utils.hpp"
+
+1712498810 d:\codegameltncm\gamesdl2\scenes\gameoverscene.hpp
+	"../Config.hpp"
+	"../components/Text.hpp"
+	"../scenes/BaseScene.hpp"
+
+1712499670 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
+	"../Config.hpp"
+	"../components/Text.hpp"
+	"../scenes/BaseScene.hpp"
+
+1712499799 source:d:\codegameltncm\gamesdl2\scenes\highscorescene.cpp
+	"MenuScene.hpp"
+	"HighScoreScene.hpp"
+	"HighScoreScene.hpp"
+	"../Resource.hpp"
+	"../Game.hpp"
+
+1712499758 d:\codegameltncm\gamesdl2\scenes\highscorescene.hpp
+	"../Config.hpp"
+	"../components/Text.hpp"
+	"../scenes/BaseScene.hpp"
+
+1712499728 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
+	"MenuScene.hpp"
+	"PlayScene.hpp"
+	"HighScoreScene.hpp"
+	"../Resource.hpp"
+	"../Game.hpp"
 

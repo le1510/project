@@ -36,6 +36,8 @@
 		<Unit filename="components/Text.hpp" />
 		<Unit filename="misc/Random.cpp" />
 		<Unit filename="misc/Random.hpp" />
+		<Unit filename="misc/Utils.cpp" />
+		<Unit filename="misc/Utils.hpp" />
 		<Unit filename="objects/AnimatedObject.cpp" />
 		<Unit filename="objects/AnimatedObject.hpp" />
 		<Unit filename="objects/BaseObject.cpp" />
@@ -57,6 +59,8 @@
 		<Unit filename="objects/Tower.cpp" />
 		<Unit filename="objects/Tower.hpp" />
 		<Unit filename="scenes/BaseScene.hpp" />
+		<Unit filename="scenes/GameOverScene.cpp" />
+		<Unit filename="scenes/GameOverScene.hpp" />
 		<Unit filename="scenes/PlayScene.cpp" />
 		<Unit filename="scenes/PlayScene.hpp" />
 		<Unit filename="types/Vector2f.cpp" />

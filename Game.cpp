@@ -1,6 +1,6 @@
 #include"Game.hpp"
 #include"Resource.hpp"
- #include"scenes/PlayScene.hpp"
+ #include"scenes/MenuScene.hpp"
 static Game* g_game=nullptr;
 Game::Game()
 {
@@ -27,7 +27,7 @@ void Game::Run()
                 m_isRunning=false;
 
             }
-            m_scene->HandlEvent(e);
+            m_scene->HandleEvent(e);
         }
         //fps-frame per second
         //60fps -> 1 giay 60 frames
@@ -77,8 +77,13 @@ void Game::Initialize()
     SDL_SetRenderDrawColor(m_renderer,0,0,0,255);//mau den
     m_isRunning=true;
     Resource::LoadAllData(m_renderer);
-    SetScene(new PlayScene());//tro choi bat dau
+    SetScene(new MenuScene());//tro choi bat dau
 
+}
+
+void Game::Quit()
+{
+	this->m_isRunning = false;
 }
 
 void Game::Terminate()

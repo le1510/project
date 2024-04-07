@@ -26,6 +26,10 @@ protected:
     SDL_Rect m_totalHP;//hp max
     SDL_Rect m_currentHP;//hp hientai
 
+    float m_elapsedTime;
+    bool m_isAttackable;
+
+
 public:
     Threat(SDL_Texture*,SDL_Texture*,SDL_Texture*,int,int,int);//hàm khởi tạo của lớp threat được sử dụng để thiết lập texture va các thôn gsoos khác của đối tượng
     void SetState(ThreatState state);//thiet lap trang thai
@@ -34,4 +38,8 @@ public:
     void Render(SDL_Renderer*) override;//ve doi tuong len man hinh
     static Threat* Generate();//tao ra doi tuong threat mới
     virtual int Score() =0;//phương thức thuần áo r để tính điểm khi giết 1 đối tượng de dọa các lớp con của threat phải ghi đè phương thức này để cung cấp điểm số cụ thể cho đối tượng
+
+    bool IsAttackable() const;
+    int Attack();
+
 };
