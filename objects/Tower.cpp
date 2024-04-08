@@ -30,10 +30,10 @@ void Tower::Update(float delta)
 {
 
     this->UpdateAnimation(delta);//cap nhat trang thai tower
-    this->m_currentHP.w = (int)((float)this->GetCurrentHP() / (float)this->GetMaxHP() * this->m_totalHP.w);
+    this->m_currentHP.w = (int)((float)this->GetCurrentHP() / (float)this->GetMaxHP() * this->m_totalHP.w);//máu hiện tại/máu tối đa nhân chiều dài thanh máu để tạo ra chièu dài thanh máu hiện tại
     if(this->GetCurrentHP()<=0)
     {
-        this->m_isAlive=false;
+        this->m_isAlive=false;//thanh máu đã chết
     }
 }
 void Tower::Render(SDL_Renderer* renderer )
@@ -45,7 +45,7 @@ void Tower::Render(SDL_Renderer* renderer )
 
     if(this->GetCurrentHP()>0)
     {
-    SDL_SetRenderDrawColor(renderer,255,255,0,255);//MAU DO
+    SDL_SetRenderDrawColor(renderer,255,255,0,255);//MAU vang
     SDL_RenderFillRect(renderer,&this->m_currentHP);
     }
 }

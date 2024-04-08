@@ -45,7 +45,7 @@ void PlayScene::Update(float delta)//cập nhật trạng thái
     for(auto threat:m_threats)
     {
         threat->Update(delta);//cap nhat quai vat
-        if(threat->IsAttackable())
+        if(threat->IsAttackable())//kiẻm tra xem threat có thể tấn công hay không, nếu có thể thì giảm đi một lượng bằng giá trị tấn công của threat
         {
             this->m_tower->SetCurrentHP(this->m_tower->GetCurrentHP()-threat->Attack());
         }
