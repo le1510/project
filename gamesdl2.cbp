@@ -61,6 +61,10 @@
 		<Unit filename="scenes/BaseScene.hpp" />
 		<Unit filename="scenes/GameOverScene.cpp" />
 		<Unit filename="scenes/GameOverScene.hpp" />
+		<Unit filename="scenes/HighScoreScene.cpp" />
+		<Unit filename="scenes/HighScoreScene.hpp" />
+		<Unit filename="scenes/MenuScene.cpp" />
+		<Unit filename="scenes/MenuScene.hpp" />
 		<Unit filename="scenes/PlayScene.cpp" />
 		<Unit filename="scenes/PlayScene.hpp" />
 		<Unit filename="types/Vector2f.cpp" />

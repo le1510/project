@@ -5,10 +5,10 @@
 #include "../Game.hpp"
 
 MenuScene::MenuScene() :
-	m_mousePosition({0, 0})
+	m_mousePosition({0, 0})//thiết lập vị trí ban đầu của chuột là 0 0
 {
-	this->m_title = new Text(Resource::FONT_96);
-	this->m_title->SetPosition({456, 130});
+	this->m_title = new Text(Resource::FONT_96);// tạo chữ menu font c96
+	this->m_title->SetPosition({456, 130});//vị trí đ
 
 	this->m_playText = new Text(Resource::FONT_48);
 	this->m_playText->SetPosition({ 519, 270 });

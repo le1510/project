@@ -56,17 +56,17 @@ Game* Game::GetInstance()
     return g_game;
 }
 
-void Game::SetScene(BaseScene* scene)
+void Game::SetScene(BaseScene* scene)//thiết lạp cảnh mới cho trò chơi
 {
     m_scene = scene;
 }
 
 void Game::Initialize()
 {//KHOI TAO SDL2
-    SDL_Init(SDL_INIT_EVERYTHING);
-    TTF_Init();
-    Mix_Init(MIX_INIT_MP3);
-    Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,2048);
+    SDL_Init(SDL_INIT_EVERYTHING);//khởi động sdl2
+    TTF_Init();//khởi tạo thư viện quản lý văn bản
+    Mix_Init(MIX_INIT_MP3);//uản lý văn bản phát âm thanh
+    Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,2048);//tần số âm thanh, pha trộn âm thanh, số lượng âm thanpha trộn,buffer âm thanh
 
     //TAO WINDOW
     m_window=SDL_CreateWindow(WINDOW_TITLE,SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,WINDOW_WIDTH,WINDOW_HEIGHT,SDL_WINDOW_SHOWN);

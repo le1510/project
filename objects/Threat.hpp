@@ -39,7 +39,7 @@ public:
     static Threat* Generate();//tao ra doi tuong threat mới
     virtual int Score() =0;//phương thức thuần áo r để tính điểm khi giết 1 đối tượng de dọa các lớp con của threat phải ghi đè phương thức này để cung cấp điểm số cụ thể cho đối tượng
 
-    bool IsAttackable() const;
-    int Attack();
+    bool IsAttackable() const;//kiểm tr xem dối tượng có thể bị tấn công khay không
+    int Attack();//thực hiện hành đôngj tấn công
 
 };
