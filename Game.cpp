@@ -4,21 +4,18 @@
 static Game* g_game=nullptr;
 Game::Game()
 {
-    //chay game
     Initialize();
 
 }
 Game::~Game()
 {
-    //huy game
     Terminate();
 }
 void Game::Run()
 {
-    float last_frame_time=0.f;//thoi gian troi qua cua cac khung hinh
+    float last_frame_time=0.f;
     while(m_isRunning)
     {
-        //xu ly su kien
         SDL_Event e;
         while(SDL_PollEvent(&e)!=0)
         {
@@ -29,56 +26,48 @@ void Game::Run()
             }
             m_scene->HandleEvent(e);
         }
-        //fps-frame per second
-        //60fps -> 1 giay 60 frames
-        //update game
+
 
         float delta=(SDL_GetTicks()-last_frame_time)/1000.f;
         last_frame_time=SDL_GetTicks();
         m_scene->Update(delta);
-        //render
-        SDL_SetRenderDrawColor(m_renderer,0,0,0,255);//mau den
 
-        SDL_RenderClear(m_renderer);//xoa noi dung render, chuan bi doi tuong moi
-        SDL_RenderCopy(m_renderer,Resource::TX_MAP_BACKGROUND,nullptr,nullptr);// sao chep map_background len renderer
-        m_scene->Render(m_renderer);//ve doi tuong scene len rederer
-        SDL_RenderPresent(m_renderer);//hien thi noi dung renderer len man hinh
-
+        SDL_SetRenderDrawColor(m_renderer,0,0,0,255);
+        SDL_RenderClear(m_renderer);
+        SDL_RenderCopy(m_renderer,Resource::TX_MAP_BACKGROUND,nullptr,nullptr);
+        m_scene->Render(m_renderer);
+        SDL_RenderPresent(m_renderer);
     }
 
 }
 Game* Game::GetInstance()
 {
-    if(g_game==nullptr)//kiem tra xem co doi tuong game nao duoc tao chua
+    if(g_game==nullptr)
     {
         g_game=new Game();
     }
     return g_game;
 }
 
-void Game::SetScene(BaseScene* scene)//thiết lạp cảnh mới cho trò chơi
+void Game::SetScene(BaseScene* scene)
 {
     m_scene = scene;
 }
 
 void Game::Initialize()
-{//KHOI TAO SDL2
-    SDL_Init(SDL_INIT_EVERYTHING);//khởi động sdl2
-    TTF_Init();//khởi tạo thư viện quản lý văn bản
-    Mix_Init(MIX_INIT_MP3);//uản lý văn bản phát âm thanh
-    Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,2048);//tần số âm thanh, pha trộn âm thanh, số lượng âm thanpha trộn,buffer âm thanh
+{
+    SDL_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
+    Mix_Init(MIX_INIT_MP3);
+    Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,2048);
 
-    //TAO WINDOW
     m_window=SDL_CreateWindow(WINDOW_TITLE,SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,WINDOW_WIDTH,WINDOW_HEIGHT,SDL_WINDOW_SHOWN);
-    //tao renderer
     m_renderer=SDL_CreateRenderer(m_window,-1,SDL_RENDERER_PRESENTVSYNC);
 
-    //chon mau render
-    SDL_SetRenderDrawColor(m_renderer,0,0,0,255);//mau den
+    SDL_SetRenderDrawColor(m_renderer,0,0,0,255);
     m_isRunning=true;
     Resource::LoadAllData(m_renderer);
-    SetScene(new MenuScene());//tro choi bat dau
-
+    SetScene(new MenuScene());
 }
 
 void Game::Quit()
@@ -87,7 +76,7 @@ void Game::Quit()
 }
 
 void Game::Terminate()
-{//dung chuong trinh
+{
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
 

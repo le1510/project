@@ -15,7 +15,6 @@ public:
     ~Game();
     void Run();
     void Quit();
-    //sinmgleton pattern
     static Game* GetInstance();
     void SetScene(BaseScene*);
 private:
