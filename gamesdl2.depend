@@ -16,7 +16,7 @@
 	<iomanip>
 	<fstream>
 
-1712499919 d:\codegameltncm\gamesdl2\game.hpp
+1712670064 d:\codegameltncm\gamesdl2\game.hpp
 	"Config.hpp"
 	"scenes/BaseScene.hpp"
 
@@ -81,7 +81,7 @@
 1712482764 source:d:\codegameltncm\gamesdl2\resource.cpp
 	"Resource.hpp"
 
-1712475658 d:\codegameltncm\gamesdl2\resource.hpp
+1712669982 d:\codegameltncm\gamesdl2\resource.hpp
 	"Config.hpp"
 
 1711104276 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
@@ -167,7 +167,7 @@
 	"../Resource.hpp"
 	<cmath>
 
-1712488268 source:d:\codegameltncm\gamesdl2\components\text.cpp
+1712653807 source:d:\codegameltncm\gamesdl2\components\text.cpp
 	"Text.hpp"
 
 1712482766 d:\codegameltncm\gamesdl2\components\text.hpp
