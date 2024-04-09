@@ -30,6 +30,6 @@ void Text::RenderText(SDL_Renderer* renderer, const std::string& text)//vẽ vă
 	SDL_FreeSurface(surf);
 	SDL_QueryTexture(texture, nullptr, nullptr, &this->m_position.w, &this->m_position.h);
 
-	SDL_RenderCopy(renderer, texture, nullptr, &this->m_position);
+	SDL_RenderCopy(renderer, texture, nullptr, &this->m_position);//ve van ban
 	SDL_DestroyTexture(texture);
 }
