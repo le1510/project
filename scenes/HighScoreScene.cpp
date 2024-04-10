@@ -58,3 +58,6 @@ void HighScoreScene::LoadFromFile()
 
 	inputFile.close();
 }
+bool HighScoreScene::IsNewHighScore(int score) const {
+    return score > 0;
+}

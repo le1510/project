@@ -2,6 +2,7 @@
 #include "../Resource.hpp"
 #include "../Game.hpp"
 #include "GameOverScene.hpp"
+#include"HighScoreScene.hpp"
 PlayScene::PlayScene():
     m_elapsedTime(0.f),
     m_score(0)
@@ -76,24 +77,26 @@ void PlayScene::Update(float delta)
             i++;
         }
 
-        for (int i = 0; i < this->m_threats.size();)
+        for (std::vector<Threat*>::size_type i = 0; i <m_threats.size(); i++)
         {
-            if (!this->m_threats[i]->IsAlive())
             {
-                this->m_threats.erase(this->m_threats.begin() + i);
-                this->m_score+=this->m_threats[i]->Score();
+                if (!this->m_threats[i]->IsAlive())
+                {
+                    this->m_threats.erase(this->m_threats.begin() + i);
+                    this->m_score+=this->m_threats[i]->Score();
+                }
+                else
+                {
+                    i++;
+                }
             }
-            else
-            {
-                i++;
-            }
+
         }
 
-    }
-
-    if (!this->m_tower->IsAlive())
-    {
-        Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
+        if (!this->m_tower->IsAlive())
+        {
+            Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
+        }
     }
 }
 
@@ -119,3 +122,28 @@ void PlayScene::Render(SDL_Renderer* renderer)
     }
     this->m_scoreText->RenderText(renderer,"Score: "+std::to_string(this->m_score));
 }
+void PlayScene::EndGame(int currentScore)
+{
+    HighScoreScene highScoreScene;
+    highScoreScene.LoadFromFile();
+
+    if (highScoreScene.IsNewHighScore(currentScore))
+    {
+        std::cout << "Bạn đã đạt được điểm số cao nhất! Bạn có muốn tiếp tục không? (Y/N): ";
+        char response;
+        std::cin >> response;
+        if (response == 'Y' || response == 'y')
+        {
+        }
+        else
+        {
+            exit(0);
+
+        }
+    }
+    else
+    {
+    }
+}
+
+
