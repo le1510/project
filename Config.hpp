@@ -13,11 +13,11 @@
 #include <sstream>
 #include <iomanip>
 #include <fstream>
-#define WINDOW_TITLE "Dino Gun" // tiêu đề cửa sổ trò
-#define WINDOW_WIDTH 1200 //chiều rộng cửa sổ trò chơi
-#define WINDOW_HEIGHT 680 // chiều cao cửa sổ trò chơi
+#define WINDOW_TITLE "Dino Gun"
+#define WINDOW_WIDTH 1200
+#define WINDOW_HEIGHT 680
 
-#define RES_FONT "res/fonts/monogram-extended.ttf" // đường dẫn tới tệp tin
+#define RES_FONT "res/fonts/monogram-extended.ttf"
 
 #define RES_SFX_SHOT "res/sfx/shot.mp3"
 #define RES_SFX_BACKGROUND "res/sfx/background_music.mp3"

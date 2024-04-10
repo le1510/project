@@ -1,20 +1,20 @@
 #include "HP.hpp"
 
 HP::HP(int maxHP):
-    m_maxHP(maxHP),//thiet lap m_maxhp=maxhp duoc truyen vao
-    m_currentHP(maxHP)//thiet lap m_currenthp=maxhp
+    m_maxHP(maxHP),
+    m_currentHP(maxHP)
 {
 
 }
 
 int HP::GetMaxHP()
 {
-    return this->m_maxHP;//doc gia tri maxhp cua hp
+    return this->m_maxHP;
 }
 
 int HP::GetCurrentHP()
 {
-    return this->m_currentHP;//doc mau hien tai
+    return this->m_currentHP;
 }
 
 void HP::SetMaxHP(int maxHP)
@@ -27,5 +27,5 @@ void HP::SetMaxHP(int maxHP)
 
 void HP::SetCurrentHP(int currentHP)
 {
-    this->m_currentHP = currentHP;//tjiet lap gia tr imoi cho hp hien tai
+    this->m_currentHP = currentHP;
 }

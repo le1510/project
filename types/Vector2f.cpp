@@ -8,7 +8,7 @@ Vector2f::Vector2f() :
 }
 
 Vector2f::Vector2f(float _x, float _y) :
-	x(_x),//xy chi dinh
+	x(_x),
 	y(_y)
 {
 }
@@ -32,7 +32,7 @@ Vector2f Vector2f::Normalize() const
 	}
 }
 
-Vector2f Vector2f::operator*(float scalar) const//scalar:vo huong
+Vector2f Vector2f::operator*(float scalar) const
 {
 	return Vector2f(x * scalar, y * scalar);
 }

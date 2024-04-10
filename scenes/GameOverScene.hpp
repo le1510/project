@@ -7,20 +7,20 @@
 class GameOverScene : public BaseScene
 {
 private:
-	Text* m_title;//  chữ hiện thị tiêu đề của cảnh game over
-	Text* m_scoreText;//hiển thị chữ score
+	Text* m_title;
+	Text* m_scoreText;
 
-	std::string m_scoreStr;//lưu điểm số dưới dạng chuỗi
+	std::string m_scoreStr;
 
-	float m_elapsedTime;//thời gian trôi qua từ khi cảnh game được hiển thị
+	float m_elapsedTime;
 
 public:
-	GameOverScene(int);//hàm khởi tạo đối tượng manf hình game over
+	GameOverScene(int);
 	~GameOverScene() = default;
 
 	void HandleEvent(SDL_Event) override;
 	void Update(float) override;
 	void Render(SDL_Renderer*) override;
 
-	void SaveScore(int);//lưu điểm số vào một tệp
+	void SaveScore(int);
 };

@@ -5,55 +5,55 @@
 #include "../Game.hpp"
 
 HighScoreScene::HighScoreScene() :
-	m_elapsedTime(0.f)//thời gian trôi qua khi bảng xép hạng hiển thị
+	m_elapsedTime(0.f)
 {
-	this->m_title = new Text(Resource::FONT_96);//phông chữ của game
-	this->m_title->SetPosition({ 420, 120 });//vị trí đặt phông chữ
+	this->m_title = new Text(Resource::FONT_96);
+	this->m_title->SetPosition({ 420, 120 });
 
-	this->LoadFromFile();//tải dữ liệu từ tệp tin và lưu trữ vào vector m_scores
+	this->LoadFromFile();
 }
 
 void HighScoreScene::HandleEvent(SDL_Event e)
 {
-	if (e.type == SDL_MOUSEBUTTONDOWN)//kiểm tra xem phải nháan chuột không
+	if (e.type == SDL_MOUSEBUTTONDOWN)
 	{
-		if (e.button.button == SDL_BUTTON_LEFT && this->m_elapsedTime > 0.5f)//xem phải nhấn chuột trái và thời gin trôi qua có lớn hơn 0.5s không
+		if (e.button.button == SDL_BUTTON_LEFT && this->m_elapsedTime > 0.5f)
 		{
-			Game::GetInstance()->SetScene(new MenuScene());//trở về menu
+			Game::GetInstance()->SetScene(new MenuScene());
 		}
 	}
 }
 
 void HighScoreScene::Update(float delta)
 {
-	this->m_elapsedTime += delta;//update thời gian trôi qua
+	this->m_elapsedTime += delta;
 }
 
-void HighScoreScene::Render(SDL_Renderer* renderer)//vẽ đối tượng lên màn hinhf
+void HighScoreScene::Render(SDL_Renderer* renderer)
 {
 	this->m_title->RenderText(renderer, "High Score");
 
-	int startY = 250;//vị trí của điểm số dầu tiên
-	int lineHeight = 60;//khoảng cách giữa các điểm số
+	int startY = 250;
+	int lineHeight = 60;
 
 	for (size_t i = 0; i < m_scores.size(); ++i)
 	{
-		std::string scoreText = "Score " + std::to_string(i + 1) + ": " + std::to_string(m_scores[i]);//gọi ra điểm sôs có xếp hạng
+		std::string scoreText = "Score " + std::to_string(i + 1) + ": " + std::to_string(m_scores[i]);
 
-		Text* scoreDisplay = new Text(Resource::FONT_48);//viết theo font chữ 48
-		scoreDisplay->SetPosition({ 492, startY + static_cast<int>(i) * lineHeight });//dặt vị tí tên bắt đầu từ statrt y và các chữ tiếp theo thì +60
-		scoreDisplay->RenderText(renderer, scoreText);//vẽ điểm lên màn hình
+		Text* scoreDisplay = new Text(Resource::FONT_48);
+		scoreDisplay->SetPosition({ 492, startY + static_cast<int>(i) * lineHeight });
+		scoreDisplay->RenderText(renderer, scoreText);
 	}
 }
 
-void HighScoreScene::LoadFromFile()//tải load dữ liệu từ file
+void HighScoreScene::LoadFromFile()
 {
 	std::ifstream inputFile("scores.txt");
 
 	int score;
 	while (inputFile >> score)
 	{
-		m_scores.push_back(score);//đọc điểm mơi svaf thêm vào
+		m_scores.push_back(score);
 	}
 
 	inputFile.close();

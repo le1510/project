@@ -7,17 +7,17 @@
 class MenuScene final : public BaseScene
 {
 private:
-	Text* m_title;//tiêu đề
-	Text* m_playText;//chơi
-	Text* m_scoreText;//điểm số cao nhất
-	Text* m_exitText;//thóat
-	SDL_Point m_mousePosition;//điểm chuột hiện tại trên màn hình
+	Text* m_title;
+	Text* m_playText;
+	Text* m_scoreText;
+	Text* m_exitText;
+	SDL_Point m_mousePosition;
 
 public:
 	MenuScene();
 	~MenuScene() = default;
 
-	void HandleEvent(SDL_Event) override;//xử lý sự kiện
-	void Update(float) override;//cập nhật
-	void Render(SDL_Renderer*) override;//vẽ cảnh lên màn hình
+	void HandleEvent(SDL_Event) override;
+	void Update(float) override;
+	void Render(SDL_Renderer*) override;
 };

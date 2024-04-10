@@ -3,7 +3,7 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1712498407 d:\codegameltncm\gamesdl2\config.hpp
+1712712944 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -26,21 +26,21 @@
 1710602135 d:\codegameltncm\gamesdl2\rescoure.hpp
 	"Config.hpp"
 
-1712562587 source:d:\codegameltncm\gamesdl2\game.cpp
+1712681144 source:d:\codegameltncm\gamesdl2\game.cpp
 	"Game.hpp"
 	"Resource.hpp"
 	"scenes/MenuScene.hpp"
 
-1712498800 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
+1712713050 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1712571984 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1712716047 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
 	"GameOverScene.hpp"
 
-1712498902 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1712713252 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
 	"../components/Text.hpp"
 	"../objects/Player.hpp"
@@ -48,33 +48,33 @@
 	"../objects/Threat.hpp"
 	"../objects/Bullet.hpp"
 
-1712495410 source:d:\codegameltncm\gamesdl2\components\damage.cpp
+1712713794 source:d:\codegameltncm\gamesdl2\components\damage.cpp
 	"Damage.hpp"
 
-1712483081 d:\codegameltncm\gamesdl2\components\damage.hpp
+1712713747 d:\codegameltncm\gamesdl2\components\damage.hpp
 
-1712495446 source:d:\codegameltncm\gamesdl2\components\hp.cpp
+1712713871 source:d:\codegameltncm\gamesdl2\components\hp.cpp
 	"HP.hpp"
 
-1710906608 d:\codegameltncm\gamesdl2\components\hp.hpp
+1712713747 d:\codegameltncm\gamesdl2\components\hp.hpp
 
-1712499993 source:d:\codegameltncm\gamesdl2\objects\baseobject.cpp
+1712714349 source:d:\codegameltncm\gamesdl2\objects\baseobject.cpp
 	"BaseObject.hpp"
 
-1712479908 d:\codegameltncm\gamesdl2\objects\baseobject.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\baseobject.hpp
 	"../Config.hpp"
 	"../types/Vector2f.hpp"
 
-1712476620 d:\codegameltncm\gamesdl2\types\vector2f.hpp
+1712713005 d:\codegameltncm\gamesdl2\types\vector2f.hpp
 
-1712484365 source:d:\codegameltncm\gamesdl2\types\vector2f.cpp
+1712716066 source:d:\codegameltncm\gamesdl2\types\vector2f.cpp
 	"Vector2f.hpp"
 	<cmath>
 
-1712488270 source:d:\codegameltncm\gamesdl2\objects\animatedobject.cpp
+1712713984 source:d:\codegameltncm\gamesdl2\objects\animatedobject.cpp
 	"AnimatedObject.hpp"
 
-1712480465 d:\codegameltncm\gamesdl2\objects\animatedobject.hpp
+1712713344 d:\codegameltncm\gamesdl2\objects\animatedobject.hpp
 	"../Config.hpp"
 	"BaseObject.hpp"
 
@@ -84,33 +84,33 @@
 1712669982 d:\codegameltncm\gamesdl2\resource.hpp
 	"Config.hpp"
 
-1711104276 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
+1712714527 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
 	"Gun.hpp"
 	"../Resource.hpp"
 	<cmath>
 
-1712482766 d:\codegameltncm\gamesdl2\objects\gun.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\gun.hpp
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1712329618 source:d:\codegameltncm\gamesdl2\objects\player.cpp
+1712714785 source:d:\codegameltncm\gamesdl2\objects\player.cpp
 	"Player.hpp"
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
 
-1711472404 d:\codegameltncm\gamesdl2\objects\player.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\player.hpp
 	"../Config.hpp"
 	"../components/Damage.hpp"
 	"AnimatedObject.hpp"
 	"Gun.hpp"
 	"Bullet.hpp"
 
-1711472404 d:\codegameltncm\gamesdl2\objects\tower.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\tower.hpp
 	"../Config.hpp"
 	"../components/HP.hpp"
 	"AnimatedObject.hpp"
 
-1712571984 source:d:\codegameltncm\gamesdl2\objects\tower.cpp
+1712715171 source:d:\codegameltncm\gamesdl2\objects\tower.cpp
 	"Tower.hpp"
 	"../Resource.hpp"
 
@@ -118,31 +118,31 @@
 	"Random.hpp"
 	<random>
 
-1711200968 d:\codegameltncm\gamesdl2\misc\random.hpp
+1712713667 d:\codegameltncm\gamesdl2\misc\random.hpp
 
-1712560969 d:\codegameltncm\gamesdl2\objects\threat.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\threat.hpp
 	"../components/Damage.hpp"
 	"../Config.hpp"
 	"../components/HP.hpp"
 	"AnimatedObject.hpp"
 
-1712416800 source:d:\codegameltncm\gamesdl2\objects\goblin.cpp
+1712714428 source:d:\codegameltncm\gamesdl2\objects\goblin.cpp
 	"Goblin.hpp"
 	"../Resource.hpp"
 
-1712480465 d:\codegameltncm\gamesdl2\objects\goblin.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\goblin.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712487677 source:d:\codegameltncm\gamesdl2\objects\mushroom.cpp
+1712714573 source:d:\codegameltncm\gamesdl2\objects\mushroom.cpp
 	"Mushroom.hpp"
 	"../Resource.hpp"
 
-1712482766 d:\codegameltncm\gamesdl2\objects\mushroom.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\mushroom.hpp
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712486342 source:d:\codegameltncm\gamesdl2\objects\skeleton.cpp
+1712714777 source:d:\codegameltncm\gamesdl2\objects\skeleton.cpp
 	"Skeleton.hpp"
 	"../Resource.hpp"
 
@@ -150,65 +150,65 @@
 	"../Config.hpp"
 	"Threat.hpp"
 
-1712497209 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
+1712715171 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
 	"Threat.hpp"
 	"Goblin.hpp"
 	"Mushroom.hpp"
 	"Skeleton.hpp"
 	"../misc/Random.hpp"
 
-1712480465 d:\codegameltncm\gamesdl2\objects\bullet.hpp
+1712713667 d:\codegameltncm\gamesdl2\objects\bullet.hpp
 	"../Config.hpp"
 	"BaseObject.hpp"
 	"../components/Damage.hpp"
 
-1712329473 source:d:\codegameltncm\gamesdl2\objects\bullet.cpp
+1712714428 source:d:\codegameltncm\gamesdl2\objects\bullet.cpp
 	"Bullet.hpp"
 	"../Resource.hpp"
 	<cmath>
 
-1712653807 source:d:\codegameltncm\gamesdl2\components\text.cpp
+1712713984 source:d:\codegameltncm\gamesdl2\components\text.cpp
 	"Text.hpp"
 
-1712482766 d:\codegameltncm\gamesdl2\components\text.hpp
+1712713747 d:\codegameltncm\gamesdl2\components\text.hpp
 	"../Config.hpp"
 
-1712571984 source:d:\codegameltncm\gamesdl2\misc\utils.cpp
+1712713984 source:d:\codegameltncm\gamesdl2\misc\utils.cpp
 	"Utils.hpp"
 
 1712498352 d:\codegameltncm\gamesdl2\misc\utils.hpp
 	"../Config.hpp"
 
-1712562587 source:d:\codegameltncm\gamesdl2\scenes\gameoverscene.cpp
+1712715339 source:d:\codegameltncm\gamesdl2\scenes\gameoverscene.cpp
 	"GameOverScene.hpp"
 	"MenuScene.hpp"
 	"../Game.hpp"
 	"../Resource.hpp"
 	"../misc/Utils.hpp"
 
-1712561283 d:\codegameltncm\gamesdl2\scenes\gameoverscene.hpp
+1712713089 d:\codegameltncm\gamesdl2\scenes\gameoverscene.hpp
 	"../Config.hpp"
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1712561435 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
+1712713158 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
 	"../Config.hpp"
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1712563315 source:d:\codegameltncm\gamesdl2\scenes\highscorescene.cpp
+1712715718 source:d:\codegameltncm\gamesdl2\scenes\highscorescene.cpp
 	"MenuScene.hpp"
 	"HighScoreScene.hpp"
 	"HighScoreScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
 
-1712561283 d:\codegameltncm\gamesdl2\scenes\highscorescene.hpp
+1712713252 d:\codegameltncm\gamesdl2\scenes\highscorescene.hpp
 	"../Config.hpp"
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1712563769 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
+1712715718 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
 	"MenuScene.hpp"
 	"PlayScene.hpp"
 	"HighScoreScene.hpp"

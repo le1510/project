@@ -7,13 +7,13 @@ Damage::Damage(int damage) :
 
 int Damage::GetDamage()
 {
-    return this->m_damage;//doc muc do sat thuong
+    return this->m_damage;
 }
 
 void Damage::SetDamage(int damage)
 {
     if (damage > 0)
     {
-        this->m_damage = damage;//thay doi muc do sat thuong
+        this->m_damage = damage;
     }
 }

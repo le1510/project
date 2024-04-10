@@ -5,41 +5,40 @@
 #include "../Game.hpp"
 
 MenuScene::MenuScene() :
-	m_mousePosition({0, 0})//thiết lập vị trí ban đầu của chuột là 0 0
+	m_mousePosition({0, 0})
 {
-	this->m_title = new Text(Resource::FONT_96);// tạo chữ menu font c96
-	this->m_title->SetPosition({456, 130});//vị trí đặt tiêu đề game
+	this->m_title = new Text(Resource::FONT_96);
+	this->m_title->SetPosition({456, 130});
 
-	this->m_playText = new Text(Resource::FONT_48);//font 96
-	this->m_playText->SetPosition({ 519, 270 });//vị trí đặt nơi chơi game
-
+	this->m_playText = new Text(Resource::FONT_48);
+	this->m_playText->SetPosition({ 519, 270 });
 	this->m_scoreText = new Text(Resource::FONT_48);
 	this->m_scoreText->SetPosition({ 510, 370 });
 
 	this->m_exitText = new Text(Resource::FONT_48);
 	this->m_exitText->SetPosition({ 564, 470 });
 
-	Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);//phát nhạc nền trong trò chơi tuwf tệp âm hanh(teeoj tin âm thanh,-1 :âm thanh phát vô hạn )
+	Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
 }
 
 void MenuScene::HandleEvent(SDL_Event e)
 {
-	this->m_mousePosition.x = e.button.x;// cập nhật vị trí của chuột trong cửa sổ winddow và lưu trữ tọa độ x y của sự kiện chuột
+	this->m_mousePosition.x = e.button.x;
 	this->m_mousePosition.y = e.button.y;
 
-	if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)//có phải nhấn chuột và nhấn chuột trái hay không
+	if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)
 	{
-		if (this->m_playText->IsSelected(this->m_mousePosition))//kiểm tra xem vị trí chuọt có nằm trong vùng chọn playgame không
+		if (this->m_playText->IsSelected(this->m_mousePosition))
 		{
-			Game::GetInstance()->SetScene(new PlayScene());// nếu có thì chuyển sang chế độ chơi game
+			Game::GetInstance()->SetScene(new PlayScene());
 ;		}
 
-		if (this->m_scoreText->IsSelected(this->m_mousePosition))//kiẻm tra xem chọn điẻm cao hất không để chuyển cảnh sang bảng xếp hạng
+		if (this->m_scoreText->IsSelected(this->m_mousePosition))
 		{
 			Game::GetInstance()->SetScene(new HighScoreScene());
 		}
 
-		if (this->m_exitText->IsSelected(this->m_mousePosition))// nhấn ẽxit thì thoát trò chơi
+		if (this->m_exitText->IsSelected(this->m_mousePosition))
 		{
 			Game::GetInstance()->Quit();
 		}
