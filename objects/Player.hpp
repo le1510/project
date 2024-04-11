@@ -1,4 +1,4 @@
-#pragma once
+#pragma once // file hp
 
 #include "../Config.hpp"
 #include "../components/Damage.hpp"
