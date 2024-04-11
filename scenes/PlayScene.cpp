@@ -1,8 +1,8 @@
-#include <Config.hpp>
-#include <scenes/PlayScene.hpp>
-#include <scenes/GameOverScene.hpp>
-#include <Game.hpp>
-#include <Resource.hpp>
+#include "PlayScene.hpp"
+#include "../Resource.hpp"
+#include "../Game.hpp"
+#include "GameOverScene.hpp"
+#include"HighScoreScene.hpp"
 
 PlayScene::PlayScene() :
 	m_elapsedTime(0.f),

@@ -26,4 +26,10 @@ void Bullet::Update(float delta)
 	vec.y = (float)std::sin((this->m_angle - 90.f) * M_PI / 180);
 
 	this->Move(vec * (this->m_speed * delta));
+
+	auto o = this->m_origin;
+    if (o->x < 0 || o->x > WINDOW_WIDTH || o->y < 0 || o->y > WINDOW_HEIGHT)
+    {
+        this->m_isAlive = false;
+    }
 }

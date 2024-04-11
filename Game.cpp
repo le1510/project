@@ -40,6 +40,7 @@ void Game::Run()
     }
 
 }
+// singleton pattern
 Game* Game::GetInstance()
 {
     if(g_game==nullptr)
