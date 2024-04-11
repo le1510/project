@@ -34,14 +34,13 @@
 1712713050 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1712737794 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1712739305 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
 	"GameOverScene.hpp"
-	"HighScoreScene.hpp"
 
-1712737268 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1712739305 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
 	"../components/Text.hpp"
 	"../objects/Player.hpp"
@@ -59,7 +58,7 @@
 
 1712713747 d:\codegameltncm\gamesdl2\components\hp.hpp
 
-1712714349 source:d:\codegameltncm\gamesdl2\objects\baseobject.cpp
+1712799297 source:d:\codegameltncm\gamesdl2\objects\baseobject.cpp
 	"BaseObject.hpp"
 
 1712713667 d:\codegameltncm\gamesdl2\objects\baseobject.hpp
@@ -197,14 +196,14 @@
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1712737994 source:d:\codegameltncm\gamesdl2\scenes\highscorescene.cpp
+1712739305 source:d:\codegameltncm\gamesdl2\scenes\highscorescene.cpp
 	"MenuScene.hpp"
 	"HighScoreScene.hpp"
 	"HighScoreScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
 
-1712737892 d:\codegameltncm\gamesdl2\scenes\highscorescene.hpp
+1712739221 d:\codegameltncm\gamesdl2\scenes\highscorescene.hpp
 	"../Config.hpp"
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"

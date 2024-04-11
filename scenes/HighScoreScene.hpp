@@ -19,5 +19,4 @@ public:
 	void Render(SDL_Renderer*) override;
 
 	void LoadFromFile();
-	bool IsNewHighScore(int score) const;
 };
