@@ -41,6 +41,8 @@ void PlayScene::Update(float delta)
 
 	this->m_tower->Update(delta);
 	this->m_player->Update(delta);
+    this->CheckPlayerAndTower();
+
 
 	for (auto threat : this->m_threats)
 	{
@@ -125,3 +127,22 @@ void PlayScene::Render(SDL_Renderer* renderer)
 
 	this->m_scoreText->RenderText(renderer, "Score: " + std::to_string(this->m_score));
 }
+
+void PlayScene::CheckPlayerAndTower()
+{
+	if (this->m_player->IsCollision(this->m_tower))
+	{
+		auto o = this->m_player->GetOrigin();
+
+		if (o.x > 535 && o.x < WINDOW_WIDTH / 2)
+		{
+			this->m_player->SetOrigin({ 535, o.y });
+		}
+
+		if (o.x < 665 && o.x > WINDOW_WIDTH / 2)
+		{
+			this->m_player->SetOrigin({ 665, o.y });
+		}
+	}
+}
+

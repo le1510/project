@@ -14,5 +14,5 @@ this->m_rectCollision->y = this->m_rectDst->y + (this->m_rectDst->h - this->m_re
     }
 int Mushroom::Score()
 {
-    return 8;
+    return 10;
 }

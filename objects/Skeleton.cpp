@@ -15,5 +15,5 @@ this->m_rectCollision->y = this->m_rectDst->y + (this->m_rectDst->h - this->m_re
 }
 int Skeleton::Score()
 {
-    return 9;
+    return 0 ;
 }
