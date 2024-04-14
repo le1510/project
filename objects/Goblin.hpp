@@ -3,7 +3,7 @@
 #include"Threat.hpp"
 class Goblin : public Threat
 {
-    public:
+public:
     Goblin();
     int Score()override;
 };

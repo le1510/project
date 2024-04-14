@@ -3,7 +3,7 @@
 #include"Threat.hpp"
 class Mushroom : public Threat
 {
-    public:
+public:
     Mushroom();
     int Score()override;
 

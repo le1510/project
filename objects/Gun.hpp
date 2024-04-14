@@ -8,8 +8,8 @@ class Gun : public BaseObject
 private:
 
 public:
-	Gun();
-	~Gun() = default;
+    Gun();
+    ~Gun() = default;
 
-	void Update(float) override;
+    void Update(float) override;
 };

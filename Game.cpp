@@ -1,6 +1,6 @@
 #include"Game.hpp"
 #include"Resource.hpp"
- #include"scenes/MenuScene.hpp"
+#include"scenes/MenuScene.hpp"
 static Game* g_game=nullptr;
 Game::Game()
 {
@@ -73,7 +73,7 @@ void Game::Initialize()
 
 void Game::Quit()
 {
-	this->m_isRunning = false;
+    this->m_isRunning = false;
 }
 
 void Game::Terminate()

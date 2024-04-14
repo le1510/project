@@ -11,8 +11,8 @@ private:
     SDL_Rect m_currentHP;
 
 public:
-	Tower();
+    Tower();
 
-	void Update(float) override;
-	void Render(SDL_Renderer*) override;
+    void Update(float) override;
+    void Render(SDL_Renderer*) override;
 };

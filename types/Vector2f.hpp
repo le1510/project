@@ -3,15 +3,15 @@
 class Vector2f
 {
 public:
-	float x;
-	float y;
+    float x;
+    float y;
 
 public:
-	Vector2f();
-	Vector2f(float, float);
+    Vector2f();
+    Vector2f(float, float);
 
-	float Magnitude() const;
-	Vector2f Normalize() const;
+    float Magnitude() const;
+    Vector2f Normalize() const;
 
-	Vector2f operator*(float) const;
+    Vector2f operator*(float) const;
 };

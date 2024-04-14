@@ -44,7 +44,7 @@ void Tower::Render(SDL_Renderer* renderer )
 
     if(this->GetCurrentHP()>0)
     {
-    SDL_SetRenderDrawColor(renderer,255,255,0,255);//MAU vang
-    SDL_RenderFillRect(renderer,&this->m_currentHP);
+        SDL_SetRenderDrawColor(renderer,255,255,0,255);//MAU vang
+        SDL_RenderFillRect(renderer,&this->m_currentHP);
     }
 }

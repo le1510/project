@@ -3,7 +3,7 @@
 #include"Threat.hpp"
 class Skeleton  : public Threat
 {
-    public:
+public:
     Skeleton();//bo xuong
     int Score()override;
 

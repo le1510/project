@@ -3,14 +3,14 @@
 class Damage
 {
 protected:
-	int		m_damage;
+    int		m_damage;
 
 public:
-	Damage() = default;
-	Damage(int);
+    Damage() = default;
+    Damage(int);
 
-	~Damage() = default;
+    ~Damage() = default;
 
-	int GetDamage();
-	void SetDamage(int);
+    int GetDamage();
+    void SetDamage(int);
 };
