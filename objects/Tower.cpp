@@ -3,7 +3,8 @@
 
 Tower::Tower() :
     AnimatedObject(11, 0.15f),
-    HP(100)
+    HP(100),
+    m_elapsedTime(0.f)
 {
     this->m_texture = Resource::TX_MAP_TOWER;
     this->m_rectSrc->w = 100;
@@ -27,7 +28,22 @@ Tower::Tower() :
 
 void Tower::Update(float delta)
 {
+    this->m_elapsedTime+=delta;
+    if(m_elapsedTime>5.f)
+    {
+        int tHP=this->GetCurrentHP()+7;
+        if(tHP<=this->GetMaxHP())
+        {
+            this->SetCurrentHP(tHP);
+        }
+        else
+        {
+            this->SetCurrentHP(this->GetMaxHP());
+        }
 
+        this->m_elapsedTime-=5.f;
+
+    }
     this->UpdateAnimation(delta);
     this->m_currentHP.w = (int)((float)this->GetCurrentHP() / (float)this->GetMaxHP() * this->m_totalHP.w);
     if(this->GetCurrentHP()<=0)

@@ -9,6 +9,7 @@ class Tower final : public AnimatedObject, public HP
 private:
     SDL_Rect m_totalHP;
     SDL_Rect m_currentHP;
+    float m_elapsedTime;
 
 public:
     Tower();
