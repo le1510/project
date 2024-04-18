@@ -17,6 +17,8 @@ private:
     std::vector<Bullet*> m_bullets;
     int  m_score;
     Text* m_scoreText;
+    float m_spawnTime;
+    int m_level;
 
 public:
     PlayScene();
@@ -25,4 +27,5 @@ public:
     void Update(float) override;
     void Render(SDL_Renderer*) override ;
     void CheckPlayerAndTower();
+    void UpdateLevel();
 };
