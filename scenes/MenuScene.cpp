@@ -23,7 +23,12 @@ MenuScene::MenuScene() :
     this->m_exitText = new Text(Resource::FONT_48);
     this->m_exitText->SetPosition({ 564, 475 });
 
-    Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
+    if(Resource::IsSound)
+    {
+        Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
+    }
+
+    this->m_soundRect=new SDL_Rect({20,550,32,32});
 }
 
 void MenuScene::HandleEvent(SDL_Event e)
@@ -50,6 +55,25 @@ void MenuScene::HandleEvent(SDL_Event e)
         if (this->m_exitText->IsSelected(this->m_mousePosition))
         {
             Game::GetInstance()->Quit();
+        }
+
+        if (    this->m_mousePosition.x >= this->m_soundRect->x &&
+                this->m_mousePosition.x <= this->m_soundRect->x + this->m_soundRect->w &&
+                this->m_mousePosition.y >= this->m_soundRect->y &&
+                this->m_mousePosition.y <= this->m_soundRect->y + this->m_soundRect->h)
+        {
+            Resource::IsSound = !Resource::IsSound;
+
+            if (Resource::IsSound)
+            {
+                Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
+
+
+            }
+            else
+            {
+                Mix_HaltMusic();
+            }
         }
     }
 }
@@ -93,4 +117,8 @@ void MenuScene::Render(SDL_Renderer* renderer)
     this->m_helpText->RenderText(renderer, "Help");
 
     this->m_exitText->RenderText(renderer, "Exit");
+
+    SDL_RenderCopy(renderer,Resource::IsSound ? Resource::TX_ON : Resource::TX_OFF, nullptr, this->m_soundRect);
+
+
 }

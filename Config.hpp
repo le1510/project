@@ -44,3 +44,6 @@
 #define RES_TX_SKELETON_ATTACK "res/textures/monsters/skeleton/attack.png"
 #define RES_TX_SKELETON_DEATH "res/textures/monsters/skeleton/death.png"
 #define RES_TX_SKELETON_WALK "res/textures/monsters/skeleton/walk.png"
+
+#define RES_TX_ON "res/textures/icon/on.png"
+#define RES_TX_OFF "res/textures/icon/off.png"

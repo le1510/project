@@ -13,6 +13,7 @@ private:
     Text* m_exitText;
     Text* m_helpText;
     SDL_Point m_mousePosition;
+    SDL_Rect* m_soundRect;
 
 public:
     MenuScene();

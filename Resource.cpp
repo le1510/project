@@ -28,6 +28,12 @@ SDL_Texture* Resource::TX_MUSHROOM_WALK;
 SDL_Texture* Resource::TX_SKELETON_ATTACK;
 SDL_Texture* Resource::TX_SKELETON_DEATH;
 SDL_Texture* Resource::TX_SKELETON_WALK;
+SDL_Texture* Resource::TX_ON;
+SDL_Texture* Resource::TX_OFF;
+
+
+
+bool Resource::IsSound=true;
 
 SDL_Texture* Resource::LoadTextureFromFile(const std::string& path, SDL_Renderer* renderer)
 {
@@ -91,4 +97,7 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_SKELETON_ATTACK		= LoadTextureFromFile(RES_TX_SKELETON_ATTACK, renderer);
     TX_SKELETON_DEATH		= LoadTextureFromFile(RES_TX_SKELETON_DEATH, renderer);
     TX_SKELETON_WALK		= LoadTextureFromFile(RES_TX_SKELETON_WALK, renderer);
+    TX_ON                   = LoadTextureFromFile(RES_TX_ON, renderer);
+    TX_OFF                   = LoadTextureFromFile(RES_TX_OFF, renderer);
+
 }

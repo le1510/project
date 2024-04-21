@@ -14,8 +14,11 @@ PlayScene::PlayScene() :
     this->m_player = new Player();
     this->m_scoreText = new Text(Resource::FONT_24);
     this->m_scoreText->SetPosition({ 50, 5 });
+    if(Resource::IsSound)
+    {
+        Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
+    }
 
-    Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
 }
 
 void PlayScene::HandleEvent(SDL_Event e)
@@ -24,8 +27,12 @@ void PlayScene::HandleEvent(SDL_Event e)
     {
         if (e.button.button == SDL_BUTTON_LEFT && this->m_player->IsShotable())
         {
-            Mix_PlayChannel(-1, Resource::SFX_SHOT, 0);
+            if(Resource::IsSound)
+            {
+                Mix_PlayChannel(-1, Resource::SFX_SHOT, 0);
+            }
             this->m_bullets.push_back(this->m_player->Shot());
+
         }
     }
 }

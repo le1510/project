@@ -36,6 +36,13 @@ public:
     static SDL_Texture* TX_SKELETON_DEATH;
     static SDL_Texture* TX_SKELETON_WALK;
 
+    static bool IsSound;
+
+    static SDL_Texture* TX_ON;
+    static SDL_Texture* TX_OFF;
+
+
+
 public:
     static SDL_Texture* LoadTextureFromFile(const std::string& path, SDL_Renderer* renderer);
 
