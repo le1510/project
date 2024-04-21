@@ -4,7 +4,7 @@
 
 Player::Player() :
     AnimatedObject(6, 0.1f),
-    Damage(10),
+    Damage(70),
     m_speed(150),
     m_isShotable(true)
 {

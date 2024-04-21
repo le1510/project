@@ -19,6 +19,9 @@ public:
     static SDL_Texture* TX_MAP_BACKGROUND;
     static SDL_Texture* TX_MAP_TOWER;
 
+    static SDL_Texture* TX_BACKGROUND_2;
+    static SDL_Texture* TX_BACKGROUND_3;
+
     static SDL_Texture* TX_GOBLIN_ATTACK;
     static SDL_Texture* TX_GOBLIN_DEATH;
     static SDL_Texture* TX_GOBLIN_WALK;

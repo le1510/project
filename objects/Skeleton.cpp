@@ -6,7 +6,7 @@ Skeleton::Skeleton() :
         Resource::TX_SKELETON_ATTACK,
         Resource::TX_SKELETON_DEATH,
         Resource::TX_SKELETON_WALK,
-        20, 5, 200)
+        20, 3, 200)
 {
     this->m_rectCollision->w = 30;
     this->m_rectCollision->h = 40;

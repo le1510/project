@@ -37,6 +37,8 @@ void GameOverScene::Update(float delta)
 
 void GameOverScene::Render(SDL_Renderer* renderer)
 {
+    SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_2, nullptr, nullptr);
+
     this->m_title->RenderText(renderer, "GAME OVER");
 
     this->m_scoreText->RenderText(renderer, this->m_scoreStr);

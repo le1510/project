@@ -5,7 +5,7 @@ Mushroom::Mushroom():
         Resource::TX_MUSHROOM_ATTACK,
         Resource::TX_MUSHROOM_DEATH,
         Resource::TX_MUSHROOM_WALK,
-        70,1,120)
+        60,1,120)
 {
     this->m_rectCollision->w = 30;
     this->m_rectCollision->h = 40;

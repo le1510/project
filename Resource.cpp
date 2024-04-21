@@ -12,6 +12,9 @@ SDL_Texture* Resource::TX_PLAYER_BULLET;
 SDL_Texture* Resource::TX_MAP_BACKGROUND;
 SDL_Texture* Resource::TX_MAP_TOWER;
 
+SDL_Texture* Resource::TX_BACKGROUND_2;
+SDL_Texture* Resource::TX_BACKGROUND_3;
+
 SDL_Texture* Resource::TX_GOBLIN_ATTACK;
 SDL_Texture* Resource::TX_GOBLIN_DEATH;
 SDL_Texture* Resource::TX_GOBLIN_WALK;
@@ -69,6 +72,9 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
 
     TX_MAP_BACKGROUND		= LoadTextureFromFile(RES_TX_MAP_BACKGROUND, renderer);
     TX_MAP_TOWER			= LoadTextureFromFile(RES_TX_MAP_TOWER, renderer);
+
+    TX_BACKGROUND_2         = LoadTextureFromFile(RES_TX_BACKGROUND_2, renderer);
+    TX_BACKGROUND_3         = LoadTextureFromFile(RES_TX_BACKGROUND_3, renderer);
 
     TX_GOBLIN_ATTACK		= LoadTextureFromFile(RES_TX_GOBLIN_ATTACK, renderer);
     TX_GOBLIN_DEATH			= LoadTextureFromFile(RES_TX_GOBLIN_DEATH, renderer);

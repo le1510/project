@@ -9,6 +9,7 @@ MenuScene::MenuScene() :
 {
     this->m_title = new Text(Resource::FONT_96);
     this->m_title->SetPosition({456, 130});
+    this->m_title->SetColor({ 255, 0, 0, 255 });
 
     this->m_playText = new Text(Resource::FONT_48);
     this->m_playText->SetPosition({ 519, 270 });
@@ -48,9 +49,9 @@ void MenuScene::HandleEvent(SDL_Event e)
 
 void MenuScene::Update(float delta)
 {
-    this->m_playText->SetColor({ 255, 255, 255, 255 });
-    this->m_scoreText->SetColor({ 255, 255, 255, 255 });
-    this->m_exitText->SetColor({ 255, 255, 255, 255 });
+    this->m_playText->SetColor({ 0, 0, 0, 255 });
+    this->m_scoreText->SetColor({ 0, 0, 0, 255 });
+    this->m_exitText->SetColor({ 0, 0, 0, 255 });
 
     if (this->m_playText->IsSelected(this->m_mousePosition))
     {
@@ -70,6 +71,8 @@ void MenuScene::Update(float delta)
 
 void MenuScene::Render(SDL_Renderer* renderer)
 {
+    SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_3, nullptr, nullptr);
+
     this->m_title->RenderText(renderer, WINDOW_TITLE);
     this->m_playText->RenderText(renderer, "Play game");
     this->m_scoreText->RenderText(renderer, "High score");
