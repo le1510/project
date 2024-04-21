@@ -22,6 +22,8 @@ public:
     static SDL_Texture* TX_BACKGROUND_2;
     static SDL_Texture* TX_BACKGROUND_3;
     static SDL_Texture* TX_BACKGROUND_4;
+    static SDL_Texture* TX_BACKGROUND_5;
+
 
 
     static SDL_Texture* TX_GOBLIN_ATTACK;

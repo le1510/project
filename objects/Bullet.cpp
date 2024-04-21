@@ -3,7 +3,7 @@
 #include <cmath>
 
 Bullet::Bullet(float angle, SDL_Point origin) :
-    Damage(15),
+    Damage(30),
     m_speed(800),
     m_elapsedTime(0.f)
 {

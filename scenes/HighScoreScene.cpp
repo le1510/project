@@ -26,11 +26,14 @@ void HighScoreScene::HandleEvent(SDL_Event e)
 
 void HighScoreScene::Update(float delta)
 {
+
     this->m_elapsedTime += delta;
 }
 
 void HighScoreScene::Render(SDL_Renderer* renderer)
 {
+            SDL_RenderCopy(renderer,Resource::TX_BACKGROUND_5,nullptr,nullptr);
+
     this->m_title->RenderText(renderer, "High Score");
 
     int startY = 250;

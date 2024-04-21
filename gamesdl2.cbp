@@ -61,6 +61,8 @@
 		<Unit filename="scenes/BaseScene.hpp" />
 		<Unit filename="scenes/GameOverScene.cpp" />
 		<Unit filename="scenes/GameOverScene.hpp" />
+		<Unit filename="scenes/HelpScene .hpp" />
+		<Unit filename="scenes/HelpScene.cpp" />
 		<Unit filename="scenes/HighScoreScene.cpp" />
 		<Unit filename="scenes/HighScoreScene.hpp" />
 		<Unit filename="scenes/MenuScene.cpp" />
