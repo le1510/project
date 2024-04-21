@@ -31,6 +31,7 @@
 
 #define RES_TX_BACKGROUND_2 "res/textures/map/background-2.png"
 #define RES_TX_BACKGROUND_3 "res/textures/map/background-3.png"
+#define RES_TX_BACKGROUND_4 "res/textures/map/background-4.png"
 
 #define RES_TX_GOBLIN_ATTACK "res/textures/monsters/goblin/attack.png"
 #define RES_TX_GOBLIN_DEATH "res/textures/monsters/goblin/death.png"

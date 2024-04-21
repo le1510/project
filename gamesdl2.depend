@@ -3,7 +3,7 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1713709868 d:\codegameltncm\gamesdl2\config.hpp
+1713710132 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -79,10 +79,10 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1713709631 source:d:\codegameltncm\gamesdl2\resource.cpp
+1713710142 source:d:\codegameltncm\gamesdl2\resource.cpp
 	"Resource.hpp"
 
-1713709563 d:\codegameltncm\gamesdl2\resource.hpp
+1713710084 d:\codegameltncm\gamesdl2\resource.hpp
 	"Config.hpp"
 
 1713066424 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
@@ -192,7 +192,7 @@
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1713066424 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
+1713710910 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
 	"../Config.hpp"
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
@@ -215,4 +215,14 @@
 	"HighScoreScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
+
+1713710564 source:d:\codegameltncm\gamesdl2\scenes\helpscene.cpp
+	"MenuScene.hpp"
+	"HelpScene.hpp"
+	"../Resource.hpp"
+	"../Game.hpp"
+
+1713710564 d:\codegameltncm\gamesdl2\scenes\helpscene.hpp
+	"../Config.hpp"
+	"../scenes/BaseScene.hpp"
 

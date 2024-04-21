@@ -11,6 +11,7 @@ private:
     Text* m_playText;
     Text* m_scoreText;
     Text* m_exitText;
+    Text* m_helpText;
     SDL_Point m_mousePosition;
 
 public:
