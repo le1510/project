@@ -3,7 +3,7 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1713717012 d:\codegameltncm\gamesdl2\config.hpp
+1713786195 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -168,7 +168,7 @@
 	"../Resource.hpp"
 	<cmath>
 
-1713066424 source:d:\codegameltncm\gamesdl2\components\text.cpp
+1713782634 source:d:\codegameltncm\gamesdl2\components\text.cpp
 	"Text.hpp"
 
 1713066424 d:\codegameltncm\gamesdl2\components\text.hpp
@@ -209,7 +209,7 @@
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1713713207 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
+1713785802 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
 	"MenuScene.hpp"
 	"PlayScene.hpp"
 	"HighScoreScene.hpp"

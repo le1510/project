@@ -26,7 +26,7 @@
 #define RES_TX_PLAYER_GUN "res/textures/player/gun.png"
 #define RES_TX_PLAYER_BULLET "res/textures/player/bullet.png"
 
-#define RES_TX_MAP_BACKGROUND "res/textures/map/background.png"
+#define RES_TX_MAP_BACKGROUND "res/textures/map/background.jpg"
 #define RES_TX_MAP_TOWER "res/textures/map/tower.png"
 
 #define RES_TX_BACKGROUND_2 "res/textures/map/background-2.png"
