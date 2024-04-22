@@ -7,7 +7,7 @@
 PlayScene::PlayScene() :
     m_elapsedTime(0.f),
     m_score(0),
-    m_spawnTime(1.2f),
+    m_spawnTime(2.f),
     m_level(0)
 {
     this->m_tower = new Tower();

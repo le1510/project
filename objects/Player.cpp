@@ -34,30 +34,47 @@ void Player::Update(float delta)
     const Uint8* keyboardState = SDL_GetKeyboardState(nullptr);
     Vector2f vector;
 
+    bool isMoving = false;
+
     if (keyboardState[SDL_SCANCODE_A])
     {
         this->SetFlipH(true);
         vector.x = -1.f;
-
+        isMoving = true;
     }
 
     if (keyboardState[SDL_SCANCODE_D])
     {
         this->SetFlipH(false);
         vector.x = 1.f;
+        isMoving = true;
     }
 
     if (keyboardState[SDL_SCANCODE_W])
     {
         vector.y = -1.f;
+        isMoving = true;
     }
 
     if (keyboardState[SDL_SCANCODE_S])
     {
         vector.y = 1.f;
+        isMoving = true;
     }
 
     vector = vector.Normalize();
+
+    if (!isMoving)
+    {
+        this->SetCurrentFrame(1);
+    }
+    if (isMoving)
+    {
+        this->UpdateAnimation(delta);
+    }
+
+    vector = vector.Normalize();
+
     this->Move(vector * (delta * this->m_speed));
     int xOffset = this->m_rectDst->w / 2;
     int yOffset = this->m_rectDst->h / 2;
