@@ -9,26 +9,28 @@
 MenuScene::MenuScene() :
     m_mousePosition({0, 0})
 {
-   this->m_title = new Text(Resource::FONT_96);
+    this->m_title = new Text(Resource::FONT_96);
     this->m_title->SetPosition({456, 130});
     this->m_title->SetColor({ 255, 0, 0, 255 });
 
     this->m_playText = new Text(Resource::FONT_96);
     this->m_playText->SetPosition({ 19, 200 });
     this->m_scoreText = new Text(Resource::FONT_96);
-    this->m_scoreText->SetPosition({ 10, 275 });
+    this->m_scoreText->SetPosition({ 10, 270 });
     this->m_helpText = new Text(Resource::FONT_96);
-    this->m_helpText->SetPosition({ 64, 350 });
+    this->m_helpText->SetPosition({ 64, 340 });
+    this->m_levelText = new Text(Resource::FONT_96);
+    this->m_levelText->SetPosition({ 55, 410 });
 
     this->m_exitText = new Text(Resource::FONT_96);
-    this->m_exitText->SetPosition({ 64, 425 });
+    this->m_exitText->SetPosition({ 64, 480 });
 
     if(Resource::IsSound)
     {
         Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
     }
 
-    this->m_soundRect=new SDL_Rect({20,550,64 ,64 });
+    this->m_soundRect=new SDL_Rect({15,570,64 ,64 });
 }
 
 void MenuScene::HandleEvent(SDL_Event e)
@@ -50,6 +52,10 @@ void MenuScene::HandleEvent(SDL_Event e)
         if (this->m_helpText->IsSelected(this->m_mousePosition))
         {
             Game::GetInstance()->SetScene(new HelpScene());
+        }
+        if (this->m_levelText->IsSelected(this->m_mousePosition))
+        {
+            Game::GetInstance()->SetScene(new LevelScene());
         }
 
         if (this->m_exitText->IsSelected(this->m_mousePosition))

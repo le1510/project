@@ -3,6 +3,21 @@
 #include "../Game.hpp"
 #include "GameOverScene.hpp"
 #include"HighScoreScene.hpp"
+void PlayScene::SetSpawnTime(float spawnTime) {
+    m_spawnTime = spawnTime;
+}
+
+void PlayScene::SetEasySpawnTime() {
+    SetSpawnTime(2.5f);
+}
+
+void PlayScene::SetMediumSpawnTime() {
+    SetSpawnTime(1.5f);
+}
+
+void PlayScene::SetHardSpawnTime() {
+    SetSpawnTime(0.1f);
+}
 
 PlayScene::PlayScene() :
     m_elapsedTime(0.f),
