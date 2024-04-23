@@ -46,7 +46,7 @@ public:
     static SDL_Texture* TX_ON;
     static SDL_Texture* TX_OFF;
     static SDL_Texture* TX_PAUSE;
-        static SDL_Texture* TX_CONTINUE;
+    static SDL_Texture* TX_CONTINUE;
 
 
 

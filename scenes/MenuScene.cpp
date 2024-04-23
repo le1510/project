@@ -32,7 +32,7 @@ MenuScene::MenuScene() :
         Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
     }
 
-    this->m_soundRect=new SDL_Rect({15,570,64 ,64 });
+    this->m_soundRect=new SDL_Rect({15,570,64,64 });
 }
 
 

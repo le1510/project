@@ -36,4 +36,9 @@ public:
     void SetEasySpawnTime();
     void SetMediumSpawnTime();
     void SetHardSpawnTime();
+    void CheckPlayerAndThreatsCollision();
+    void HandlePlayerAndThreatCollision(Threat*);
+    void GameOver();
+
+
 };

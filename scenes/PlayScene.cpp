@@ -144,6 +144,8 @@ void PlayScene::Update(float delta)
         Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
     }
     this->UpdateLevel();
+        this->CheckPlayerAndThreatsCollision();
+
 }
 }
 
@@ -197,6 +199,26 @@ void PlayScene::CheckPlayerAndTower()
             this->m_player->SetOrigin({ 665, o.y });
         }
     }
+}
+void PlayScene::CheckPlayerAndThreatsCollision()
+{
+    for (auto threat : this->m_threats)
+    {
+        if (this->m_player->IsCollision(threat))
+        {
+            this->HandlePlayerAndThreatCollision(threat);
+            break;
+        }
+    }
+}
+void PlayScene::HandlePlayerAndThreatCollision(Threat* threat)
+{
+    this->GameOver();
+
+}
+void PlayScene::GameOver()
+{
+    Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
 }
 void PlayScene::UpdateLevel()
 {
