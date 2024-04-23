@@ -120,3 +120,17 @@ Bullet* Player::Shot()
     m_elapsedTime=0.f;
     return new Bullet(m_gun->GetAngle(),GetOrigin());
 }
+void Player::Scale(float scaleFactor)
+{
+    this->m_rectDst->w *= scaleFactor;
+    this->m_rectDst->h *= scaleFactor;
+
+    this->m_rectDst->x -= (this->m_rectDst->w * scaleFactor - this->m_rectDst->w) / 2;
+    this->m_rectDst->y -= (this->m_rectDst->h * scaleFactor - this->m_rectDst->h) / 2;
+
+    this->m_rectCollision->w *= scaleFactor;
+    this->m_rectCollision->h *= scaleFactor;
+    this->m_rectCollision->x -= (this->m_rectCollision->w * scaleFactor - this->m_rectCollision->w) / 2;
+    this->m_rectCollision->y -= (this->m_rectCollision->h * scaleFactor - this->m_rectCollision->h) / 2;
+}
+

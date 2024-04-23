@@ -3,6 +3,7 @@
 #include "../Config.hpp"
 #include "../components/Text.hpp"
 #include "../scenes/BaseScene.hpp"
+#include "../objects/AnimatedObject.hpp"
 
 class MenuScene final : public BaseScene
 {
@@ -14,6 +15,10 @@ private:
     Text* m_helpText;
     SDL_Point m_mousePosition;
     SDL_Rect* m_soundRect;
+    Text* m_levelText;
+    float m_elapsedTime;
+
+
 
 public:
     MenuScene();

@@ -25,4 +25,6 @@ public:
 
     bool IsShotable() const;
     Bullet* Shot();
+    void Scale(float scaleFactor);
+
 };

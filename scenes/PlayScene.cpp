@@ -3,6 +3,7 @@
 #include "../Game.hpp"
 #include "GameOverScene.hpp"
 #include"HighScoreScene.hpp"
+
 void PlayScene::SetSpawnTime(float spawnTime) {
     m_spawnTime = spawnTime;
 }
@@ -16,7 +17,7 @@ void PlayScene::SetMediumSpawnTime() {
 }
 
 void PlayScene::SetHardSpawnTime() {
-    SetSpawnTime(0.1f);
+    SetSpawnTime(0.5f);
 }
 
 PlayScene::PlayScene() :
@@ -27,8 +28,8 @@ PlayScene::PlayScene() :
 {
     this->m_tower = new Tower();
     this->m_player = new Player();
-    this->m_scoreText = new Text(Resource::FONT_24);
-    this->m_scoreText->SetPosition({ 50, 5 });
+    this->m_scoreText = new Text(Resource::FONT_48);
+    this->m_scoreText->SetPosition({ 1000, 5 });
     if(Resource::IsSound)
     {
         Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
@@ -38,22 +39,39 @@ PlayScene::PlayScene() :
 
 void PlayScene::HandleEvent(SDL_Event e)
 {
-    if (e.type == SDL_MOUSEBUTTONDOWN)
-    {
-        if (e.button.button == SDL_BUTTON_LEFT && this->m_player->IsShotable())
-        {
-            if(Resource::IsSound)
-            {
+    if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
+        int mouseX = e.button.x;
+        int mouseY = e.button.y;
+
+        if (mouseX >= 0 && mouseX <= 63 && mouseY >= 10 && mouseY <= 74) {
+            m_isGamePaused = !m_isGamePaused;
+
+            if (m_isGamePaused) {
+                Mix_PauseMusic();
+                m_isContinueShown = true;
+            } else {
+                Mix_ResumeMusic();
+                m_isContinueShown = false;
+            }
+        } else if (m_isContinueShown && mouseX >= 580 && mouseX <= 644 && mouseY >=250   && mouseY <= 314) {
+            m_isGamePaused = false;
+            m_isContinueShown = false;
+        } else if (!m_isGamePaused && this->m_player->IsShotable()) {
+            if (Resource::IsSound) {
                 Mix_PlayChannel(-1, Resource::SFX_SHOT, 0);
             }
             this->m_bullets.push_back(this->m_player->Shot());
-
         }
     }
 }
 
+
+
+
 void PlayScene::Update(float delta)
 {
+    if(!m_isGamePaused)
+    {
     this->m_elapsedTime += delta;
 
     if (this->m_elapsedTime > this->m_spawnTime)
@@ -127,6 +145,7 @@ void PlayScene::Update(float delta)
     }
     this->UpdateLevel();
 }
+}
 
 void PlayScene::Render(SDL_Renderer* renderer)
 {
@@ -148,6 +167,15 @@ void PlayScene::Render(SDL_Renderer* renderer)
     for (auto bullet : this->m_bullets)
     {
         bullet->Render(renderer);
+    }
+
+    SDL_Rect imageRect = { 0, 10, 64 , 64  };
+    SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &imageRect);
+    if(m_isGamePaused)
+    {
+        SDL_Rect imageRect = { 580, 250 , 64 , 64  };
+    SDL_RenderCopy(renderer, Resource::TX_CONTINUE , nullptr, &imageRect);
+
     }
 
     this->m_scoreText->RenderText(renderer, "Score: " + std::to_string(this->m_score));
@@ -173,10 +201,12 @@ void PlayScene::CheckPlayerAndTower()
 void PlayScene::UpdateLevel()
 {
     int t=this->m_score/100;
-    if(t<this->m_level&&this->m_level<10)
+if (t != this->m_level && this->m_level < 10)
     {
         this->m_level=t;
         this->m_spawnTime-=t*0.1f;
+        this->m_player->Scale(1.3f);
+
     }
 
 }

@@ -34,6 +34,9 @@ SDL_Texture* Resource::TX_SKELETON_DEATH;
 SDL_Texture* Resource::TX_SKELETON_WALK;
 SDL_Texture* Resource::TX_ON;
 SDL_Texture* Resource::TX_OFF;
+SDL_Texture* Resource::TX_CONTINUE;
+SDL_Texture* Resource::TX_PAUSE;
+
 
 
 
@@ -75,6 +78,7 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     FONT_48					= LoadFontFromFile(RES_FONT, 48);
     FONT_96					= LoadFontFromFile(RES_FONT, 96);
 
+
     SFX_SHOT                =LoadSFXFromFile(RES_SFX_SHOT);
     SFX_BACKGROUND          =LoadMusicFromFile(RES_SFX_BACKGROUND);
 
@@ -89,7 +93,7 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_BACKGROUND_3         = LoadTextureFromFile(RES_TX_BACKGROUND_3, renderer);
     TX_BACKGROUND_4         = LoadTextureFromFile(RES_TX_BACKGROUND_4, renderer);
     TX_BACKGROUND_5         = LoadTextureFromFile(RES_TX_BACKGROUND_5, renderer);
-    TX_BACKGROUND_6         = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
+    TX_BACKGROUND_6        = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
 
 
 
@@ -107,5 +111,9 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_SKELETON_WALK		= LoadTextureFromFile(RES_TX_SKELETON_WALK, renderer);
     TX_ON                   = LoadTextureFromFile(RES_TX_ON, renderer);
     TX_OFF                   = LoadTextureFromFile(RES_TX_OFF, renderer);
+    TX_CONTINUE               = LoadTextureFromFile(RES_TX_CONTINUE, renderer);
+        TX_PAUSE             = LoadTextureFromFile(RES_TX_PAUSE, renderer);
+
+
 
 }

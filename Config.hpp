@@ -51,3 +51,6 @@
 
 #define RES_TX_ON "res/textures/icon/on.png"
 #define RES_TX_OFF "res/textures/icon/off.png"
+#define RES_TX_PAUSE "res/textures/icon/pause.png"
+#define RES_TX_CONTINUE "res/textures/icon/continue.png"
+

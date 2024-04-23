@@ -4,6 +4,8 @@
 #include "../Resource.hpp"
 #include "../Game.hpp"
 #include "HelpScene.hpp"
+#include "LevelScene.hpp"
+
 
 
 MenuScene::MenuScene() :
@@ -33,6 +35,8 @@ MenuScene::MenuScene() :
     this->m_soundRect=new SDL_Rect({15,570,64 ,64 });
 }
 
+
+
 void MenuScene::HandleEvent(SDL_Event e)
 {
     this->m_mousePosition.x = e.button.x;
@@ -53,11 +57,11 @@ void MenuScene::HandleEvent(SDL_Event e)
         {
             Game::GetInstance()->SetScene(new HelpScene());
         }
+
         if (this->m_levelText->IsSelected(this->m_mousePosition))
         {
             Game::GetInstance()->SetScene(new LevelScene());
         }
-
         if (this->m_exitText->IsSelected(this->m_mousePosition))
         {
             Game::GetInstance()->Quit();
@@ -73,8 +77,6 @@ void MenuScene::HandleEvent(SDL_Event e)
             if (Resource::IsSound)
             {
                 Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
-
-
             }
             else
             {
@@ -90,9 +92,10 @@ void MenuScene::Update(float delta)
     this->m_playText->SetColor({ 0, 0, 0, 255 });
     this->m_scoreText->SetColor({ 0, 0, 0, 255 });
     this->m_helpText->SetColor({ 0, 0, 0, 255 });
-
+    this->m_levelText->SetColor({ 0, 0, 0, 255 });
     this->m_exitText->SetColor({ 0, 0, 0, 255 });
 
+    // Kiểm tra và cài đặt màu sắc cho các văn bản được chọn
     if (this->m_playText->IsSelected(this->m_mousePosition))
     {
         this->m_playText->SetColor({ 255, 0, 0, 255 });
@@ -102,30 +105,34 @@ void MenuScene::Update(float delta)
     {
         this->m_scoreText->SetColor({ 255, 0, 0, 255 });
     }
+
     if (this->m_helpText->IsSelected(this->m_mousePosition))
     {
         this->m_helpText->SetColor({ 255, 0, 0, 255 });
+    }
+
+    if (this->m_levelText->IsSelected(this->m_mousePosition))
+    {
+        this->m_levelText->SetColor({ 255, 0, 0, 255 });
     }
 
     if (this->m_exitText->IsSelected(this->m_mousePosition))
     {
         this->m_exitText->SetColor({ 255, 0, 0, 255 });
     }
-
 }
 
 void MenuScene::Render(SDL_Renderer* renderer)
 {
+
+
     SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_3, nullptr, nullptr);
 
-    //this->m_title->RenderText(renderer, WINDOW_TITLE);
     this->m_playText->RenderText(renderer, "Play game");
     this->m_scoreText->RenderText(renderer, "High score");
     this->m_helpText->RenderText(renderer, "Help");
-
+    this->m_levelText->RenderText(renderer, "Level");
     this->m_exitText->RenderText(renderer, "Exit");
-
-    SDL_RenderCopy(renderer,Resource::IsSound ? Resource::TX_ON : Resource::TX_OFF, nullptr, this->m_soundRect);
-
-
+    SDL_RenderCopy(renderer, Resource::IsSound ? Resource::TX_ON : Resource::TX_OFF, nullptr, this->m_soundRect);
 }
+

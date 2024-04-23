@@ -19,6 +19,10 @@ private:
     Text* m_scoreText;
     float m_spawnTime;
     int m_level;
+    bool m_isGamePaused;
+    bool m_isContinueShown;
+
+
 
 public:
     PlayScene();
@@ -28,4 +32,8 @@ public:
     void Render(SDL_Renderer*) override ;
     void CheckPlayerAndTower();
     void UpdateLevel();
+    void SetSpawnTime(float );
+    void SetEasySpawnTime();
+    void SetMediumSpawnTime();
+    void SetHardSpawnTime();
 };

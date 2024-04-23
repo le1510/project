@@ -8,6 +8,7 @@ public:
     static TTF_Font*	FONT_48;
     static TTF_Font*	FONT_96;
 
+
     static Mix_Chunk* SFX_SHOT;
     static Mix_Music* SFX_BACKGROUND;
 
@@ -44,6 +45,10 @@ public:
 
     static SDL_Texture* TX_ON;
     static SDL_Texture* TX_OFF;
+    static SDL_Texture* TX_PAUSE;
+        static SDL_Texture* TX_CONTINUE;
+
+
 
 
 
