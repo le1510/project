@@ -7,7 +7,10 @@ Player::Player() :
     Damage(70),
     m_speed(150),
     m_isShotable(true),
-     m_scale(1.0f)
+     m_scale(1.0f),
+     HP(200),
+     m_totalHP({0,0,40,5 }),
+          m_currentHP({0,0,40,5})
 {
     this->m_texture = Resource::TX_PLAYER;
     this->m_rectSrc->w = 72;
@@ -22,16 +25,23 @@ Player::Player() :
     this->SetOrigin({ 100, 100 });
 
     this->m_gun = new Gun();
+
 }
 
 void Player::Update(float delta)
 {
     this->m_elapsedTime+=delta;
+    auto o = this->GetOrigin();
+    m_totalHP.x=m_currentHP.x=o.x-20 ;
+    m_totalHP.y=m_currentHP.y=o.y+30;
+    m_currentHP.w=(float)GetCurrentHP()/(float)GetMaxHP()*m_totalHP.w;
+
     if(m_elapsedTime>0.5f)
     {
         m_isShotable=true;
     }
     this->UpdateAnimation(delta);
+
     const Uint8* keyboardState = SDL_GetKeyboardState(nullptr);
     Vector2f vector;
 
@@ -102,12 +112,24 @@ void Player::Update(float delta)
 
     this->m_gun->SetOrigin(this->GetOrigin());
     this->m_gun->Update(delta);
+
+
 }
 
 void Player::Render(SDL_Renderer* renderer)
 {
     BaseObject::Render(renderer);
     this->m_gun->Render(renderer);
+    SDL_SetRenderDrawColor(renderer,225,225,225,255);
+
+    SDL_RenderFillRect(renderer,&this->m_totalHP);
+
+    if(this->GetCurrentHP()>0)
+    {
+        SDL_SetRenderDrawColor(renderer,255,0,0,255);
+        SDL_RenderFillRect(renderer,&this->m_currentHP);
+    }
+
 }
 
 bool Player::IsShotable() const

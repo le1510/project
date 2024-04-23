@@ -251,33 +251,43 @@ void PlayScene::CheckPlayerAndThreatsCollision()
     {
         if (this->m_player->IsCollision(threat))
         {
-            this->HandlePlayerAndThreatCollision(threat);
-            break;
+            int damage = threat->GetDamage();
+            int currentHP = this->m_player->GetCurrentHP();
+            currentHP -= damage;
+            this->m_player->SetCurrentHP(currentHP);
+
+            if (currentHP <= 0)
+            {
+
+
+                this->HandlePlayerAndThreatCollision(threat);
+                break;
+            }
         }
     }
 }
-void PlayScene::HandlePlayerAndThreatCollision(Threat* threat)
-{
-    this->GameOver();
-
-}
-void PlayScene::GameOver()
-{
-    Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
-}
-void PlayScene::UpdateLevel()
-{
-    int t=this->m_score/100;
-    if (t != this->m_level && this->m_level < 10)
+    void PlayScene::HandlePlayerAndThreatCollision(Threat* threat)
     {
-        if (this->m_player->GetScale() < 5.0f)
-        {
-            this->m_level = t;
-            this->m_spawnTime -= t * 0.1f;
-            this->m_player->Scale(1.3f);
-        }
-    }
+        this->GameOver();
 
-}
+    }
+    void PlayScene::GameOver()
+    {
+        Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
+    }
+    void PlayScene::UpdateLevel()
+    {
+        int t=this->m_score/100;
+        if (t != this->m_level && this->m_level < 10)
+        {
+            if (this->m_player->GetScale() < 5.0f)
+            {
+                this->m_level = t;
+                this->m_spawnTime -= t * 0.1f;
+                this->m_player->Scale(1.3f);
+            }
+        }
+
+    }
 
 

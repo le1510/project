@@ -25,7 +25,7 @@ public:
     static SDL_Texture* TX_BACKGROUND_4;
     static SDL_Texture* TX_BACKGROUND_5;
     static SDL_Texture* TX_BACKGROUND_6;
-        static SDL_Texture* TX_BACKGROUND_7;
+    static SDL_Texture* TX_BACKGROUND_7;
 
 
 

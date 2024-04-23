@@ -79,10 +79,10 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1713875575 source:d:\codegameltncm\gamesdl2\resource.cpp
+1713890121 source:d:\codegameltncm\gamesdl2\resource.cpp
 	"Resource.hpp"
 
-1713890757 d:\codegameltncm\gamesdl2\resource.hpp
+1713892010 d:\codegameltncm\gamesdl2\resource.hpp
 	"Config.hpp"
 
 1713066424 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
@@ -99,12 +99,13 @@
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
 
-1713890085 d:\codegameltncm\gamesdl2\objects\player.hpp
+1713895706 d:\codegameltncm\gamesdl2\objects\player.hpp
 	"../Config.hpp"
 	"../components/Damage.hpp"
 	"AnimatedObject.hpp"
 	"Gun.hpp"
 	"Bullet.hpp"
+	"../components/HP.hpp"
 
 1713445905 d:\codegameltncm\gamesdl2\objects\tower.hpp
 	"../Config.hpp"
@@ -211,7 +212,7 @@
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1713866668 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
+1713889817 source:d:\codegameltncm\gamesdl2\scenes\menuscene.cpp
 	"MenuScene.hpp"
 	"PlayScene.hpp"
 	"HighScoreScene.hpp"

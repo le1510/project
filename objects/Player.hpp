@@ -5,8 +5,10 @@
 #include "AnimatedObject.hpp"
 #include "Gun.hpp"
 #include"Bullet.hpp"
+#include "../components/HP.hpp"
 
-class Player final : public AnimatedObject,public Damage
+
+class Player final : public AnimatedObject,public Damage,public HP
 {
 private:
     int				m_speed;
@@ -15,6 +17,8 @@ private:
     bool m_isShotable;
     float m_elapsedTime;
     float m_scale;
+    SDL_Rect m_totalHP;
+    SDL_Rect m_currentHP;
 
 public:
     Player();
