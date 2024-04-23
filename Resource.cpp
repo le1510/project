@@ -17,6 +17,8 @@ SDL_Texture* Resource::TX_BACKGROUND_3;
 SDL_Texture* Resource::TX_BACKGROUND_4;
 SDL_Texture* Resource::TX_BACKGROUND_5;
 SDL_Texture* Resource::TX_BACKGROUND_6;
+SDL_Texture* Resource::TX_BACKGROUND_7;
+
 
 
 
@@ -36,6 +38,8 @@ SDL_Texture* Resource::TX_ON;
 SDL_Texture* Resource::TX_OFF;
 SDL_Texture* Resource::TX_CONTINUE;
 SDL_Texture* Resource::TX_PAUSE;
+SDL_Texture* Resource::TX_END;
+
 
 
 
@@ -94,6 +98,9 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_BACKGROUND_4         = LoadTextureFromFile(RES_TX_BACKGROUND_4, renderer);
     TX_BACKGROUND_5         = LoadTextureFromFile(RES_TX_BACKGROUND_5, renderer);
     TX_BACKGROUND_6        = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
+    TX_BACKGROUND_7        = LoadTextureFromFile(RES_TX_BACKGROUND_7, renderer);
+
+
 
 
 
@@ -112,7 +119,12 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_ON                   = LoadTextureFromFile(RES_TX_ON, renderer);
     TX_OFF                   = LoadTextureFromFile(RES_TX_OFF, renderer);
     TX_CONTINUE               = LoadTextureFromFile(RES_TX_CONTINUE, renderer);
-        TX_PAUSE             = LoadTextureFromFile(RES_TX_PAUSE, renderer);
+    TX_PAUSE             = LoadTextureFromFile(RES_TX_PAUSE, renderer);
+    TX_END             = LoadTextureFromFile(RES_TX_END, renderer);
+
+
+
+
 
 
 

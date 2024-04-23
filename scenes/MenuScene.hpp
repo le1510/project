@@ -4,8 +4,9 @@
 #include "../components/Text.hpp"
 #include "../scenes/BaseScene.hpp"
 #include "../objects/AnimatedObject.hpp"
+#include"MenuAnimation.hpp"
 
-class MenuScene final : public BaseScene
+class MenuScene final : public BaseScene,public MenuAnimation
 {
 private:
     Text* m_title;
@@ -20,6 +21,7 @@ private:
 
 
 
+
 public:
     MenuScene();
     ~MenuScene() = default;
@@ -27,4 +29,6 @@ public:
     void HandleEvent(SDL_Event) override;
     void Update(float) override;
     void Render(SDL_Renderer*) override;
+
+
 };

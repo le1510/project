@@ -6,7 +6,8 @@ Player::Player() :
     AnimatedObject(6, 0.1f),
     Damage(70),
     m_speed(150),
-    m_isShotable(true)
+    m_isShotable(true),
+     m_scale(1.0f)
 {
     this->m_texture = Resource::TX_PLAYER;
     this->m_rectSrc->w = 72;
@@ -132,5 +133,8 @@ void Player::Scale(float scaleFactor)
     this->m_rectCollision->h *= scaleFactor;
     this->m_rectCollision->x -= (this->m_rectCollision->w * scaleFactor - this->m_rectCollision->w) / 2;
     this->m_rectCollision->y -= (this->m_rectCollision->h * scaleFactor - this->m_rectCollision->h) / 2;
+}
+float Player::GetScale() const {
+    return m_scale;
 }
 

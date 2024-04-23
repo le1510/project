@@ -4,19 +4,23 @@
 #include "GameOverScene.hpp"
 #include"HighScoreScene.hpp"
 
-void PlayScene::SetSpawnTime(float spawnTime) {
+void PlayScene::SetSpawnTime(float spawnTime)
+{
     m_spawnTime = spawnTime;
 }
 
-void PlayScene::SetEasySpawnTime() {
+void PlayScene::SetEasySpawnTime()
+{
     SetSpawnTime(2.5f);
 }
 
-void PlayScene::SetMediumSpawnTime() {
+void PlayScene::SetMediumSpawnTime()
+{
     SetSpawnTime(1.5f);
 }
 
-void PlayScene::SetHardSpawnTime() {
+void PlayScene::SetHardSpawnTime()
+{
     SetSpawnTime(0.5f);
 }
 
@@ -39,25 +43,39 @@ PlayScene::PlayScene() :
 
 void PlayScene::HandleEvent(SDL_Event e)
 {
-    if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT) {
+    if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)
+    {
         int mouseX = e.button.x;
         int mouseY = e.button.y;
 
-        if (mouseX >= 0 && mouseX <= 63 && mouseY >= 10 && mouseY <= 74) {
+        if (mouseX >= 0 && mouseX <= 63 && mouseY >= 10 && mouseY <= 74)
+        {
             m_isGamePaused = !m_isGamePaused;
 
-            if (m_isGamePaused) {
+            if (m_isGamePaused)
+            {
                 Mix_PauseMusic();
                 m_isContinueShown = true;
-            } else {
+            }
+            else
+            {
                 Mix_ResumeMusic();
                 m_isContinueShown = false;
             }
-        } else if (m_isContinueShown && mouseX >= 580 && mouseX <= 644 && mouseY >=250   && mouseY <= 314) {
+        }
+        else if (m_isContinueShown && mouseX >= 520 && mouseX <= 584 && mouseY >= 280 && mouseY <= 344)
+        {
             m_isGamePaused = false;
             m_isContinueShown = false;
-        } else if (!m_isGamePaused && this->m_player->IsShotable()) {
-            if (Resource::IsSound) {
+        }
+        else if (m_isContinueShown && mouseX >= 650 && mouseX <= 714 && mouseY >= 280 && mouseY <= 344)
+        {
+            Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
+        }
+        else if (!m_isGamePaused && this->m_player->IsShotable())
+        {
+            if (Resource::IsSound)
+            {
                 Mix_PlayChannel(-1, Resource::SFX_SHOT, 0);
             }
             this->m_bullets.push_back(this->m_player->Shot());
@@ -72,81 +90,81 @@ void PlayScene::Update(float delta)
 {
     if(!m_isGamePaused)
     {
-    this->m_elapsedTime += delta;
+        this->m_elapsedTime += delta;
 
-    if (this->m_elapsedTime > this->m_spawnTime)
-    {
-        this->m_threats.push_back(Threat::Generate());
-
-        this->m_elapsedTime -= this->m_spawnTime;
-    }
-
-    this->m_tower->Update(delta);
-    this->m_player->Update(delta);
-    this->CheckPlayerAndTower();
-
-
-    for (auto threat : this->m_threats)
-    {
-        threat->Update(delta);
-
-        if (threat->IsAttackable())
+        if (this->m_elapsedTime > this->m_spawnTime)
         {
-            this->m_tower->SetCurrentHP(this->m_tower->GetCurrentHP() - threat->Attack());
+            this->m_threats.push_back(Threat::Generate());
+
+            this->m_elapsedTime -= this->m_spawnTime;
         }
-    }
 
-    for (auto bullet : this->m_bullets)
-    {
-        bullet->Update(delta);
-    }
+        this->m_tower->Update(delta);
+        this->m_player->Update(delta);
+        this->CheckPlayerAndTower();
 
-    for (auto bullet : this->m_bullets)
-    {
+
         for (auto threat : this->m_threats)
         {
-            if (bullet->IsAlive() && bullet->IsCollision(threat))
+            threat->Update(delta);
+
+            if (threat->IsAttackable())
             {
-                threat->SetCurrentHP(threat->GetCurrentHP() - bullet->GetDamage());
-                bullet->SetIsAlive(false);
+                this->m_tower->SetCurrentHP(this->m_tower->GetCurrentHP() - threat->Attack());
             }
         }
-    }
 
-    for (int i = 0; i < this->m_threats.size();)
-    {
-        if (!this->m_threats[i]->IsAlive())
+        for (auto bullet : this->m_bullets)
         {
-            this->m_threats.erase(this->m_threats.begin() + i);
+            bullet->Update(delta);
+        }
 
-            this->m_score += this->m_threats[i]->Score();
-        }
-        else
+        for (auto bullet : this->m_bullets)
         {
-            i++;
+            for (auto threat : this->m_threats)
+            {
+                if (bullet->IsAlive() && bullet->IsCollision(threat))
+                {
+                    threat->SetCurrentHP(threat->GetCurrentHP() - bullet->GetDamage());
+                    bullet->SetIsAlive(false);
+                }
+            }
         }
-    }
 
-    for (int i = 0; i < this->m_bullets.size();)
-    {
-        if (!this->m_bullets[i]->IsAlive())
+        for (int i = 0; i < this->m_threats.size();)
         {
-            this->m_bullets.erase(this->m_bullets.begin() + i);
-        }
-        else
-        {
-            i++;
-        }
-    }
+            if (!this->m_threats[i]->IsAlive())
+            {
+                this->m_threats.erase(this->m_threats.begin() + i);
 
-    if (!this->m_tower->IsAlive())
-    {
-        Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
-    }
-    this->UpdateLevel();
+                this->m_score += this->m_threats[i]->Score();
+            }
+            else
+            {
+                i++;
+            }
+        }
+
+        for (int i = 0; i < this->m_bullets.size();)
+        {
+            if (!this->m_bullets[i]->IsAlive())
+            {
+                this->m_bullets.erase(this->m_bullets.begin() + i);
+            }
+            else
+            {
+                i++;
+            }
+        }
+
+        if (!this->m_tower->IsAlive())
+        {
+            Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
+        }
+        this->UpdateLevel();
         this->CheckPlayerAndThreatsCollision();
 
-}
+    }
 }
 
 void PlayScene::Render(SDL_Renderer* renderer)
@@ -170,13 +188,40 @@ void PlayScene::Render(SDL_Renderer* renderer)
     {
         bullet->Render(renderer);
     }
+    SDL_Event e;
+    int mouseX = e.motion.x;
+    int mouseY = e.motion.y;
+    if (mouseX >= 0 && mouseX <= 64 && mouseY >= 10 && mouseY <= 74)
+    {
+        SDL_Rect pauseRect = { 0, 10, 64, 64 };
+        SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &pauseRect);
+    }
+    else
+    {
+        SDL_Rect pauseRect = { 0, 10, 64, 64 };
+        SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &pauseRect);
+    }
 
-    SDL_Rect imageRect = { 0, 10, 64 , 64  };
+    SDL_Rect imageRect = { 0, 10, 64, 64  };
     SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &imageRect);
     if(m_isGamePaused)
     {
-        SDL_Rect imageRect = { 580, 250 , 64 , 64  };
-    SDL_RenderCopy(renderer, Resource::TX_CONTINUE , nullptr, &imageRect);
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_Rect rect = { 470, 250, 350, 20 };
+        SDL_RenderFillRect(renderer, &rect);
+
+        SDL_Color white = { 255, 255, 255 };
+        SDL_Surface* surface = TTF_RenderText_Solid(Resource::FONT_24, "Do you want to continue or stop?", white);
+        SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+        SDL_Rect textRect = { 500, 250, surface->w, surface->h };
+        SDL_RenderCopy(renderer, texture, nullptr, &textRect);
+        SDL_FreeSurface(surface);
+        SDL_DestroyTexture(texture);
+        SDL_Rect imageRect = { 520, 280, 64, 64  };
+        SDL_RenderCopy(renderer, Resource::TX_CONTINUE, nullptr, &imageRect);
+        SDL_Rect image_Rect = { 650, 280, 64, 64  };
+        SDL_RenderCopy(renderer, Resource::TX_END, nullptr, &image_Rect);
+
 
     }
 
@@ -223,12 +268,14 @@ void PlayScene::GameOver()
 void PlayScene::UpdateLevel()
 {
     int t=this->m_score/100;
-if (t != this->m_level && this->m_level < 10)
+    if (t != this->m_level && this->m_level < 10)
     {
-        this->m_level=t;
-        this->m_spawnTime-=t*0.1f;
-        this->m_player->Scale(1.3f);
-
+        if (this->m_player->GetScale() < 5.0f)
+        {
+            this->m_level = t;
+            this->m_spawnTime -= t * 0.1f;
+            this->m_player->Scale(1.3f);
+        }
     }
 
 }

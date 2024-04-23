@@ -9,8 +9,18 @@
 
 
 MenuScene::MenuScene() :
-    m_mousePosition({0, 0})
+   MenuAnimation(3,0.6f)
+
 {
+    this->m_texture = Resource::TX_BACKGROUND_3;
+    this->m_rectSrc->w = 400   ;
+    this->m_rectSrc->h = 216  ;
+
+    this->m_rectDst->w = 1200;
+    this->m_rectDst->h = 681;
+
+
+
     this->m_title = new Text(Resource::FONT_96);
     this->m_title->SetPosition({456, 130});
     this->m_title->SetColor({ 255, 0, 0, 255 });
@@ -32,7 +42,7 @@ MenuScene::MenuScene() :
         Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
     }
 
-    this->m_soundRect=new SDL_Rect({15,570,64,64 });
+    this->m_soundRect=new SDL_Rect({15,570,64 ,64 });
 }
 
 
@@ -88,6 +98,9 @@ void MenuScene::HandleEvent(SDL_Event e)
 
 void MenuScene::Update(float delta)
 {
+     this->m_elapsedTime+=delta;
+     this->UpdateAnimation(delta);
+
 
     this->m_playText->SetColor({ 0, 0, 0, 255 });
     this->m_scoreText->SetColor({ 0, 0, 0, 255 });
@@ -124,10 +137,8 @@ void MenuScene::Update(float delta)
 
 void MenuScene::Render(SDL_Renderer* renderer)
 {
-
-
-    SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_3, nullptr, nullptr);
-
+    BaseObject::Render(renderer);
+    SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_7, nullptr, nullptr);
     this->m_playText->RenderText(renderer, "Play game");
     this->m_scoreText->RenderText(renderer, "High score");
     this->m_helpText->RenderText(renderer, "Help");

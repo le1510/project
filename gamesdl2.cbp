@@ -67,6 +67,8 @@
 		<Unit filename="scenes/HighScoreScene.hpp" />
 		<Unit filename="scenes/LevelScene.cpp" />
 		<Unit filename="scenes/LevelScene.hpp" />
+		<Unit filename="scenes/MenuAnimation.cpp" />
+		<Unit filename="scenes/MenuAnimation.hpp" />
 		<Unit filename="scenes/MenuScene.cpp" />
 		<Unit filename="scenes/MenuScene.hpp" />
 		<Unit filename="scenes/PlayScene.cpp" />

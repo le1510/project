@@ -3,7 +3,7 @@
 	"Config.hpp"
 	"Game.hpp"
 
-1713866284 d:\codegameltncm\gamesdl2\config.hpp
+1713890085 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -34,7 +34,7 @@
 1712850715 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1713866178 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1713890085 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
@@ -79,10 +79,10 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1713866284 source:d:\codegameltncm\gamesdl2\resource.cpp
+1713875575 source:d:\codegameltncm\gamesdl2\resource.cpp
 	"Resource.hpp"
 
-1713866668 d:\codegameltncm\gamesdl2\resource.hpp
+1713890757 d:\codegameltncm\gamesdl2\resource.hpp
 	"Config.hpp"
 
 1713066424 source:d:\codegameltncm\gamesdl2\objects\gun.cpp
@@ -94,12 +94,12 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1713866178 source:d:\codegameltncm\gamesdl2\objects\player.cpp
+1713890085 source:d:\codegameltncm\gamesdl2\objects\player.cpp
 	"Player.hpp"
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
 
-1713866178 d:\codegameltncm\gamesdl2\objects\player.hpp
+1713890085 d:\codegameltncm\gamesdl2\objects\player.hpp
 	"../Config.hpp"
 	"../components/Damage.hpp"
 	"AnimatedObject.hpp"
@@ -192,11 +192,12 @@
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 
-1713865864 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
+1713889817 d:\codegameltncm\gamesdl2\scenes\menuscene.hpp
 	"../Config.hpp"
 	"../components/Text.hpp"
 	"../scenes/BaseScene.hpp"
 	"../objects/AnimatedObject.hpp"
+	"MenuAnimation.hpp"
 
 1713716623 source:d:\codegameltncm\gamesdl2\scenes\highscorescene.cpp
 	"MenuScene.hpp"
@@ -240,4 +241,11 @@
 	"../Config.hpp"
 	"../scenes/BaseScene.hpp"
 	"../components/Text.hpp"
+
+1713884069 d:\codegameltncm\gamesdl2\scenes\menuanimation.hpp
+	"../Config.hpp"
+	"../objects/BaseObject.hpp"
+
+1713884180 source:d:\codegameltncm\gamesdl2\scenes\menuanimation.cpp
+	"MenuAnimation.hpp"
 

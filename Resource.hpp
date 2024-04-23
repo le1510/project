@@ -25,6 +25,8 @@ public:
     static SDL_Texture* TX_BACKGROUND_4;
     static SDL_Texture* TX_BACKGROUND_5;
     static SDL_Texture* TX_BACKGROUND_6;
+        static SDL_Texture* TX_BACKGROUND_7;
+
 
 
 
@@ -47,11 +49,7 @@ public:
     static SDL_Texture* TX_OFF;
     static SDL_Texture* TX_PAUSE;
     static SDL_Texture* TX_CONTINUE;
-
-
-
-
-
+    static SDL_Texture* TX_END;
 public:
     static SDL_Texture* LoadTextureFromFile(const std::string& path, SDL_Renderer* renderer);
 

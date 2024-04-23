@@ -30,10 +30,14 @@
 #define RES_TX_MAP_TOWER "res/textures/map/tower.png"
 
 #define RES_TX_BACKGROUND_2 "res/textures/map/background-2.png"
-#define RES_TX_BACKGROUND_3 "res/textures/map/background-3.png"
+#define RES_TX_BACKGROUND_3 "res/textures/map/anmenu.jpg"
 #define RES_TX_BACKGROUND_4 "res/textures/map/background-4.png"
 #define RES_TX_BACKGROUND_5 "res/textures/map/background-5.png"
 #define RES_TX_BACKGROUND_6 "res/textures/map/background-6.png"
+#define RES_TX_BACKGROUND_7 "res/textures/map/background-7.png"
+//#define RES_TX_BACKGROUND_3 "res/textures/map/background-3.png"
+
+
 
 
 
@@ -53,4 +57,10 @@
 #define RES_TX_OFF "res/textures/icon/off.png"
 #define RES_TX_PAUSE "res/textures/icon/pause.png"
 #define RES_TX_CONTINUE "res/textures/icon/continue.png"
+#define RES_TX_END "res/textures/icon/end.png"
+#define RES_TX_PAUSEBIG "res/textures/icon/pausebig.png"
+#define RES_TX_CONTINUEBIG "res/textures/icon/continuebig.png"
+#define RES_TX_ENDBIG "res/textures/icon/endbig.png"
+
+
 

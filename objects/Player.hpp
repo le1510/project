@@ -14,6 +14,7 @@ private:
 
     bool m_isShotable;
     float m_elapsedTime;
+    float m_scale;
 
 public:
     Player();
@@ -26,5 +27,6 @@ public:
     bool IsShotable() const;
     Bullet* Shot();
     void Scale(float scaleFactor);
+    float GetScale() const;
 
 };
