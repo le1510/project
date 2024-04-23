@@ -7,8 +7,13 @@
 #include"../objects/Bullet.hpp"
 
 class PlayScene: public BaseScene
-
 {
+
+    int m_maxShots;
+    int m_shotsFired;
+    float m_timeSinceLastShot;
+    float m_reloadTime;
+
 private:
     Player*  m_player;
     Tower* m_tower;
@@ -21,11 +26,15 @@ private:
     int m_level;
     bool m_isGamePaused;
     bool m_isContinueShown;
+    int mouseX;
+    int mouseY;
+
 
 
 
 public:
     PlayScene();
+
 
     void HandleEvent(SDL_Event) override ;
     void Update(float) override;
@@ -39,6 +48,11 @@ public:
     void CheckPlayerAndThreatsCollision();
     void HandlePlayerAndThreatCollision(Threat*);
     void GameOver();
+    void ReloadBullet();
+    void SetMaxShots(int maxShots);
+    void SetReloadTime(float reloadTime);
+
+
 
 
 };

@@ -28,7 +28,13 @@ PlayScene::PlayScene() :
     m_elapsedTime(0.f),
     m_score(0),
     m_spawnTime(2.f),
-    m_level(0)
+    m_level(0),
+    m_isGamePaused(false),
+    m_shotsFired(0),
+    m_timeSinceLastShot(0.f),
+    m_maxShots(10),
+     m_reloadTime(5.f)
+
 {
     this->m_tower = new Tower();
     this->m_player = new Player();
@@ -40,7 +46,12 @@ PlayScene::PlayScene() :
     }
 
 }
-
+void PlayScene::SetMaxShots(int maxShots) {
+    m_maxShots = maxShots;
+}
+void PlayScene::SetReloadTime(float  reloadtime) {
+    m_reloadTime = reloadtime;
+}
 void PlayScene::HandleEvent(SDL_Event e)
 {
     if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)
@@ -72,11 +83,13 @@ void PlayScene::HandleEvent(SDL_Event e)
         {
             Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
         }
-        else if (!m_isGamePaused && this->m_player->IsShotable())
+        if (!m_isGamePaused && this->m_player->IsShotable() && m_shotsFired < m_maxShots)
         {
+
             if (Resource::IsSound)
             {
                 Mix_PlayChannel(-1, Resource::SFX_SHOT, 0);
+                m_shotsFired++;
             }
             this->m_bullets.push_back(this->m_player->Shot());
         }
@@ -97,6 +110,15 @@ void PlayScene::Update(float delta)
             this->m_threats.push_back(Threat::Generate());
 
             this->m_elapsedTime -= this->m_spawnTime;
+        }
+        if (m_shotsFired >= 5)
+        {
+            m_timeSinceLastShot += delta;
+            if (m_timeSinceLastShot >= m_reloadTime)
+            {
+                m_shotsFired = 0; // Đặt lại số lượng đạn đã bắn về 0
+                m_timeSinceLastShot = 0; // Đặt lại thời gian kể từ lần bắn đạn cuối cùng
+            }
         }
 
         this->m_tower->Update(delta);
@@ -166,6 +188,11 @@ void PlayScene::Update(float delta)
 
     }
 }
+void PlayScene::ReloadBullet()
+{
+    m_shotsFired = 0;
+    m_timeSinceLastShot = 0;
+}
 
 void PlayScene::Render(SDL_Renderer* renderer)
 {
@@ -191,56 +218,56 @@ void PlayScene::Render(SDL_Renderer* renderer)
 
 
     SDL_Rect imageRect = { 0, 10, 64, 64  };
-SDL_Point mousePos;
-SDL_GetMouseState(&mousePos.x, &mousePos.y);
+    SDL_Point mousePos;
+    SDL_GetMouseState(&mousePos.x, &mousePos.y);
 
-if (SDL_PointInRect(&mousePos, &imageRect))
-{
-    SDL_Rect scaledImageRect = { imageRect.x + imageRect.w * 0.25, imageRect.y + imageRect.h * 0.25, imageRect.w * 1.2, imageRect.h * 1.2 };
-    SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &scaledImageRect);
-}
-else
-{
-    SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &imageRect);
-}
-
-if(m_isGamePaused)
-{
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_Rect rect = { 470, 250, 350, 20 };
-    SDL_RenderFillRect(renderer, &rect);
-
-    SDL_Color white = { 255, 255, 255 };
-    SDL_Surface* surface = TTF_RenderText_Solid(Resource::FONT_24, "Do you want to continue or stop?", white);
-    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
-    SDL_Rect textRect = { 500, 250, surface->w, surface->h };
-    SDL_RenderCopy(renderer, texture, nullptr, &textRect);
-    SDL_FreeSurface(surface);
-    SDL_DestroyTexture(texture);
-
-    SDL_Rect continueRect = { 520, 280, 64, 64 };
-    SDL_Rect endRect = { 650, 280, 64, 64 };
-
-    if (SDL_PointInRect(&mousePos, &continueRect))
+    if (SDL_PointInRect(&mousePos, &imageRect))
     {
-        SDL_Rect scaledContinueRect = { continueRect.x - continueRect.w * 0.25, continueRect.y - continueRect.h * 0.25, continueRect.w * 1.5, continueRect.h * 1.5 };
-        SDL_RenderCopy(renderer, Resource::TX_CONTINUE, nullptr, &scaledContinueRect);
+        SDL_Rect scaledImageRect = { imageRect.x + imageRect.w * 0.25, imageRect.y + imageRect.h * 0.25, imageRect.w * 1.2, imageRect.h * 1.2 };
+        SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &scaledImageRect);
     }
     else
     {
-        SDL_RenderCopy(renderer, Resource::TX_CONTINUE, nullptr, &continueRect);
+        SDL_RenderCopy(renderer, Resource::TX_PAUSE, nullptr, &imageRect);
     }
 
-    if (SDL_PointInRect(&mousePos, &endRect))
+    if(m_isGamePaused)
     {
-        SDL_Rect scaledEndRect = { endRect.x - endRect.w * 0.25, endRect.y - endRect.h * 0.25, endRect.w * 1.5, endRect.h * 1.5 };
-        SDL_RenderCopy(renderer, Resource::TX_END, nullptr, &scaledEndRect);
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_Rect rect = { 470, 250, 350, 20 };
+        SDL_RenderFillRect(renderer, &rect);
+
+        SDL_Color white = { 255, 255, 255 };
+        SDL_Surface* surface = TTF_RenderText_Solid(Resource::FONT_24, "Do you want to continue or stop?", white);
+        SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+        SDL_Rect textRect = { 500, 250, surface->w, surface->h };
+        SDL_RenderCopy(renderer, texture, nullptr, &textRect);
+        SDL_FreeSurface(surface);
+        SDL_DestroyTexture(texture);
+
+        SDL_Rect continueRect = { 520, 280, 64, 64 };
+        SDL_Rect endRect = { 650, 280, 64, 64 };
+
+        if (SDL_PointInRect(&mousePos, &continueRect))
+        {
+            SDL_Rect scaledContinueRect = { continueRect.x - continueRect.w * 0.25, continueRect.y - continueRect.h * 0.25, continueRect.w * 1.5, continueRect.h * 1.5 };
+            SDL_RenderCopy(renderer, Resource::TX_CONTINUE, nullptr, &scaledContinueRect);
+        }
+        else
+        {
+            SDL_RenderCopy(renderer, Resource::TX_CONTINUE, nullptr, &continueRect);
+        }
+
+        if (SDL_PointInRect(&mousePos, &endRect))
+        {
+            SDL_Rect scaledEndRect = { endRect.x - endRect.w * 0.25, endRect.y - endRect.h * 0.25, endRect.w * 1.5, endRect.h * 1.5 };
+            SDL_RenderCopy(renderer, Resource::TX_END, nullptr, &scaledEndRect);
+        }
+        else
+        {
+            SDL_RenderCopy(renderer, Resource::TX_END, nullptr, &endRect);
+        }
     }
-    else
-    {
-        SDL_RenderCopy(renderer, Resource::TX_END, nullptr, &endRect);
-    }
-}
 
 
 
@@ -285,28 +312,28 @@ void PlayScene::CheckPlayerAndThreatsCollision()
         }
     }
 }
-    void PlayScene::HandlePlayerAndThreatCollision(Threat* threat)
-    {
-        this->GameOver();
+void PlayScene::HandlePlayerAndThreatCollision(Threat* threat)
+{
+    this->GameOver();
 
-    }
-    void PlayScene::GameOver()
+}
+void PlayScene::GameOver()
+{
+    Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
+}
+void PlayScene::UpdateLevel()
+{
+    int t=this->m_score/100;
+    if (t != this->m_level && this->m_level < 10)
     {
-        Game::GetInstance()->SetScene(new GameOverScene(this->m_score));
-    }
-    void PlayScene::UpdateLevel()
-    {
-        int t=this->m_score/100;
-        if (t != this->m_level && this->m_level < 10)
+        if (this->m_player->GetScale() < 5.0f)
         {
-            if (this->m_player->GetScale() < 5.0f)
-            {
-                this->m_level = t;
-                this->m_spawnTime -= t * 0.1f;
-                this->m_player->Scale(1.3f);
-            }
+            this->m_level = t;
+            this->m_spawnTime -= t * 0.1f;
+            this->m_player->Scale(1.3f);
         }
-
     }
+
+}
 
 
