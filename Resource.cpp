@@ -26,6 +26,7 @@ SDL_Texture* Resource::TX_BACKGROUND_5;
 SDL_Texture* Resource::TX_BACKGROUND_6;
 SDL_Texture* Resource::TX_BACKGROUND_7;
 SDL_Texture* Resource::TX_BACKGROUND_8;
+SDL_Texture* Resource::TX_BACKGROUND_9;
 
 
 
@@ -116,6 +117,8 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_BACKGROUND_6        = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
     TX_BACKGROUND_7        = LoadTextureFromFile(RES_TX_BACKGROUND_7, renderer);
     TX_BACKGROUND_8        = LoadTextureFromFile(RES_TX_BACKGROUND_8, renderer);
+    TX_BACKGROUND_9        = LoadTextureFromFile(RES_TX_BACKGROUND_9, renderer);
+
 
 
 

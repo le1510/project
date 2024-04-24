@@ -8,8 +8,15 @@
 ColorDinoScene::ColorDinoScene(PlayScene* playScene) :
     m_playScene(playScene),
     m_elapsedTime(0.f),
-    m_mousePosition({0, 0})
+    m_mousePosition({0, 0}),
+    MenuAnimation(3,0.1f)
 {
+    this->m_texture = Resource::TX_BACKGROUND_9;
+    this->m_rectSrc->w = 400   ;
+    this->m_rectSrc->h = 226  ;
+
+    this->m_rectDst->w = 1200;
+    this->m_rectDst->h = 680;
     this->yellowText = new Text(Resource::FONT_48);
     this->yellowText->SetPosition({ 640, 520 });
     this->greenText = new Text(Resource::FONT_48);
@@ -34,20 +41,20 @@ void ColorDinoScene::HandleEvent(SDL_Event e)
         if (this->yellowText->IsSelected(this->m_mousePosition))
         {
             Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERYELLOW;
-
             Game::GetInstance()->SetScene(m_playScene);
 
         }
         else if (this->redText->IsSelected(this->m_mousePosition))
         {
+//            Game::GetInstance()->SetScene(m_playScene);
             Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERRED;
-
             Game::GetInstance()->SetScene(m_playScene);
 
 
         }
         else if (this->blueText->IsSelected(this->m_mousePosition))
         {
+
             Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERBLUE;
             Game::GetInstance()->SetScene(m_playScene);
 
@@ -55,7 +62,9 @@ void ColorDinoScene::HandleEvent(SDL_Event e)
         }
         else if (this->greenText->IsSelected(this->m_mousePosition))
         {
+
             Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERGREEN;
+
             Game::GetInstance()->SetScene(m_playScene);
 
         }
@@ -71,6 +80,8 @@ void ColorDinoScene::HandleEvent(SDL_Event e)
 
 void ColorDinoScene::Update(float delta)
 {
+    this->m_elapsedTime+=delta;
+    this->UpdateAnimation(delta);
     this->greenText->SetColor({ 0, 128, 0, 255 });
     this->yellowText->SetColor({ 255, 255, 0, 255 });
     this->blueText->SetColor({ 0, 0, 255, 255 });
@@ -96,7 +107,8 @@ void ColorDinoScene::Update(float delta)
 
 void ColorDinoScene::Render(SDL_Renderer* renderer)
 {
-    SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_8, nullptr, nullptr);
+    BaseObject::Render(renderer);
+        SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_7, nullptr, nullptr);
 
     this->redText->RenderText(renderer, "DINO RED");
     this->blueText->RenderText(renderer, "DINO BLUE");

@@ -96,6 +96,8 @@
 #define RES_TX_BACKGROUND_7 "res/textures/map/background-7.png"
 //#define RES_TX_BACKGROUND_3 "res/textures/map/background-3.png"
 #define RES_TX_BACKGROUND_8 "res/textures/map/background-8.png"
+#define RES_TX_BACKGROUND_9 "res/textures/map/backgroud-9.png"
+
 
 
 
