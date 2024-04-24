@@ -33,7 +33,7 @@ PlayScene::PlayScene() :
     m_shotsFired(0),
     m_timeSinceLastShot(0.f),
     m_maxShots(10),
-     m_reloadTime(5.f)
+     m_reloadTime(10.f)
 
 {
     this->m_tower = new Tower();

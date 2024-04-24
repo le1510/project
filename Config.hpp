@@ -74,9 +74,9 @@
 
 #define RES_TX_PLAYER "res/textures/player/dino.png"
 #define RES_TX_PLAYERRED "res/textures/player/dinored.png"
-#define RES_TX_PLAYERBLUE "res/textures/player/dinoredblue.png"
+#define RES_TX_PLAYERBLUE "res/textures/player/dinoblue.png"
 #define RES_TX_PLAYERYELLOW "res/textures/player/dinoyellow.png"
-#define RES_TX_PLAYERGREEN "res/textures/player/dinogreen.png"
+#define RES_TX_PLAYERGREEN "res/textures/player/dinoygreen.png"
 
 
 

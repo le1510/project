@@ -16,7 +16,7 @@ Player::Player() :
 
 
 {
-    this->m_texture = Resource::TX_PLAYER;
+   // this->m_texture = Resource::TX_PLAYER;
     this->m_rectSrc->w = 72;
     this->m_rectSrc->h = 78;
 
@@ -145,6 +145,7 @@ void Player::Update(float delta)
 }
 
 void Player::Render(SDL_Renderer* renderer) {
+    this->m_texture = Resource::TX_PLAYERYELLOW;
     BaseObject::Render(renderer);
     this->m_gun->Render(renderer);
     SDL_SetRenderDrawColor(renderer, 225, 225, 225, 255);
