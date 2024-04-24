@@ -33,18 +33,14 @@ void ColorDinoScene::HandleEvent(SDL_Event e)
     {
         if (this->yellowText->IsSelected(this->m_mousePosition))
         {
-//            Game::GetInstance()->SetScene(m_playScene);
-            Resource::TX_PLAYER = Resource::TX_PLAYERYELLOW;
-            std::cout << "Color: " << Resource::TX_PLAYER << std::endl;
+            Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERYELLOW;
 
             Game::GetInstance()->SetScene(m_playScene);
 
         }
         else if (this->redText->IsSelected(this->m_mousePosition))
         {
-//            Game::GetInstance()->SetScene(m_playScene);
-            Resource::TX_PLAYER = Resource::TX_PLAYERRED;
-            std::cout << "Color: " << Resource::TX_PLAYER << std::endl;
+            Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERRED;
 
             Game::GetInstance()->SetScene(m_playScene);
 
@@ -52,21 +48,14 @@ void ColorDinoScene::HandleEvent(SDL_Event e)
         }
         else if (this->blueText->IsSelected(this->m_mousePosition))
         {
-            // Game::GetInstance()->SetScene(m_playScene);
-//            Player::UpdateTexture("u");
-            Resource::TX_PLAYER = Resource::TX_PLAYERBLUE;
-            std::cout << "Color: " << Resource::TX_PLAYER << std::endl;
+            Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERBLUE;
             Game::GetInstance()->SetScene(m_playScene);
 
 
         }
         else if (this->greenText->IsSelected(this->m_mousePosition))
         {
-            //Game::GetInstance()->SetScene(m_playScene);
-//            Player::UpdateTexture("green");
-            Resource::TX_PLAYER = Resource::TX_PLAYERGREEN;
-            std::cout << "Color: " << Resource::TX_PLAYER << std::endl;
-
+            Resource::TX_PLAYERYELLOW = Resource::TX_PLAYERGREEN;
             Game::GetInstance()->SetScene(m_playScene);
 
         }
@@ -76,7 +65,6 @@ void ColorDinoScene::HandleEvent(SDL_Event e)
             Game::GetInstance()->SetScene(levelScene);
         }
 
-//        Game::GetInstance()->SetScene(m_playScene);
     }
 }
 

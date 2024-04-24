@@ -9,7 +9,7 @@
 
 
 MenuScene::MenuScene() :
-   MenuAnimation(3,0.6f)
+    MenuAnimation(3,0.6f)
 
 {
     this->m_texture = Resource::TX_BACKGROUND_3;
@@ -42,7 +42,7 @@ MenuScene::MenuScene() :
         Mix_PlayMusic(Resource::SFX_BACKGROUND, -1);
     }
 
-    this->m_soundRect=new SDL_Rect({15,570,64 ,64 });
+    this->m_soundRect=new SDL_Rect({15,570,64,64 });
 }
 
 
@@ -98,8 +98,8 @@ void MenuScene::HandleEvent(SDL_Event e)
 
 void MenuScene::Update(float delta)
 {
-     this->m_elapsedTime+=delta;
-     this->UpdateAnimation(delta);
+    this->m_elapsedTime+=delta;
+    this->UpdateAnimation(delta);
 
 
     this->m_playText->SetColor({ 0, 0, 0, 255 });
@@ -108,7 +108,6 @@ void MenuScene::Update(float delta)
     this->m_levelText->SetColor({ 0, 0, 0, 255 });
     this->m_exitText->SetColor({ 0, 0, 0, 255 });
 
-    // Kiểm tra và cài đặt màu sắc cho các văn bản được chọn
     if (this->m_playText->IsSelected(this->m_mousePosition))
     {
         this->m_playText->SetColor({ 255, 0, 0, 255 });

@@ -19,7 +19,7 @@ private:
     int m_totalAmmo;
     int m_currentAmmo;
     int m_maxAmmo;
-    int m_shotsFired; // Thêm biến m_shotsFired
+    int m_shotsFired;
     std::vector<Bullet*> m_bullets;
 
 public:
@@ -30,12 +30,10 @@ public:
     void Render(SDL_Renderer*) override;
     void SetMaxAmmo(int maxAmmo) { m_maxAmmo = maxAmmo; }
     void UpdateAmmo(int ammo) { m_currentAmmo = ammo; }
-    void UpdateShotsFired(int shotsFired) { m_shotsFired = shotsFired; } // Khai báo phương thức cập nhật m_shotsFired
+    void UpdateShotsFired(int shotsFired) { m_shotsFired = shotsFired; }
     void DecreaseBulletDamage(int amount);
     bool IsShotable() const;
     Bullet* Shot();
     void Scale(float scaleFactor);
     float GetScale() const;
-//    static UpdateTexture(const std::string& texturePath);
-
 };

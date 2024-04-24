@@ -25,7 +25,7 @@ void GameOverScene::HandleEvent(SDL_Event e)
     {
         if (e.button.button == SDL_BUTTON_LEFT && this->m_elapsedTime > 0.5f)
         {
-            Game::GetInstance()->SetScene(new MenuScene());// chuyển màn hình ra menu
+            Game::GetInstance()->SetScene(new MenuScene());
         }
     }
 }

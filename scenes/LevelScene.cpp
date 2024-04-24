@@ -1,4 +1,3 @@
-// Trong LevelScene.cpp
 #include "MenuScene.hpp"
 #include "LevelScene.hpp"
 #include "../Resource.hpp"
@@ -33,21 +32,21 @@ void LevelScene::HandleEvent(SDL_Event e)
         {
             PlayScene* playScene = new PlayScene();
             playScene->SetEasySpawnTime();
-            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene); // Truyền tham chiếu của PlayScene hiện tại
+            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene);
             Game::GetInstance()->SetScene(colorDinoScene);
         }
         else if (mediumText->IsSelected(m_mousePosition))
         {
             PlayScene* playScene = new PlayScene();
             playScene->SetMediumSpawnTime();
-            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene); // Truyền tham chiếu của PlayScene hiện tại
+            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene);
             Game::GetInstance()->SetScene(colorDinoScene);
         }
         else if (hardText->IsSelected(m_mousePosition))
         {
             PlayScene* playScene = new PlayScene();
             playScene->SetHardSpawnTime();
-            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene); // Truyền tham chiếu của PlayScene hiện tại
+            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene);
             Game::GetInstance()->SetScene(colorDinoScene);
         }
         else
@@ -83,9 +82,9 @@ void LevelScene::Render(SDL_Renderer* renderer)
 {
     SDL_RenderCopy(renderer, Resource::TX_BACKGROUND_6, nullptr, nullptr);
 
-    this->easyText->RenderText(renderer, "EASY:");
-    this->mediumText->RenderText(renderer, "MEDIUM:");
-    this->hardText->RenderText(renderer, "HARD:");
+    this->easyText->RenderText(renderer, "EASY");
+    this->mediumText->RenderText(renderer, "MEDIUM");
+    this->hardText->RenderText(renderer, "HARD");
 
 
 

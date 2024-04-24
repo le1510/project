@@ -10,13 +10,12 @@ Player::Player() :
     m_scale(1.0f),
     HP(200),
     m_totalHP({0,0,40,5 }),
-    m_currentHP({0,0,40,5}),
-     m_currentAmmo(10),
-    m_maxAmmo(10)
+          m_currentHP({0,0,40,5}),
+          m_currentAmmo(10),
+          m_maxAmmo(10)
 
 
 {
-   // this->m_texture = Resource::TX_PLAYER;
     this->m_rectSrc->w = 72;
     this->m_rectSrc->h = 78;
 
@@ -32,30 +31,6 @@ Player::Player() :
 
 
 }
-//void Player::UpdateTexture(const std::string& texturePath)
-//{
-//    if (texturePath == "yellow")
-//    {
-//        this->m_texture = Resource::TX_PLAYERYELLOW;
-//    }
-//    else if (texturePath == "red")
-//    {
-//        m_texture = Resource::TX_PLAYERRED;
-//    }
-//    else if (texturePath == "blue")
-//    {
-//        m_texture = Resource::TX_PLAYERBLUE;
-//    }
-//    else if (texturePath == "green")
-//    {
-//        m_texture = Resource::TX_PLAYERGREEN;
-//    }
-//    else
-//    {
-//        // Mặc định là màu vàng nếu đường dẫn không hợp lệ
-//        m_texture = Resource::TX_PLAYERYELLOW;
-//    }
-//}
 
 void Player::Update(float delta)
 {
@@ -144,22 +119,23 @@ void Player::Update(float delta)
     this->UpdateAmmo(m_maxAmmo - m_shotsFired);
 }
 
-void Player::Render(SDL_Renderer* renderer) {
+void Player::Render(SDL_Renderer* renderer)
+{
     this->m_texture = Resource::TX_PLAYERYELLOW;
     BaseObject::Render(renderer);
     this->m_gun->Render(renderer);
     SDL_SetRenderDrawColor(renderer, 225, 225, 225, 255);
     SDL_RenderFillRect(renderer, &this->m_totalHP);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // Màu xanh dương
-
-    if (this->GetCurrentHP() > 0) {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+    if (this->GetCurrentHP() > 0)
+    {
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
         SDL_RenderFillRect(renderer, &this->m_currentHP);
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Màu xanh lá cây cho thanh đạn
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     int ammoWidth = static_cast<int>((static_cast<float>(m_currentAmmo) / static_cast<float>(m_maxAmmo)) * m_totalHP.w);
-    SDL_Rect currentAmmoRect = { m_totalHP.x, m_totalHP.y + m_totalHP.h, ammoWidth, 5 }; // Lượng đạn còn lại
+    SDL_Rect currentAmmoRect = { m_totalHP.x, m_totalHP.y + m_totalHP.h, ammoWidth, 5 };
     SDL_RenderFillRect(renderer, &currentAmmoRect);
 }
 

@@ -33,7 +33,7 @@ PlayScene::PlayScene() :
     m_shotsFired(0),
     m_timeSinceLastShot(0.f),
     m_maxShots(10),
-     m_reloadTime(10.f)
+    m_reloadTime(10.f)
 
 {
     this->m_tower = new Tower();
@@ -46,10 +46,12 @@ PlayScene::PlayScene() :
     }
 
 }
-void PlayScene::SetMaxShots(int maxShots) {
+void PlayScene::SetMaxShots(int maxShots)
+{
     m_maxShots = maxShots;
 }
-void PlayScene::SetReloadTime(float  reloadtime) {
+void PlayScene::SetReloadTime(float  reloadtime)
+{
     m_reloadTime = reloadtime;
 }
 void PlayScene::HandleEvent(SDL_Event e)
@@ -121,7 +123,7 @@ void PlayScene::Update(float delta)
             }
         }
         this->m_player->UpdateAmmo(this->m_maxShots - this->m_shotsFired);
-            this->m_player->UpdateShotsFired(this->m_shotsFired);
+        this->m_player->UpdateShotsFired(this->m_shotsFired);
 
 
 

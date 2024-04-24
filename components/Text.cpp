@@ -1,7 +1,7 @@
 #include "Text.hpp"
 
 Text::Text(TTF_Font* font) :
-        m_color({0, 0, 0, 255}),
+    m_color({0, 0, 0, 255}),
         m_position({0, 0, 0, 0}),
         m_font(font)
 {
