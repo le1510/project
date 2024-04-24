@@ -39,3 +39,7 @@ void Bullet::Update(float delta)
         this->m_isAlive = false;
     }
 }
+void Bullet::DecreaseDamage(int amount)
+{
+    m_damage -= amount;
+}

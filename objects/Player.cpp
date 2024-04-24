@@ -125,16 +125,16 @@ void Player::Render(SDL_Renderer* renderer) {
     this->m_gun->Render(renderer);
     SDL_SetRenderDrawColor(renderer, 225, 225, 225, 255);
     SDL_RenderFillRect(renderer, &this->m_totalHP);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255); // Màu xanh dương
 
     if (this->GetCurrentHP() > 0) {
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
         SDL_RenderFillRect(renderer, &this->m_currentHP);
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255); // Màu xanh lá cây cho thanh đạn
     int ammoWidth = static_cast<int>((static_cast<float>(m_currentAmmo) / static_cast<float>(m_maxAmmo)) * m_totalHP.w);
-    SDL_Rect currentAmmoRect = { m_totalHP.x, m_totalHP.y + m_totalHP.h, ammoWidth, 5 };
+    SDL_Rect currentAmmoRect = { m_totalHP.x, m_totalHP.y + m_totalHP.h, ammoWidth, 5 }; // Lượng đạn còn lại
     SDL_RenderFillRect(renderer, &currentAmmoRect);
 }
 
@@ -144,11 +144,20 @@ bool Player::IsShotable() const
 {
     return m_isShotable;
 }
+void Player::DecreaseBulletDamage(int amount)
+{
+    for (auto bullet : m_bullets)
+    {
+        bullet->DecreaseDamage(amount);
+    }
+}
 
 Bullet* Player::Shot()
 {
     m_isShotable=false;
     m_elapsedTime=0.f;
+    DecreaseBulletDamage(5);
+
     return new Bullet(m_gun->GetAngle(),GetOrigin());
 }
 void Player::Scale(float scaleFactor)

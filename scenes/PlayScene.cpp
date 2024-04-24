@@ -327,7 +327,7 @@ void PlayScene::GameOver()
 }
 void PlayScene::UpdateLevel()
 {
-    int t=this->m_score/100;
+    int t = this->m_score / 100;
     if (t != this->m_level && this->m_level < 10)
     {
         if (this->m_player->GetScale() < 5.0f)
@@ -335,9 +335,10 @@ void PlayScene::UpdateLevel()
             this->m_level = t;
             this->m_spawnTime -= t * 0.1f;
             this->m_player->Scale(1.3f);
+            this->m_player->DecreaseBulletDamage(5);
         }
     }
-
 }
+
 
 
