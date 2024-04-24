@@ -36,4 +36,6 @@ public:
     Bullet* Shot();
     void Scale(float scaleFactor);
     float GetScale() const;
+//    static UpdateTexture(const std::string& texturePath);
+
 };

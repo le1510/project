@@ -6,11 +6,18 @@ Mix_Chunk* Resource::SFX_SHOT;
 Mix_Music* Resource::SFX_BACKGROUND;
 
 SDL_Texture* Resource::TX_PLAYER;
+SDL_Texture* Resource::TX_PLAYERRED;
+SDL_Texture* Resource::TX_PLAYERBLUE;
+SDL_Texture* Resource::TX_PLAYERGREEN;
+SDL_Texture* Resource::TX_PLAYERYELLOW;
+
 SDL_Texture* Resource::TX_PLAYER_GUN;
 SDL_Texture* Resource::TX_PLAYER_BULLET;
 
 SDL_Texture* Resource::TX_MAP_BACKGROUND;
 SDL_Texture* Resource::TX_MAP_TOWER;
+SDL_Texture* Resource::TX_MAP_CANNON;
+
 
 SDL_Texture* Resource::TX_BACKGROUND_2;
 SDL_Texture* Resource::TX_BACKGROUND_3;
@@ -18,6 +25,8 @@ SDL_Texture* Resource::TX_BACKGROUND_4;
 SDL_Texture* Resource::TX_BACKGROUND_5;
 SDL_Texture* Resource::TX_BACKGROUND_6;
 SDL_Texture* Resource::TX_BACKGROUND_7;
+SDL_Texture* Resource::TX_BACKGROUND_8;
+
 
 
 
@@ -87,11 +96,18 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     SFX_BACKGROUND          =LoadMusicFromFile(RES_SFX_BACKGROUND);
 
     TX_PLAYER				= LoadTextureFromFile(RES_TX_PLAYER, renderer);
+    TX_PLAYERRED				= LoadTextureFromFile(RES_TX_PLAYERRED, renderer);
+    TX_PLAYERBLUE				= LoadTextureFromFile(RES_TX_PLAYERBLUE, renderer);
+    TX_PLAYERYELLOW				= LoadTextureFromFile(RES_TX_PLAYERYELLOW, renderer);
+    TX_PLAYERGREEN				= LoadTextureFromFile(RES_TX_PLAYERGREEN, renderer);
+
     TX_PLAYER_GUN			= LoadTextureFromFile(RES_TX_PLAYER_GUN, renderer);
     TX_PLAYER_BULLET		= LoadTextureFromFile(RES_TX_PLAYER_BULLET, renderer);
 
     TX_MAP_BACKGROUND		= LoadTextureFromFile(RES_TX_MAP_BACKGROUND, renderer);
     TX_MAP_TOWER			= LoadTextureFromFile(RES_TX_MAP_TOWER, renderer);
+    TX_MAP_CANNON			= LoadTextureFromFile(RES_TX_MAP_CANNON, renderer);
+
 
     TX_BACKGROUND_2         = LoadTextureFromFile(RES_TX_BACKGROUND_2, renderer);
     TX_BACKGROUND_3         = LoadTextureFromFile(RES_TX_BACKGROUND_3, renderer);
@@ -99,6 +115,9 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_BACKGROUND_5         = LoadTextureFromFile(RES_TX_BACKGROUND_5, renderer);
     TX_BACKGROUND_6        = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
     TX_BACKGROUND_7        = LoadTextureFromFile(RES_TX_BACKGROUND_7, renderer);
+    TX_BACKGROUND_8        = LoadTextureFromFile(RES_TX_BACKGROUND_8, renderer);
+
+
 
 
 

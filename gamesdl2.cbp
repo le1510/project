@@ -59,6 +59,8 @@
 		<Unit filename="objects/Tower.cpp" />
 		<Unit filename="objects/Tower.hpp" />
 		<Unit filename="scenes/BaseScene.hpp" />
+		<Unit filename="scenes/ColorDinoScene.cpp" />
+		<Unit filename="scenes/ColorDinoScene.hpp" />
 		<Unit filename="scenes/GameOverScene.cpp" />
 		<Unit filename="scenes/GameOverScene.hpp" />
 		<Unit filename="scenes/HelpScene .hpp" />

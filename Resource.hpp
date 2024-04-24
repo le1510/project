@@ -4,6 +4,9 @@
 class Resource
 {
 public:
+
+
+
     static TTF_Font*	FONT_24;
     static TTF_Font*	FONT_48;
     static TTF_Font*	FONT_96;
@@ -14,11 +17,18 @@ public:
 
 
     static SDL_Texture* TX_PLAYER;
+    static SDL_Texture* TX_PLAYERRED;
+    static SDL_Texture* TX_PLAYERGREEN;
+    static SDL_Texture* TX_PLAYERYELLOW;
+    static SDL_Texture* TX_PLAYERBLUE;
+
     static SDL_Texture* TX_PLAYER_GUN;
     static SDL_Texture* TX_PLAYER_BULLET;
 
     static SDL_Texture* TX_MAP_BACKGROUND;
     static SDL_Texture* TX_MAP_TOWER;
+    static SDL_Texture* TX_MAP_CANNON;
+
 
     static SDL_Texture* TX_BACKGROUND_2;
     static SDL_Texture* TX_BACKGROUND_3;
@@ -26,6 +36,8 @@ public:
     static SDL_Texture* TX_BACKGROUND_5;
     static SDL_Texture* TX_BACKGROUND_6;
     static SDL_Texture* TX_BACKGROUND_7;
+    static SDL_Texture* TX_BACKGROUND_8;
+
 
 
 
@@ -59,3 +71,4 @@ public:
     static Mix_Chunk* LoadSFXFromFile(const std::string &path);
     static void LoadAllData(SDL_Renderer* renderer);
 };
+

@@ -34,7 +34,7 @@ private:
 
 public:
     PlayScene();
-
+    Player* GetPlayer() const { return m_player; }
 
     void HandleEvent(SDL_Event) override ;
     void Update(float) override;

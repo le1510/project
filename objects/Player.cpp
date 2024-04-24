@@ -3,7 +3,7 @@
 #include "../Resource.hpp"
 
 Player::Player() :
-    AnimatedObject(6, 0.1f),
+    AnimatedObject(11, 0.1f),
     Damage(70),
     m_speed(150),
     m_isShotable(true),
@@ -18,10 +18,10 @@ Player::Player() :
 {
     this->m_texture = Resource::TX_PLAYER;
     this->m_rectSrc->w = 72;
-    this->m_rectSrc->h = 72;
+    this->m_rectSrc->h = 78;
 
     this->m_rectDst->w = 72;
-    this->m_rectDst->h = 72;
+    this->m_rectDst->h = 78;
 
     this->m_rectCollision->w = this->m_rectCollision->h = 50;
     this->m_rectCollision->x = this->m_rectCollision->y = 11;
@@ -32,6 +32,30 @@ Player::Player() :
 
 
 }
+//void Player::UpdateTexture(const std::string& texturePath)
+//{
+//    if (texturePath == "yellow")
+//    {
+//        this->m_texture = Resource::TX_PLAYERYELLOW;
+//    }
+//    else if (texturePath == "red")
+//    {
+//        m_texture = Resource::TX_PLAYERRED;
+//    }
+//    else if (texturePath == "blue")
+//    {
+//        m_texture = Resource::TX_PLAYERBLUE;
+//    }
+//    else if (texturePath == "green")
+//    {
+//        m_texture = Resource::TX_PLAYERGREEN;
+//    }
+//    else
+//    {
+//        // Mặc định là màu vàng nếu đường dẫn không hợp lệ
+//        m_texture = Resource::TX_PLAYERYELLOW;
+//    }
+//}
 
 void Player::Update(float delta)
 {

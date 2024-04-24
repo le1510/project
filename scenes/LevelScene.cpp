@@ -4,6 +4,8 @@
 #include "../Resource.hpp"
 #include "../Game.hpp"
 #include "PlayScene.hpp"
+#include "ColorDinoScene.hpp"
+
 LevelScene::LevelScene() :
     m_elapsedTime(0.f),
     m_mousePosition({0, 0})
@@ -27,23 +29,26 @@ void LevelScene::HandleEvent(SDL_Event e)
 
     if (e.type == SDL_MOUSEBUTTONDOWN && e.button.button == SDL_BUTTON_LEFT)
     {
-        if (this->easyText->IsSelected(this->m_mousePosition))
+        if (easyText->IsSelected(m_mousePosition))
         {
             PlayScene* playScene = new PlayScene();
             playScene->SetEasySpawnTime();
-            Game::GetInstance()->SetScene(playScene);
+            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene); // Truyền tham chiếu của PlayScene hiện tại
+            Game::GetInstance()->SetScene(colorDinoScene);
         }
-        else if (this->mediumText->IsSelected(this->m_mousePosition))
+        else if (mediumText->IsSelected(m_mousePosition))
         {
             PlayScene* playScene = new PlayScene();
             playScene->SetMediumSpawnTime();
-            Game::GetInstance()->SetScene(playScene);
+            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene); // Truyền tham chiếu của PlayScene hiện tại
+            Game::GetInstance()->SetScene(colorDinoScene);
         }
-        else if (this->hardText->IsSelected(this->m_mousePosition))
+        else if (hardText->IsSelected(m_mousePosition))
         {
             PlayScene* playScene = new PlayScene();
             playScene->SetHardSpawnTime();
-            Game::GetInstance()->SetScene(playScene);
+            ColorDinoScene* colorDinoScene = new ColorDinoScene(playScene); // Truyền tham chiếu của PlayScene hiện tại
+            Game::GetInstance()->SetScene(colorDinoScene);
         }
         else
         {
@@ -52,6 +57,7 @@ void LevelScene::HandleEvent(SDL_Event e)
         }
     }
 }
+
 
 
 void LevelScene::Update(float delta)
