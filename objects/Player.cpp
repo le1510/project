@@ -7,10 +7,14 @@ Player::Player() :
     Damage(70),
     m_speed(150),
     m_isShotable(true),
-     m_scale(1.0f),
-     HP(200),
-     m_totalHP({0,0,40,5 }),
-          m_currentHP({0,0,40,5})
+    m_scale(1.0f),
+    HP(200),
+    m_totalHP({0,0,40,5 }),
+    m_currentHP({0,0,40,5}),
+     m_currentAmmo(10),
+    m_maxAmmo(10)
+
+
 {
     this->m_texture = Resource::TX_PLAYER;
     this->m_rectSrc->w = 72;
@@ -25,6 +29,7 @@ Player::Player() :
     this->SetOrigin({ 100, 100 });
 
     this->m_gun = new Gun();
+
 
 }
 
@@ -112,25 +117,28 @@ void Player::Update(float delta)
 
     this->m_gun->SetOrigin(this->GetOrigin());
     this->m_gun->Update(delta);
-
-
+    this->UpdateAmmo(m_maxAmmo - m_shotsFired);
 }
 
-void Player::Render(SDL_Renderer* renderer)
-{
+void Player::Render(SDL_Renderer* renderer) {
     BaseObject::Render(renderer);
     this->m_gun->Render(renderer);
-    SDL_SetRenderDrawColor(renderer,225,225,225,255);
+    SDL_SetRenderDrawColor(renderer, 225, 225, 225, 255);
+    SDL_RenderFillRect(renderer, &this->m_totalHP);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
 
-    SDL_RenderFillRect(renderer,&this->m_totalHP);
-
-    if(this->GetCurrentHP()>0)
-    {
-        SDL_SetRenderDrawColor(renderer,255,0,0,255);
-        SDL_RenderFillRect(renderer,&this->m_currentHP);
+    if (this->GetCurrentHP() > 0) {
+        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+        SDL_RenderFillRect(renderer, &this->m_currentHP);
     }
 
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+    int ammoWidth = static_cast<int>((static_cast<float>(m_currentAmmo) / static_cast<float>(m_maxAmmo)) * m_totalHP.w);
+    SDL_Rect currentAmmoRect = { m_totalHP.x, m_totalHP.y + m_totalHP.h, ammoWidth, 5 };
+    SDL_RenderFillRect(renderer, &currentAmmoRect);
 }
+
+
 
 bool Player::IsShotable() const
 {
@@ -156,7 +164,8 @@ void Player::Scale(float scaleFactor)
     this->m_rectCollision->x -= (this->m_rectCollision->w * scaleFactor - this->m_rectCollision->w) / 2;
     this->m_rectCollision->y -= (this->m_rectCollision->h * scaleFactor - this->m_rectCollision->h) / 2;
 }
-float Player::GetScale() const {
+float Player::GetScale() const
+{
     return m_scale;
 }
 

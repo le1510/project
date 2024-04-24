@@ -19,6 +19,11 @@ private:
     float m_scale;
     SDL_Rect m_totalHP;
     SDL_Rect m_currentHP;
+    int m_totalAmmo;
+    int m_currentAmmo;
+    int m_maxAmmo;
+        int m_shotsFired;
+
 
 public:
     Player();
@@ -26,6 +31,14 @@ public:
 
     void Update(float) override;
     void Render(SDL_Renderer*) override;
+    void SetMaxAmmo(int maxAmmo)
+     { m_maxAmmo = maxAmmo; }
+         void UpdateAmmo(int ammo)
+          { m_currentAmmo = ammo; }
+              void UpdateShotsFired(int shotsFired) { m_shotsFired = shotsFired; }
+
+
+
 
 
     bool IsShotable() const;

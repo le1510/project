@@ -116,10 +116,14 @@ void PlayScene::Update(float delta)
             m_timeSinceLastShot += delta;
             if (m_timeSinceLastShot >= m_reloadTime)
             {
-                m_shotsFired = 0; // Đặt lại số lượng đạn đã bắn về 0
-                m_timeSinceLastShot = 0; // Đặt lại thời gian kể từ lần bắn đạn cuối cùng
+                m_shotsFired = 0;
+                m_timeSinceLastShot = 0;
             }
         }
+        this->m_player->UpdateAmmo(this->m_maxShots - this->m_shotsFired);
+            this->m_player->UpdateShotsFired(this->m_shotsFired);
+
+
 
         this->m_tower->Update(delta);
         this->m_player->Update(delta);

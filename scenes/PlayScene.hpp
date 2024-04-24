@@ -51,6 +51,8 @@ public:
     void ReloadBullet();
     void SetMaxShots(int maxShots);
     void SetReloadTime(float reloadTime);
+    int GetShotsFired() const { return m_shotsFired; }
+
 
 
 
