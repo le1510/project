@@ -34,11 +34,11 @@ Hãy tham gia vào cuộc phiêu lưu và khám phá thế giới đầy màu s�
 - [Graphics](#graphics)
 - [Notes](#notes)
 ## **Information** <a name="information"></a>
-Name: Lê Thị Tú Phương
-Student ID: 22020695
-Class: K68J
-Email: 23020695@vnu.edu.vn
-Facebook: https://www.facebook.com/Lethituphuong2005
+Name: Lê Thị Tú Phương <br>
+Student ID: 22020695 <br>
+Class: K68J <br>
+Email: 23020695@vnu.edu.vn <br> 
+Facebook: https://www.facebook.com/Lethituphuong2005 <br>
 ## **Idea** <a name="idea"></a>
     Phát triển theo game CASTLE DEFENDER: game thủ thành chiến thuật 
 
