@@ -10,8 +10,10 @@ Bullet::Bullet(float angle, SDL_Point origin) :
     this->m_texture = Resource::TX_PLAYER_BULLET;
 
 
-    this->m_rectSrc->w = this->m_rectDst->w = 32;
-    this->m_rectSrc->h = this->m_rectDst->h = 32;
+    this->m_rectSrc->w = 32 ;
+    this->m_rectSrc->h = 32;
+    this->m_rectDst->w = 18    ;
+    this->m_rectDst->h = 18    ;
 
     this->m_rectCollision->w = this->m_rectCollision->h = 20;
     this->m_rectCollision->x = this->m_rectCollision->y = 6;

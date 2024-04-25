@@ -7,6 +7,7 @@ class Gun : public BaseObject
 {
 private:
 
+
 public:
     Gun();
     ~Gun() = default;
