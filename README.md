@@ -93,8 +93,9 @@ Bước 5: Bật pvz.exe và chơi
 
 ### <span style="color: green;">**Begin**</span> <a name="begin"></a>
 Khi vào màn hình menu game, có các con dino chuyển động , sẽ có 5 dòng chữ để bạn chọn, bạn có thể chơi game ngay lập tức ở đây sẽ không có level và chọn màu cho nhân vật, mặc định là màu vàng, hoặc vào hàm highscore để xem 5 điểm số cao nhất từng chơi, hàm help sẽ hướng dẫn bạn cách chơi và luật chơi, ở dòng chữ level khi bạn nhấp vào sẽ đổi sang level và mù cho nhân vật, exit sẽ giúp bạn thoát khỏi trò chơi, nút âm thanh sẽ giúp bạn tắt bật âm thanh chỉ cần nhấn vào biểu tượng.
-![Ảnh chụp màn hình 2024-04-25 150508](https://hackmd.io/_uploads/ryHNZcvbR.png)
-
+[![Ảnh chụp màn hình 2024-04-25 150508](https://hackmd.io/_uploads/ryHNZcvbR.png)
+]
+(https://github.com/le1510/project/blob/main/res/textures/map/background-2.png)
 ### <span style="color: green;">**Level**</span> <a name="level"></a>
 Khi bạn chuyển từ menuscene sang levelscene sẽ cho các bạn chọn mức độ của game từ dễ đến khó 
 ![Uploading file..._ybctwqrx5]()
