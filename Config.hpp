@@ -35,7 +35,6 @@
 #define RES_TX_BACKGROUND_5 "res/textures/map/background-5.png"
 #define RES_TX_BACKGROUND_6 "res/textures/map/background-6.png"
 #define RES_TX_BACKGROUND_7 "res/textures/map/background-7.png"
-//#define RES_TX_BACKGROUND_3 "res/textures/map/background-3.png"
 
 
 
@@ -50,7 +49,6 @@
 #define RES_TX_MUSHROOM_WALK "res/textures/monsters/mushroom/walk.png"
 #pragma once
 
-//include sdl2
 #include<SDL2/SDL.h>
 #include<SDL2/SDL_image.h>
 #include<SDL2/SDL_mixer.h>
@@ -94,7 +92,6 @@
 #define RES_TX_BACKGROUND_5 "res/textures/map/background-5.png"
 #define RES_TX_BACKGROUND_6 "res/textures/map/background-6.png"
 #define RES_TX_BACKGROUND_7 "res/textures/map/background-7.png"
-//#define RES_TX_BACKGROUND_3 "res/textures/map/background-3.png"
 #define RES_TX_BACKGROUND_8 "res/textures/map/background-8.png"
 #define RES_TX_BACKGROUND_9 "res/textures/map/backgroud-9.png"
 

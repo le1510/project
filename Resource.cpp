@@ -97,10 +97,10 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     SFX_BACKGROUND          =LoadMusicFromFile(RES_SFX_BACKGROUND);
 
     TX_PLAYER				= LoadTextureFromFile(RES_TX_PLAYER, renderer);
-    TX_PLAYERRED				= LoadTextureFromFile(RES_TX_PLAYERRED, renderer);
-    TX_PLAYERBLUE				= LoadTextureFromFile(RES_TX_PLAYERBLUE, renderer);
-    TX_PLAYERYELLOW				= LoadTextureFromFile(RES_TX_PLAYERYELLOW, renderer);
-    TX_PLAYERGREEN				= LoadTextureFromFile(RES_TX_PLAYERGREEN, renderer);
+    TX_PLAYERRED			= LoadTextureFromFile(RES_TX_PLAYERRED, renderer);
+    TX_PLAYERBLUE			= LoadTextureFromFile(RES_TX_PLAYERBLUE, renderer);
+    TX_PLAYERYELLOW			= LoadTextureFromFile(RES_TX_PLAYERYELLOW, renderer);
+    TX_PLAYERGREEN			= LoadTextureFromFile(RES_TX_PLAYERGREEN, renderer);
 
     TX_PLAYER_GUN			= LoadTextureFromFile(RES_TX_PLAYER_GUN, renderer);
     TX_PLAYER_BULLET		= LoadTextureFromFile(RES_TX_PLAYER_BULLET, renderer);
@@ -114,10 +114,10 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_BACKGROUND_3         = LoadTextureFromFile(RES_TX_BACKGROUND_3, renderer);
     TX_BACKGROUND_4         = LoadTextureFromFile(RES_TX_BACKGROUND_4, renderer);
     TX_BACKGROUND_5         = LoadTextureFromFile(RES_TX_BACKGROUND_5, renderer);
-    TX_BACKGROUND_6        = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
-    TX_BACKGROUND_7        = LoadTextureFromFile(RES_TX_BACKGROUND_7, renderer);
-    TX_BACKGROUND_8        = LoadTextureFromFile(RES_TX_BACKGROUND_8, renderer);
-    TX_BACKGROUND_9        = LoadTextureFromFile(RES_TX_BACKGROUND_9, renderer);
+    TX_BACKGROUND_6         = LoadTextureFromFile(RES_TX_BACKGROUND_6, renderer);
+    TX_BACKGROUND_7         = LoadTextureFromFile(RES_TX_BACKGROUND_7, renderer);
+    TX_BACKGROUND_8         = LoadTextureFromFile(RES_TX_BACKGROUND_8, renderer);
+    TX_BACKGROUND_9         = LoadTextureFromFile(RES_TX_BACKGROUND_9, renderer);
 
 
 
@@ -139,10 +139,10 @@ void Resource::LoadAllData(SDL_Renderer* renderer)
     TX_SKELETON_DEATH		= LoadTextureFromFile(RES_TX_SKELETON_DEATH, renderer);
     TX_SKELETON_WALK		= LoadTextureFromFile(RES_TX_SKELETON_WALK, renderer);
     TX_ON                   = LoadTextureFromFile(RES_TX_ON, renderer);
-    TX_OFF                   = LoadTextureFromFile(RES_TX_OFF, renderer);
-    TX_CONTINUE               = LoadTextureFromFile(RES_TX_CONTINUE, renderer);
-    TX_PAUSE             = LoadTextureFromFile(RES_TX_PAUSE, renderer);
-    TX_END             = LoadTextureFromFile(RES_TX_END, renderer);
+    TX_OFF                  = LoadTextureFromFile(RES_TX_OFF, renderer);
+    TX_CONTINUE             = LoadTextureFromFile(RES_TX_CONTINUE, renderer);
+    TX_PAUSE                = LoadTextureFromFile(RES_TX_PAUSE, renderer);
+    TX_END                  = LoadTextureFromFile(RES_TX_END, renderer);
 
 
 

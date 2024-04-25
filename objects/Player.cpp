@@ -189,9 +189,11 @@ float Player::GetScale() const
 {
     return m_scale;
 }
-void Player::Heal(int amount,float delta) {
+void Player::Heal(int amount,float delta)
+{
     m_timeSinceLastHeal += delta;
-    if (m_timeSinceLastHeal >= 3.0f) {
+    if (m_timeSinceLastHeal >= 3.0f)
+    {
         m_timeSinceLastHeal = 0.0f;
         int newHP = GetCurrentHP() + m_healAmount;
         SetCurrentHP((newHP > GetMaxHP()) ? GetMaxHP() : newHP);
@@ -199,7 +201,8 @@ void Player::Heal(int amount,float delta) {
 }
 void Player::UpdateGunScale(float scaleFactor)
 {
-    if (m_gun != nullptr) {
+    if (m_gun != nullptr)
+    {
         m_gun->Scale(scaleFactor);
     }
 }

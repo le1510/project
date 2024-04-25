@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1713066424 source:d:\codegameltncm\gamesdl2\main.cpp
+1714023649 source:d:\codegameltncm\gamesdl2\main.cpp
 	"Config.hpp"
 	"Game.hpp"
 
-1713985539 d:\codegameltncm\gamesdl2\config.hpp
+1714023651 d:\codegameltncm\gamesdl2\config.hpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -52,7 +52,7 @@
 	"GameOverScene.hpp"
 	"HighScoreScene.hpp"
 
-1714016234 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1714023651 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
 	"../components/Text.hpp"
 	"../objects/Player.hpp"
@@ -90,7 +90,7 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1713985851 source:d:\codegameltncm\gamesdl2\resource.cpp
+1714023650 source:d:\codegameltncm\gamesdl2\resource.cpp
 	"Resource.hpp"
 
 1713985539 d:\codegameltncm\gamesdl2\resource.hpp
@@ -105,7 +105,7 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1714016986 source:d:\codegameltncm\gamesdl2\objects\player.cpp
+1714023648 source:d:\codegameltncm\gamesdl2\objects\player.cpp
 	"Player.hpp"
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
@@ -270,7 +270,7 @@
 	"PlayScene.hpp"
 	"ColorDinoScene.hpp"
 
-1713985690 d:\codegameltncm\gamesdl2\scenes\colordinoscene.hpp
+1714023648 d:\codegameltncm\gamesdl2\scenes\colordinoscene.hpp
 	"../Config.hpp"
 	"../scenes/BaseScene.hpp"
 	"../components/Text.hpp"

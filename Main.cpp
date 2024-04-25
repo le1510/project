@@ -3,9 +3,8 @@
 
 int main(int argc, char* arvg[])
 {
-    // random 1 cai seed
-    //std::srand(std::time(nullptr));
+    std::srand(std::time(nullptr));
     Game::GetInstance()->Run();
 
-    return EXIT_SUCCESS;//RETURN 0
+    return EXIT_SUCCESS;
 }

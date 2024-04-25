@@ -34,7 +34,10 @@ private:
 
 public:
     PlayScene();
-    Player* GetPlayer() const { return m_player; }
+    Player* GetPlayer() const
+    {
+        return m_player;
+    }
 
     void HandleEvent(SDL_Event) override ;
     void Update(float) override;
@@ -51,8 +54,11 @@ public:
     void ReloadBullet();
     void SetMaxShots(int maxShots);
     void SetReloadTime(float reloadTime);
-    int GetShotsFired() const { return m_shotsFired; }
-        void Heal(int amount, float delta );
+    int GetShotsFired() const
+    {
+        return m_shotsFired;
+    }
+    void Heal(int amount, float delta );
 
 
 

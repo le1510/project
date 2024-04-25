@@ -9,7 +9,7 @@ class ColorDinoScene final : public BaseScene,public MenuAnimation
 {
 private:
     float m_elapsedTime;
-     Text* yellowText;
+    Text* yellowText;
     Text* redText;
     Text* greenText;
     Text* blueText;
@@ -21,7 +21,7 @@ private:
 public:
     ColorDinoScene();
     ~ColorDinoScene() = default;
-        ColorDinoScene(PlayScene* playScene);
+    ColorDinoScene(PlayScene* playScene);
 
     void HandleEvent(SDL_Event) override;
     void Update(float) override;
