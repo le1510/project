@@ -10,6 +10,10 @@
 * Phá đảo game: 
 </div>
 
+<div align="center">
+Bản Tiếng Anh: <a href="./README-en.md">English version</a>
+</div>
+
 ## Giới thiệu
 
 Trong một thế giới xa xôi, các loài khủng long sống hòa bình bị đe dọa bởi một nguy hiểm mới. Cổng tử thần mở ra, phóng ra những quái vật đáng sợ, tấn công các cộng đồng khủng long.
@@ -103,53 +107,41 @@ Bước 5: Bật pvz.exe và chơi
 ### <span style="color: green;">**Begin**</span>
 
 Khi vào màn hình menu game, có các con dino chuyển động , sẽ có 5 dòng chữ để bạn chọn, bạn có thể chơi game ngay lập tức ở đây sẽ không có level và chọn màu cho nhân vật, mặc định là màu vàng, hoặc vào hàm highscore để xem 5 điểm số cao nhất từng chơi, hàm help sẽ hướng dẫn bạn cách chơi và luật chơi, ở dòng chữ level khi bạn nhấp vào sẽ đổi sang level và mù cho nhân vật, exit sẽ giúp bạn thoát khỏi trò chơi, nút âm thanh sẽ giúp bạn tắt bật âm thanh chỉ cần nhấn vào biểu tượng.
-[![Ảnh chụp màn hình 2024-04-25 150508](https://hackmd.io/_uploads/ryHNZcvbR.png)
-]
-(https://github.com/le1510/project/blob/main/res/textures/map/background-2.png)
+![](./imgs/menu.png)
 
 ### <span style="color: green;">**Level**</span>
 
 Khi bạn chuyển từ menuscene sang levelscene sẽ cho các bạn chọn mức độ của game từ dễ đến khó
-![Uploading file..._ybctwqrx5]()
+![](./imgs/level.png)
 
 ### <span style="color: green;">**Object**</span> <a name="object"></a>
 
 #### <span style="color: orange;">**Player**</span>
 
 Sau khi bạn từ levelscene sang chọn màu dino sẽ có các hình ảnh và tên ở dưới để bạn chọn màu sắc cho con dino bạn muốn chơi
-![Ảnh chụp màn hình 2024-04-25 152023](https://hackmd.io/_uploads/Sy6375wWC.png)
+![](./imgs/choose.png)
 
 #### <span style="color: orange;">**Threat**</span>
 
 Để đối đầu với con dino, và đánh chiếm tòa tháp sẽ là những con threat, threat sẽ gồm các đối tượng:
-![attack](https://hackmd.io/_uploads/BkaSNcPbR.png)
-![attack](https://hackmd.io/_uploads/SJUDV9D-0.png)
-![attack](https://hackmd.io/_uploads/r1-dE5DbC.png)
+![](./res/textures/monsters/goblin/attack.png)
+![](./res/textures/monsters/mushroom/attack.png)
+![](./res/textures/monsters/skeleton/attack.png)
 
 ### <span style="color: green;">**Play**</span>
 
 Hãy dùng các nút A S W D để di chuyển nhân vật, dùng chuột trái để bắn đạn gây sát thương cho Threat, bảo vệ tòa thành. Chú ý đừng để dino chạm vào quái vật và đừng bắn quá nhiều đạn, đạn có giới hạn. Khi dino hoặc tòa tháp hết máu thì GameOver
-![attack](https://hackmd.io/_uploads/rJyc6cvWA.png)
 
 ## **Graphics**
 
 Sự hỗ trợ từ các thầy lý thuyết, thực hành, và các anh mentor.
 Các nguồn từ lazyfoo, chat gpt,thực hành 123,...
 Những tài nguyên đã sử dụng:
-![attack](https://hackmd.io/_uploads/BkNsTcvbC.png)
-![attack](https://hackmd.io/_uploads/H1h2TqvbR.png)
-![bullet](https://hackmd.io/_uploads/rk7RT9wbR.png)
-![dino](https://hackmd.io/_uploads/HkmRp5vZC.png)
-![dinoblue](https://hackmd.io/_uploads/SyXC69P-0.png)
-![dinogreen](https://hackmd.io/_uploads/BJ70aqPbR.png)
-![dinored](https://hackmd.io/_uploads/S14CT5DZC.png)
-![dinoyellow](https://hackmd.io/_uploads/BkNApqP-A.png)
-![gun](https://hackmd.io/_uploads/HJ4CpqDZR.png)![continue](https://hackmd.io/_uploads/HJqyAcwWA.png)
-![continuebig](https://hackmd.io/_uploads/Sy9kR9DWR.png)
-![end](https://hackmd.io/_uploads/SyqkC9DbA.png)
-![endbig](https://hackmd.io/_uploads/HJq1CcPbA.png)
-![background-4](https://hackmd.io/_uploads/rytXC5v-R.png)
-![Uploading file..._1xxejdewd]()
+
+![](./res/textures/player/dinoblue.png)
+![](./res/textures/player/dinored.png)
+![](./res/textures/player/dinoyellow.png)
+![](./res/textures/player/dinoygreen.png)
 
 ## **Notes**
 
@@ -158,11 +150,11 @@ Những tài nguyên đã sử dụng:
 
 ```cpp
 bool BaseObject::IsCollision(const BaseObject* other) const
-        {
-            int left = other->GetRectCollision().x - (this->GetRectCollision().x + this->GetRectCollision().w);
-            int top = (other->GetRectCollision().y + other->GetRectCollision().h) - this->GetRectCollision().y;
-            int right = (other->GetRectCollision().x + other->GetRectCollision().w) - this->GetRectCollision().x;
-            int bottom = other->GetRectCollision().y - (this->GetRectCollision().y + this->GetRectCollision().h);
+{
+    int left = other->GetRectCollision().x - (this->GetRectCollision().x + this->GetRectCollision().w);
+    int top = (other->GetRectCollision().y + other->GetRectCollision().h) - this->GetRectCollision().y;
+    int right = (other->GetRectCollision().x + other->GetRectCollision().w) - this->GetRectCollision().x;
+    int bottom = other->GetRectCollision().y - (this->GetRectCollision().y + this->GetRectCollision().h);
 
     return !(left > 0 || right < 0 || top < 0 || bottom > 0);
 }
