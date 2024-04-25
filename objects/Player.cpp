@@ -121,6 +121,8 @@ void Player::Update(float delta)
     this->m_gun->SetOrigin(this->GetOrigin());
     this->m_gun->Update(delta);
     this->UpdateAmmo(m_maxAmmo - m_shotsFired);
+    this->UpdateGunScale(m_scale);
+
 }
 
 void Player::Render(SDL_Renderer* renderer)
@@ -177,6 +179,11 @@ void Player::Scale(float scaleFactor)
     this->m_rectCollision->h *= scaleFactor;
     this->m_rectCollision->x -= (this->m_rectCollision->w * scaleFactor - this->m_rectCollision->w) / 2;
     this->m_rectCollision->y -= (this->m_rectCollision->h * scaleFactor - this->m_rectCollision->h) / 2;
+
+    this->UpdateGunScale(scaleFactor);
+
+
+
 }
 float Player::GetScale() const
 {
@@ -188,6 +195,12 @@ void Player::Heal(int amount,float delta) {
         m_timeSinceLastHeal = 0.0f;
         int newHP = GetCurrentHP() + m_healAmount;
         SetCurrentHP((newHP > GetMaxHP()) ? GetMaxHP() : newHP);
+    }
+}
+void Player::UpdateGunScale(float scaleFactor)
+{
+    if (m_gun != nullptr) {
+        m_gun->Scale(scaleFactor);
     }
 }
 

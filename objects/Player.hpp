@@ -40,5 +40,7 @@ public:
     void Scale(float scaleFactor);
     float GetScale() const;
     void Heal(int amount, float delta);
+    void UpdateGunScale(float scaleFactor);
+
 
 };

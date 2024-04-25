@@ -13,4 +13,5 @@ public:
     ~Gun() = default;
 
     void Update(float) override;
+    void Scale(float scaleFactor);
 };

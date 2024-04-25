@@ -26,3 +26,8 @@ void Gun::Update(float delta)
     this->m_angle = (float) (angleRadians * 180.0f / M_PI + 90.f);
     this->m_flipH = deltaX < 0 ? true : false;
 }
+void Gun::Scale(float scaleFactor)
+{
+    this->m_rectDst->w *= scaleFactor;
+    this->m_rectDst->h *= scaleFactor;
+}
