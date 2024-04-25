@@ -11,7 +11,7 @@ void PlayScene::SetSpawnTime(float spawnTime)
 
 void PlayScene::SetEasySpawnTime()
 {
-    SetSpawnTime(2.5f);
+    SetSpawnTime(3.f);
 }
 
 void PlayScene::SetMediumSpawnTime()
@@ -122,6 +122,7 @@ void PlayScene::Update(float delta)
                 m_timeSinceLastShot = 0;
             }
         }
+        m_player->Heal(10,delta);
         this->m_player->UpdateAmmo(this->m_maxShots - this->m_shotsFired);
         this->m_player->UpdateShotsFired(this->m_shotsFired);
 

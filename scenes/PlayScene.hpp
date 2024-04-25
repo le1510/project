@@ -52,6 +52,8 @@ public:
     void SetMaxShots(int maxShots);
     void SetReloadTime(float reloadTime);
     int GetShotsFired() const { return m_shotsFired; }
+        void Heal(int amount, float delta );
+
 
 
 

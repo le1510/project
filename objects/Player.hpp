@@ -21,6 +21,9 @@ private:
     int m_maxAmmo;
     int m_shotsFired;
     std::vector<Bullet*> m_bullets;
+     float m_healTime;
+    float m_timeSinceLastHeal;
+    int m_healAmount;
 
 public:
     Player();
@@ -36,4 +39,6 @@ public:
     Bullet* Shot();
     void Scale(float scaleFactor);
     float GetScale() const;
+    void Heal(int amount, float delta);
+
 };

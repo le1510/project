@@ -12,7 +12,9 @@ Player::Player() :
     m_totalHP({0,0,40,5 }),
           m_currentHP({0,0,40,5}),
           m_currentAmmo(10),
-          m_maxAmmo(10)
+          m_maxAmmo(10),
+          m_healTime(3.0f),
+          m_healAmount(10)
 
 
 {
@@ -35,6 +37,8 @@ Player::Player() :
 void Player::Update(float delta)
 {
     this->m_elapsedTime+=delta;
+    void Heal(int amount, float delta);
+
     auto o = this->GetOrigin();
     m_totalHP.x=m_currentHP.x=o.x-20 ;
     m_totalHP.y=m_currentHP.y=o.y+30;
@@ -177,5 +181,13 @@ void Player::Scale(float scaleFactor)
 float Player::GetScale() const
 {
     return m_scale;
+}
+void Player::Heal(int amount,float delta) {
+    m_timeSinceLastHeal += delta;
+    if (m_timeSinceLastHeal >= 3.0f) {
+        m_timeSinceLastHeal = 0.0f;
+        int newHP = GetCurrentHP() + m_healAmount;
+        SetCurrentHP((newHP > GetMaxHP()) ? GetMaxHP() : newHP);
+    }
 }
 
