@@ -296,9 +296,13 @@ Join the adventure and explore the colorful world of DINO GUN now 🎮!
 - [Notes](#notes)
 ## **Information** <a name="information"></a>
 Name: Lê Thị Tú Phương
+
 Student ID: 22020695
+
 Class: K68J
+
 Email: 23020695@vnu.edu.vn
+
 Facebook: https://www.facebook.com/Lethituphuong2005
 ## **Idea** <a name="idea"></a>
     Developed based on the game CASTLE DEFENDER: a strategic castle defense game.
