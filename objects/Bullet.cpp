@@ -41,7 +41,10 @@ void Bullet::Update(float delta)
         this->m_isAlive = false;
     }
 }
-void Bullet::DecreaseDamage(int amount)
+void Bullet::ScaleBullet(float scaleFactor)
 {
-    m_damage -= amount;
+    this->m_rectDst->w *= scaleFactor;
+    this->m_rectDst->h *= scaleFactor;
 }
+
+

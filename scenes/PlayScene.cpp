@@ -339,7 +339,8 @@ void PlayScene::UpdateLevel()
             this->m_spawnTime -= t * 0.1f;
             this->m_player->Scale(1.3f);
 
-            this->m_player->DecreaseBulletDamage(5);
+            this->m_player->UpdateBulletScale(1.3f);
+
         }
     }
 }

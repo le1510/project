@@ -13,6 +13,7 @@ public:
     Bullet(float,SDL_Point);
 
     void Update(float) override;
-    void DecreaseDamage(int amount);
+    void ScaleBullet (float scaleFactor);
+
 
 };

@@ -59,10 +59,6 @@ public:
         return m_shotsFired;
     }
     void Heal(int amount, float delta );
-
-
-
-
-
+    void UpdateBulletScale(float scaleFactor);
 
 };

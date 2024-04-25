@@ -34,13 +34,13 @@ public:
     void SetMaxAmmo(int maxAmmo) { m_maxAmmo = maxAmmo; }
     void UpdateAmmo(int ammo) { m_currentAmmo = ammo; }
     void UpdateShotsFired(int shotsFired) { m_shotsFired = shotsFired; }
-    void DecreaseBulletDamage(int amount);
     bool IsShotable() const;
     Bullet* Shot();
     void Scale(float scaleFactor);
     float GetScale() const;
     void Heal(int amount, float delta);
     void UpdateGunScale(float scaleFactor);
+    void UpdateBulletScale(float scaleFactor);
 
 
 };

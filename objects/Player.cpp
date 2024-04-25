@@ -151,24 +151,23 @@ bool Player::IsShotable() const
 {
     return m_isShotable;
 }
-void Player::DecreaseBulletDamage(int amount)
-{
-    for (auto bullet : m_bullets)
-    {
-        bullet->DecreaseDamage(amount);
-    }
-}
+
 
 Bullet* Player::Shot()
 {
-    m_isShotable=false;
-    m_elapsedTime=0.f;
-    DecreaseBulletDamage(5);
 
-    return new Bullet(m_gun->GetAngle(),GetOrigin());
+    m_isShotable = false;
+    m_elapsedTime = 0.f;
+
+    Bullet* bullet = new Bullet(m_gun->GetAngle(), GetOrigin());
+    return bullet;
 }
+
 void Player::Scale(float scaleFactor)
 {
+    int originalHPBarX = m_totalHP.x;
+    int originalHPBarY = m_totalHP.y;
+
     this->m_rectDst->w *= scaleFactor;
     this->m_rectDst->h *= scaleFactor;
 
@@ -181,6 +180,17 @@ void Player::Scale(float scaleFactor)
     this->m_rectCollision->y -= (this->m_rectCollision->h * scaleFactor - this->m_rectCollision->h) / 2;
 
     this->UpdateGunScale(scaleFactor);
+    this->UpdateBulletScale(scaleFactor);
+
+    int newHPBarX = originalHPBarX * scaleFactor;
+    int newHPBarY = originalHPBarY * scaleFactor;
+
+    m_totalHP.x = newHPBarX;
+    m_totalHP.y = newHPBarY;
+    if (m_totalHP.x < 0)
+    {
+        m_totalHP.x = 0;
+    }
 
 
 
@@ -206,4 +216,12 @@ void Player::UpdateGunScale(float scaleFactor)
         m_gun->Scale(scaleFactor);
     }
 }
+void Player::UpdateBulletScale(float scaleFactor)
+{
+    for (auto& bullet : m_bullets)
+    {
+        bullet->ScaleBullet(scaleFactor);
+    }
+}
+
 
