@@ -3,11 +3,11 @@
 </div>
 
 <div align="center">
-* Thử nghiệm game: 
+* Thử nghiệm game: https://www.youtube.com/watch?v=1wcIsvAQAHE
     </div>
 
 <div align="center">
-* Phá đảo game: 
+* Phá đảo game: https://www.youtube.com/watch?v=1wcIsvAQAHE
 </div>
 
 <div align="center">
