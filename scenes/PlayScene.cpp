@@ -360,7 +360,7 @@ void PlayScene::UpdateLevel()
     int t = this->m_score / 100;
     if (t != this->m_level && this->m_level < 10)
     {
-        if (this->m_player->GetScale() < 2.5f)
+        if (this->m_player->GetScale() < 2.f)
         {
             this->m_level = t;
             this->m_spawnTime -= t * 0.1f;
