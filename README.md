@@ -90,7 +90,7 @@ Giải nén game vào một thư mục và bật pvz.exe lên và chơi.
 Bước 1: Clone repo này về hoặc chọn Code -> Download Zip
 https://github.com/le1510/project/blob/main/res/textures/map/background-2.png
 Tất cả code đều nằm trong thư mục src.
-Có thể nhảy đến bước 5 để chơi luôn.
+Có thể nhảy đến bước 5 để chơi luôn.   
 Bước 2: Cài mingw. Ở đây tôi cài đặt phiên bản MinGW-W64 GCC-8.1.0 x86_64-posix-seh.
 Một số chú ý:
 
