@@ -92,7 +92,6 @@ Unzip the game into a folder and run pvz.exe to play.
 
 Step 1: Clone this repo or choose Code -> Download Zip.
 
-![Screenshot](https://hackmd.io/_uploads/HkY_BtDbC.png)
 
 All the code is located in the src directory.
 You can skip to step 5 to play directly.    
