@@ -168,33 +168,39 @@ void Player::Scale(float scaleFactor)
     int originalHPBarX = m_totalHP.x;
     int originalHPBarY = m_totalHP.y;
 
-    this->m_rectDst->w *= scaleFactor;
-    this->m_rectDst->h *= scaleFactor;
+    int newDstWidth = static_cast<int>(this->m_rectDst->w * scaleFactor);
+    int newDstHeight = static_cast<int>(this->m_rectDst->h * scaleFactor);
 
-    this->m_rectDst->x -= (this->m_rectDst->w * scaleFactor - this->m_rectDst->w) / 2;
-    this->m_rectDst->y -= (this->m_rectDst->h * scaleFactor - this->m_rectDst->h) / 2;
+    int newDstX = this->m_origin->x - newDstWidth / 2;
+    int newDstY = this->m_origin->y - newDstHeight / 2;
+
+    this->m_rectDst->w = newDstWidth;
+    this->m_rectDst->h = newDstHeight;
+    this->m_rectDst->x = newDstX;
+    this->m_rectDst->y = newDstY;
 
     this->m_rectCollision->w *= scaleFactor;
     this->m_rectCollision->h *= scaleFactor;
-    this->m_rectCollision->x -= (this->m_rectCollision->w * scaleFactor - this->m_rectCollision->w) / 2;
-    this->m_rectCollision->y -= (this->m_rectCollision->h * scaleFactor - this->m_rectCollision->h) / 2;
+
+    int newCollisionX = this->m_origin->x - this->m_rectCollision->w / 2;
+    int newCollisionY = this->m_origin->y - this->m_rectCollision->h / 2;
+
+    this->m_rectCollision->x = newCollisionX;
+    this->m_rectCollision->y = newCollisionY;
 
     this->UpdateGunScale(scaleFactor);
     this->UpdateBulletScale(scaleFactor);
 
     int newHPBarX = originalHPBarX * scaleFactor;
     int newHPBarY = originalHPBarY * scaleFactor;
-
     m_totalHP.x = newHPBarX;
     m_totalHP.y = newHPBarY;
     if (m_totalHP.x < 0)
     {
         m_totalHP.x = 0;
     }
-
-
-
 }
+
 float Player::GetScale() const
 {
     return m_scale;

@@ -45,14 +45,13 @@
 1714054274 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1714112226 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1714129133 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
 	"GameOverScene.hpp"
 	"HighScoreScene.hpp"
 	"cmath"
-	<cmath>
 
 1714109275 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
@@ -107,7 +106,7 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1714073024 source:d:\codegameltncm\gamesdl2\objects\player.cpp
+1714129096 source:d:\codegameltncm\gamesdl2\objects\player.cpp
 	"Player.hpp"
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
@@ -177,7 +176,7 @@
 	"BaseObject.hpp"
 	"../components/Damage.hpp"
 
-1714069587 source:d:\codegameltncm\gamesdl2\objects\bullet.cpp
+1714129096 source:d:\codegameltncm\gamesdl2\objects\bullet.cpp
 	"Bullet.hpp"
 	"../Resource.hpp"
 	<cmath>

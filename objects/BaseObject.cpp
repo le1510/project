@@ -31,8 +31,8 @@ void BaseObject::Render(SDL_Renderer* renderer)
         );
 
     }
-    //SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    //SDL_RenderDrawRect(renderer, this->m_rectCollision);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderDrawRect(renderer, this->m_rectCollision);
 }
 
 SDL_Point BaseObject::GetOrigin() const
