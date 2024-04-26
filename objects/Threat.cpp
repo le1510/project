@@ -21,7 +21,7 @@ Threat::Threat(
 {
     this->SetCurrentFrame(1);
     this->SetMaxFrame(8);
-    this->SetTimePerFrame(0.15f);
+    this->SetTimePerFrame(0.1f);
 
     this->m_state = ThreatState::WALK;
     this->m_texture = m_walkTex;
@@ -109,6 +109,7 @@ void Threat::Update(float delta)
             this->m_isAttackable=true;
         }
     }
+
     if (this->GetCurrentHP() <= 0 && this->m_state != ThreatState::DEATH)
     {
         this->SetState(ThreatState::DEATH);
@@ -118,6 +119,7 @@ void Threat::Update(float delta)
     {
         this->m_isAlive = false;
     }
+
 }
 void Threat::Render(SDL_Renderer* renderer )
 {
@@ -169,3 +171,5 @@ Threat* Threat::Generate()
 
     return newThreat;
 }
+
+

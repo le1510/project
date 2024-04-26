@@ -3,7 +3,7 @@
 #include "../Game.hpp"
 #include "GameOverScene.hpp"
 #include"HighScoreScene.hpp"
-
+#include"cmath"
 void PlayScene::SetSpawnTime(float spawnTime)
 {
     m_spawnTime = spawnTime;
@@ -298,6 +298,8 @@ void PlayScene::CheckPlayerAndTower()
         }
     }
 }
+#include <cmath> // Để sử dụng std::hypot
+
 void PlayScene::CheckPlayerAndThreatsCollision()
 {
     for (auto threat : this->m_threats)
@@ -309,16 +311,42 @@ void PlayScene::CheckPlayerAndThreatsCollision()
             currentHP -= damage;
             this->m_player->SetCurrentHP(currentHP);
 
+            if (threat->GetState() == ThreatState::WALK && std::hypot(threat->GetOrigin().x - this->m_tower->GetOrigin().x, threat->GetOrigin().y - this->m_tower->GetOrigin().y) > 80.f)
+            {
+                threat->SetState(ThreatState::ATTACK);
+                threat->SetAttackMaxFrame(8);
+            }
+
             if (currentHP <= 0)
             {
-
-
                 this->HandlePlayerAndThreatCollision(threat);
                 break;
+            }
+
+            if (threat->GetState() == ThreatState::ATTACK && threat->GetCurrentFrame() == threat->GetAttackMaxFrame())
+            {
+                threat->SetState(ThreatState::DEATH);
+            }
+
+
+        }
+        else
+        {
+            if (threat->GetState() == ThreatState::ATTACK && threat->GetCurrentFrame() < threat->GetAttackMaxFrame())
+            {
+                threat->SetState(ThreatState::WALK);
             }
         }
     }
 }
+float PlayScene::TinhKhoangCach(const SDL_Point& p1, const SDL_Point& p2)
+{
+    int dx = p2.x - p1.x;
+    int dy = p2.y - p1.y;
+    return sqrt(dx * dx + dy * dy);
+}
+
+
 void PlayScene::HandlePlayerAndThreatCollision(Threat* threat)
 {
     this->GameOver();
@@ -344,6 +372,5 @@ void PlayScene::UpdateLevel()
         }
     }
 }
-
 
 

@@ -27,6 +27,7 @@ protected:
 
     float m_elapsedTime;
     bool m_isAttackable;
+    int m_attackMaxFrame;
 
 
 public:
@@ -39,5 +40,7 @@ public:
     virtual int Score() =0;
     bool IsAttackable() const;
     int Attack();
+     void SetAttackMaxFrame(int maxFrame) { m_attackMaxFrame = maxFrame; }
+    int GetAttackMaxFrame() const { return m_attackMaxFrame; }
 
 };

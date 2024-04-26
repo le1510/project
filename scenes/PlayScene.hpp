@@ -60,5 +60,7 @@ public:
     }
     void Heal(int amount, float delta );
     void UpdateBulletScale(float scaleFactor);
+    float TinhKhoangCach(const SDL_Point& p1, const SDL_Point& p2);
+
 
 };

@@ -45,14 +45,16 @@
 1714054274 d:\codegameltncm\gamesdl2\scenes\basescene.hpp
 	"../Config.hpp"
 
-1714071986 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
+1714112226 source:d:\codegameltncm\gamesdl2\scenes\playscene.cpp
 	"PlayScene.hpp"
 	"../Resource.hpp"
 	"../Game.hpp"
 	"GameOverScene.hpp"
 	"HighScoreScene.hpp"
+	"cmath"
+	<cmath>
 
-1714071149 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
+1714109275 d:\codegameltncm\gamesdl2\scenes\playscene.hpp
 	"BaseScene.hpp"
 	"../components/Text.hpp"
 	"../objects/Player.hpp"
@@ -105,7 +107,7 @@
 	"../Config.hpp"
 	"BaseObject.hpp"
 
-1714072321 source:d:\codegameltncm\gamesdl2\objects\player.cpp
+1714073024 source:d:\codegameltncm\gamesdl2\objects\player.cpp
 	"Player.hpp"
 	"../types/Vector2f.hpp"
 	"../Resource.hpp"
@@ -133,13 +135,13 @@
 
 1714054274 d:\codegameltncm\gamesdl2\misc\random.hpp
 
-1714054274 d:\codegameltncm\gamesdl2\objects\threat.hpp
+1714112050 d:\codegameltncm\gamesdl2\objects\threat.hpp
 	"../components/Damage.hpp"
 	"../Config.hpp"
 	"../components/HP.hpp"
 	"AnimatedObject.hpp"
 
-1714054274 source:d:\codegameltncm\gamesdl2\objects\goblin.cpp
+1714124750 source:d:\codegameltncm\gamesdl2\objects\goblin.cpp
 	"Goblin.hpp"
 	"../Resource.hpp"
 
@@ -147,7 +149,7 @@
 	"../Config.hpp"
 	"Threat.hpp"
 
-1714054274 source:d:\codegameltncm\gamesdl2\objects\mushroom.cpp
+1714110704 source:d:\codegameltncm\gamesdl2\objects\mushroom.cpp
 	"Mushroom.hpp"
 	"../Resource.hpp"
 
@@ -163,7 +165,7 @@
 	"../Config.hpp"
 	"Threat.hpp"
 
-1714054274 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
+1714124750 source:d:\codegameltncm\gamesdl2\objects\threat.cpp
 	"Threat.hpp"
 	"Goblin.hpp"
 	"Mushroom.hpp"
