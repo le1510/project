@@ -3,11 +3,11 @@
 </div>
 
 <div align="center">
-* Game trial: 
+* Game trial: https://www.youtube.com/watch?v=1wcIsvAQAHE
     </div>
 
 <div align="center">
-* Game breakdown: 
+* Game breakdown: https://www.youtube.com/watch?v=1wcIsvAQAHE
 </div>
 
 <div align="center">
