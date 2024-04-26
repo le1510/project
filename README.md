@@ -90,6 +90,8 @@ Giải nén game vào một thư mục và bật pvz.exe lên và chơi.
 Bước 1: Clone repo này về hoặc chọn Code -> Download Zip
 Tất cả code đều nằm trong thư mục src.
 Có thể nhảy đến bước 5 để chơi luôn.   
+![](./res/textures/map/Ảnh chụp màn hình 2024-04-25 142446.png)
+
 Bước 2: Cài mingw. Ở đây tôi cài đặt phiên bản MinGW-W64 GCC-8.1.0 x86_64-posix-seh.
 Một số chú ý:
 
