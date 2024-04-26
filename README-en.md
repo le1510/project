@@ -3,11 +3,11 @@
 </div>
 
 <div align="center">
-* Game trial: 
+* Game trial: https://www.youtube.com/watch?v=1wcIsvAQAHE
     </div>
 
 <div align="center">
-* Game breakdown: 
+* Game breakdown: https://www.youtube.com/watch?v=1wcIsvAQAHE
 </div>
 
 <div align="center">
@@ -92,10 +92,9 @@ Unzip the game into a folder and run pvz.exe to play.
 
 Step 1: Clone this repo or choose Code -> Download Zip.
 
-![Screenshot](https://hackmd.io/_uploads/HkY_BtDbC.png)
 
 All the code is located in the src directory.
-You can skip to step 5 to play directly.
+You can skip to step 5 to play directly.    
 Step 2: Install Mingw. Here, I installed the MinGW-W64 GCC-8.1.0 x86_64-posix-seh version.
 Some notes:
 
