@@ -81,7 +81,7 @@ Facebook: https://www.facebook.com/Lethituphuong2005
 
 ### **No code** <a name="download-no-code"></a>
 
-Tải game (được nén thành .rar) tại link sau:[ https://github.com/nmhienbn/PVZ-Kaito-NMH-Edition/releases/tag/published](https://github.com/le1510/project/blob/main/file.rar)
+Tải game (được nén thành .rar) tại link sau:https://github.com/le1510/project/blob/main/file.rar
 Cách này tiết kiệm bộ nhớ và thời gian tải đi rất nhiều .
 Giải nén game vào một thư mục và bật pvz.exe lên và chơi.
 
